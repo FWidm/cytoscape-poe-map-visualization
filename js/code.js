@@ -28,15 +28,18 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'color': 'white',
                 'text-outline-width': 1,
                 'background-color': 'black',
-                'text-outline-color': '#333',
+                'text-outline-color': 'black',
+                "font-size":11
             })
             .selector('edge')
             .css({
                 'curve-style': 'bezier',
-                'line-style':'dotted',
+                // 'line-style':'dashed',
                 'target-arrow-shape': 'triangle',
                 'target-arrow-color': 'ivory',
                 'line-color': 'ivory',
+                'line-opacity':.5,
+                'opacity':.5,
                 'width': 3
             })
             .selector(':selected')
@@ -47,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'source-arrow-color': '#232323',
                 'opacity': 1
             })
-            .selector('.highlighted')
+            .selector('.unique')
             .css({
                 'background-image-opacity': 1,
                 'opacity': 1,
@@ -56,6 +59,16 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'color': 'gold',
                 'target-arrow-color': 'gold',
                 'line-color': 'gold',
+            })
+            .selector('.highlighted')
+            .css({
+                'background-image-opacity': 1,
+                'opacity': 1,
+                'text-opacity': 1,
+                'background-color': 'red',
+                'color': 'red',
+                'target-arrow-color': 'red',
+                'line-color': 'red',
             })
             .selector('.faded')
             .css({
@@ -67,8 +80,19 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         layout: {
             name: 'grid',
             padding: 10
-        }
+        },
+        // rendering options:
+        headless: false,
+        styleEnabled: true,
+        hideEdgesOnViewport: false,
+        hideLabelsOnViewport: false,
+        textureOnViewport: false,
+        motionBlur: false,
+        motionBlurOpacity: 0.2,
+        wheelSensitivity: .15,
+        pixelRatio: 'auto'
     });
+
 
     /**
      * Click/Tap handler on a node
@@ -101,8 +125,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * Log node id on mouseover
      */
     cy.on('mouseover', 'node', function (e) {
-        let node = e.cyTarget;
-        console.log(node.id());
+        //let node = e.cyTarget;
+        //console.log(node.id());
     });
 
     /**
@@ -177,51 +201,44 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * Load sample data
      */
     function loadMaps() {
-        // T1
-        let map={name:"Crystal Ore",tier:1,posX:0.18193717277486768,posY: 0.14764397905759163};
         let div=$('#cy');
-        let posX=div.width()*map.posX;
-        let posY=div.height()*map.posY;
-        console.log("posX="+posX+", posY="+posY);
-        addNode(0,map.name,'img/maps/blankMap.png',posX,posY);
-        map=    {name:"Factory", tier:2,posX:0.177814136125653,posY:0.2418848167539267};
-        posX=div.width()*map.posX;
-        posY=div.height()*map.posY;
-        console.log("posX="+posX+", posY="+posY);
-        addNode(1,map.name,'img/maps/blankMap.png',posX,posY);
-        addEdge("e0",0,1);
-        map={name:"Channel", tier:3, posX:0.20785340314135994, posY:0.30261780104712044};
-        posX=div.width()*map.posX;
-        posY=div.height()*map.posY;
-        console.log("posX="+posX+", posY="+posY);
-        addNode(2,map.name,'img/maps/blankMap.png',posX,posY);
-        addEdge("e1",1,2);
 
-        map={name:"Cavern",tier: 3, posX:0.18134816753926558,posY:0.42094240837696334};
-        posX=div.width()*map.posX;
-        posY=div.height()*map.posY;
-        console.log("posX="+posX+", posY="+posY);
-        addNode(3,map.name,'img/maps/blankMap.png',posX,posY);
-        addEdge("e2",1,3);
-        i=4;
-
+        $.getJSON('json-prototypes/atlas-2.6.json', function(data) {
+            //data is the JSON string
+            //console.log(data);
+            console.log(data.maps[data.maps.length-1]);
+            for(id=0; id<data.maps.length; id++){
+                //console.log(data.maps[id]);
+                let map=data.maps[id];
+                let posX=div.width()*map.posX;
+                let posY=div.height()*map.posY;
+                //console.log(id+" | n="+map.name);
+                addNode(map.mapId,map.name,'img/maps/blankMap.png',posX,posY,map.unique);
+                if(map.parents != undefined){
+                    for (parent in map.parents){
+                        addEdge(id+"-"+map.parents[parent].mapId,map.parents[parent].mapId,map.mapId);
+                    }
+                }
+            }
+        });
     }
 
     /**
      * add a note to the grid
-     * @param id
-     * @param name
-     * @param img
-     * @param posX
-     * @param posY
+     * @param id - id of the map
+     * @param name - name of the map
+     * @param img - img of the node
+     * @param posX - posY relative to the screen
+     * @param posY - posX relative to the screen
+     * @param unique - is the map unique
      */
-    function addNode(id, name, img, posX, posY) {
+    function addNode(id, name, img, posX, posY,unique) {
         cy.add([{
             group: "nodes",
 
             data: {
                 id: id,
-                name: name
+                name: name,
             },
             style: {
                 'background-image': img,
@@ -231,16 +248,18 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             position: {x: posX, y: posY}
 
         }]);
+        if(unique)
+            cy.$('#' + id).addClass("unique");
         cy.$('#' + id).qtip({
-            show: {
-                event: 'mouseover'
-            },
-            hide: {
-                event: 'mouseout'
-            },
+            // show: {
+            //     event: 'mouseover'
+            // },
+            // hide: {
+            //     event: 'mouseout'
+            // },
             content: {
                 title: name,
-                text: '<img src='+img+'>' + '<br/><hr> Additional Info: ' + i + '<br/> Second line'
+                text: '<img src='+img+'>' + '<br/><hr> Additional Info: ' + id + '<br/> Second line'
             }, // content: { title: { text: value } }
 
             position: {
