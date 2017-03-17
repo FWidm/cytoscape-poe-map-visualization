@@ -952,7 +952,15 @@
       "tier": 15,
       "posX": 0.45894765853881836,
       "posY": 0.3590680658817291,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 111
+        },
+        {
+          "mapId": 116
+        }
+      ]
     },
     {
       "mapId": 119,
@@ -968,7 +976,12 @@
       "tier": 16,
       "posX": 0.4611256420612335,
       "posY": 0.5905759334564209,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 115
+        }
+      ]
     },
     {
       "mapId": 121,
@@ -976,7 +989,12 @@
       "tier": 16,
       "posX": 0.5547775030136108,
       "posY": 0.5916230082511902,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 117
+        }
+      ]
     },
     {
       "mapId": 122,
@@ -984,7 +1002,12 @@
       "tier": 16,
       "posX": 0.5545994639396667,
       "posY": 0.4198952913284302,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 119
+        }
+      ]
     },
     {
       "mapId": 123,
@@ -992,7 +1015,12 @@
       "tier": 16,
       "posX": 0.45876961946487427,
       "posY": 0.4157068133354187,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 118
+        }
+      ]
     },
     {
       "mapId": 124,
