@@ -1,0 +1,41 @@
+{
+  "id":1,
+  "name":"Crystal Ore",
+  "img":"/img/crystal_ore.png",
+  "tier":1,
+  "description":{
+    "boss":[
+      {
+        "bossId":10239,
+        "name":"Shrieker Eihal",
+        "basedOn":"Voidscream",
+        "Attributes":"Summons 'Shriekers', casts Sandstorm(physical dot), screeches (reduces movement speed)"
+      }
+    ]
+  },
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "cards":[
+    {
+      "cardId":1,
+      "name":"The Gambler",
+      "result":"Divination Card"
+    }
+  ],
+  "connectedSource":[
+  ],
+  "connectedTo":[
+    {
+      "mapId":1093,
+      "name":"Factory",
+      "tier":2
+    }
+  ],
+  "vendorResult":{
+    "mapId":1093,
+    "name":"Factory",
+    "tier":2
+  }
+}

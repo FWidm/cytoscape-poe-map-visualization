@@ -1,0 +1,29 @@
+body {
+    font: 14px helvetica neue, helvetica, arial, sans-serif;
+}
+
+#cy {
+    height: 100%;
+    width: 90%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#buttons{
+    position: absolute;
+    top: 0;
+    left:90%;
+    width:9%;
+    height: 99%;
+    border: dotted gray;
+}
+
+#info {
+    color: #c88;
+    font-size: 1em;
+    position: absolute;
+    z-index: -1;
+    left: 1em;
+    top: 1em;
+}
