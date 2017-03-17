@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             })
             .selector('.faded')
             .css({
-                'background-image-opacity':0.25,
+                'background-image-opacity': 0.25,
                 'opacity': 0.25,
                 'text-opacity': 0
             }),
@@ -82,7 +82,16 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         layout.run();
     });
 
-    $("#add").click(function () {
+
+    $("#connect").click(function () {
+        console.log(i);
+        cy.add([{
+            group: "edges",
+            data: {id: "e" + (i-1), source: (i-1), target: (i-2)}}
+        ]);
+    });
+
+    $("#addNode").click(function () {
         cy.add([{
             group: "nodes",
 
@@ -91,21 +100,19 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 class: "map",
                 name: 'Add-' + i
             },
-            style:{
-                'background-image':'img/maps/blankMap.png',
-                'background-width':'100%',
-                'background-height':'100%'
+            style: {
+                'background-image': 'img/maps/blankMap.png',
+                'background-width': '100%',
+                'background-height': '100%'
             },
             position: {x: 200, y: 200}
 
-        },
-            {group: "edges", data: {id: "e" + i, source: i, target: i - 1}}
-        ]);
+        }]);
 
         cy.$('#' + i).qtip({
             content: {
                 title: 'Add-' + i,
-                text: '<img src="img/maps/blankMap.png"' + i + '<br/><hr> Additional Info: '+i+'<br/> Second line'
+                text: '<img src="img/maps/blankMap.png"' + i + '<br/><hr> Additional Info: ' + i + '<br/> Second line'
             }, // content: { title: { text: value } }
 
             position: {
