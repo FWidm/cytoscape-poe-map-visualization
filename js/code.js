@@ -105,8 +105,10 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
 
         let neighborhood = node.outgoers().add(node);
         cy.elements().addClass('faded');
+        cy.elements().removeClass('highlighted');
         node.removeClass('faded');
         neighborhood.addClass('highlighted');
+
     });
 
     /**
