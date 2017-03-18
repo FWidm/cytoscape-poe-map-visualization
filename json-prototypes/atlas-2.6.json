@@ -1,6 +1,7 @@
 {
   "version": "2.6",
   "description": "init",
+  "atlasBGImage": "https://web.poecdn.com/image/Art/2DArt/Atlas/Atlas.png?scale=2&w=1&h=1&v=0e123ff2ea520a943138e8c8d793ec6f3",
   "maps": [
     {
       "mapId": 0,
@@ -40,7 +41,12 @@
       "tier": 2,
       "posX": 0.17781414091587067,
       "posY": 0.24188481271266937,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 0
+        }
+      ]
     },
     {
       "mapId": 5,
@@ -48,7 +54,12 @@
       "tier": 2,
       "posX": 0.25202879309654236,
       "posY": 0.726701557636261,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 1
+        }
+      ]
     },
     {
       "mapId": 6,
@@ -56,7 +67,12 @@
       "tier": 2,
       "posX": 0.792146623134613,
       "posY": 0.7424083948135376,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 3
+        }
+      ]
     },
     {
       "mapId": 7,
@@ -64,7 +80,12 @@
       "tier": 2,
       "posX": 0.808049738407135,
       "posY": 0.2083769589662552,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 2
+        }
+      ]
     },
     {
       "mapId": 8,
@@ -72,7 +93,12 @@
       "tier": 3,
       "posX": 0.20785340666770935,
       "posY": 0.30261778831481934,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 4
+        }
+      ]
     },
     {
       "mapId": 9,
@@ -80,7 +106,12 @@
       "tier": 3,
       "posX": 0.18134817481040955,
       "posY": 0.42094239592552185,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 4
+        }
+      ]
     },
     {
       "mapId": 10,
@@ -88,7 +119,12 @@
       "tier": 3,
       "posX": 0.19018325209617615,
       "posY": 0.6502617597579956,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 5
+        }
+      ]
     },
     {
       "mapId": 11,
@@ -96,7 +132,15 @@
       "tier": 3,
       "posX": 0.23023560643196106,
       "posY": 0.6230366230010986,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 5
+        },
+        {
+          "mapId":10
+        }
+      ]
     },
     {
       "mapId": 12,
@@ -104,7 +148,12 @@
       "tier": 3,
       "posX": 0.8021596670150757,
       "posY": 0.2534031271934509,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 7
+        }
+      ]
     },
     {
       "mapId": 13,
@@ -112,15 +161,25 @@
       "tier": 3,
       "posX": 0.7785995006561279,
       "posY": 0.800000011920929,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 6
+        }
+      ]
     },
     {
       "mapId": 14,
       "name": "Grotto",
       "tier": 3,
-      "posX": 0.8227748870849609,
+      "posX": 0.8427748870849609,
       "posY": 0.35183244943618774,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 7
+        }
+      ]
     },
     {
       "mapId": 15,
@@ -128,7 +187,12 @@
       "tier": 3,
       "posX": 0.24790576100349426,
       "posY": 0.6052355766296387,
-      "unique": true
+      "unique": true,
+      "parents": [
+        {
+          "mapId": 11
+        }
+      ]
     },
     {
       "mapId": 16,
@@ -136,7 +200,12 @@
       "tier": 4,
       "posX": 0.20667539536952972,
       "posY": 0.2178010493516922,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 8
+        }
+      ]
     },
     {
       "mapId": 17,
@@ -144,7 +213,12 @@
       "tier": 4,
       "posX": 0.2184554934501648,
       "posY": 0.3968586325645447,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 9
+        }
+      ]
     },
     {
       "mapId": 18,
@@ -152,7 +226,12 @@
       "tier": 4,
       "posX": 0.1972513049840927,
       "posY": 0.5664921402931213,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 11
+        }
+      ]
     },
     {
       "mapId": 19,
@@ -160,7 +239,12 @@
       "tier": 4,
       "posX": 0.7338351011276245,
       "posY": 0.7476440072059631,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 13
+        }
+      ]
     },
     {
       "mapId": 20,
@@ -168,7 +252,12 @@
       "tier": 4,
       "posX": 0.8151177763938904,
       "posY": 0.3078534007072449,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 12
+        }
+      ]
     },
     {
       "mapId": 21,
@@ -176,7 +265,12 @@
       "tier": 4,
       "posX": 0.7717044353485107,
       "posY": 0.34869110584259033,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 14
+        }
+      ]
     },
     {
       "mapId": 22,
@@ -184,7 +278,12 @@
       "tier": 4,
       "posX": 0.7273560166358948,
       "posY": 0.7905759215354919,
-      "unique": true
+      "unique": true,
+      "parents": [
+        {
+          "mapId": 19
+        }
+      ]
     },
     {
       "mapId": 23,
@@ -192,7 +291,12 @@
       "tier": 4,
       "posX": 0.8304319381713867,
       "posY": 0.6984293460845947,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 19
+        }
+      ]
     },
     {
       "mapId": 24,
@@ -200,7 +304,12 @@
       "tier": 5,
       "posX": 0.7542722225189209,
       "posY": 0.26497435569763184,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 20
+        }
+      ]
     },
     {
       "mapId": 25,
@@ -208,7 +317,12 @@
       "tier": 5,
       "posX": 0.7346020936965942,
       "posY": 0.3560209572315216,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 21
+        }
+      ]
     },
     {
       "mapId": 26,
@@ -216,7 +330,12 @@
       "tier": 5,
       "posX": 0.8215968608856201,
       "posY": 0.48206281661987305,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 23
+        }
+      ]
     },
     {
       "mapId": 27,
@@ -224,7 +343,12 @@
       "tier": 5,
       "posX": 0.7880235314369202,
       "posY": 0.5926230549812317,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 19
+        }
+      ]
     },
     {
       "mapId": 28,
@@ -232,7 +356,12 @@
       "tier": 5,
       "posX": 0.21727748215198517,
       "posY": 0.16753926873207092,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 16
+        }
+      ]
     },
     {
       "mapId": 29,
@@ -240,7 +369,12 @@
       "tier": 5,
       "posX": 0.2543848156929016,
       "posY": 0.27843979001045227,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 16
+        }
+      ]
     },
     {
       "mapId": 30,
@@ -248,7 +382,14 @@
       "tier": 5,
       "posX": 0.2147434502840042,
       "posY": 0.48581674695014954,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 18
+        },{
+          "mapId": 17
+        }
+      ]
     },
     {
       "mapId": 31,
@@ -256,7 +397,12 @@
       "tier": 5,
       "posX": 0.25182878971099854,
       "posY": 0.5420141220092773,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 18
+        }
+      ]
     },
     {
       "mapId": 32,
@@ -264,7 +410,12 @@
       "tier": 6,
       "posX": 0.25597381591796875,
       "posY": 0.13179580867290497,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 28
+        }
+      ]
     },
     {
       "mapId": 33,
@@ -272,7 +423,12 @@
       "tier": 6,
       "posX": 0.2836570739746094,
       "posY": 0.21675392985343933,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 29
+        }
+      ]
     },
     {
       "mapId": 34,
@@ -280,7 +436,12 @@
       "tier": 6,
       "posX": 0.2610638737678528,
       "posY": 0.4326607286930084,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 30
+        }
+      ]
     },
     {
       "mapId": 35,
@@ -288,7 +449,12 @@
       "tier": 6,
       "posX": 0.2883691191673279,
       "posY": 0.5999528765678406,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 31
+        }
+      ]
     },
     {
       "mapId": 36,
@@ -296,7 +462,12 @@
       "tier": 6,
       "posX": 0.7114529013633728,
       "posY": 0.262780100107193,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 24
+        }
+      ]
     },
     {
       "mapId": 37,
@@ -304,7 +475,12 @@
       "tier": 6,
       "posX": 0.6837696433067322,
       "posY": 0.3162303566932678,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 25
+        }
+      ]
     },
     {
       "mapId": 38,
@@ -312,7 +488,12 @@
       "tier": 6,
       "posX": 0.7202879786491394,
       "posY": 0.44397905468940735,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 25
+        }
+      ]
     },
     {
       "mapId": 39,
@@ -320,7 +501,15 @@
       "tier": 6,
       "posX": 0.7952696084976196,
       "posY": 0.4941937029361725,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 26
+        },
+        {
+          "mapId": 27
+        }
+      ]
     },
     {
       "mapId": 40,
@@ -328,15 +517,25 @@
       "tier": 6,
       "posX": 0.8151177763938904,
       "posY": 0.4292251169681549,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 25
+        }
+      ]
     },
     {
       "mapId": 41,
-      "name": "Whakawairua Tuhau Strand",
+      "name": "Whakawairua Tuahu",
       "tier": 6,
       "posX": 0.7114529013633728,
       "posY": 0.29842931032180786,
-      "unique": true
+      "unique": true,
+      "parents": [
+        {
+          "mapId": 36
+        }
+      ]
     },
     {
       "mapId": 42,
@@ -344,7 +543,12 @@
       "tier": 7,
       "posX": 0.7314790487289429,
       "posY": 0.6732984185218811,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 39
+        }
+      ]
     },
     {
       "mapId": 43,
@@ -352,7 +556,12 @@
       "tier": 7,
       "posX": 0.7591623067855835,
       "posY": 0.4984293282032013,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 40
+        }
+      ]
     },
     {
       "mapId": 44,
@@ -360,7 +569,15 @@
       "tier": 7,
       "posX": 0.6778795719146729,
       "posY": 0.1946701556444168,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 37
+        },
+        {
+          "mapId": 36
+        }
+      ]
     },
     {
       "mapId": 45,
@@ -368,7 +585,12 @@
       "tier": 7,
       "posX": 0.3015052378177643,
       "posY": 0.1371256560087204,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 32
+        }
+      ]
     },
     {
       "mapId": 46,
@@ -376,7 +598,12 @@
       "tier": 7,
       "posX": 0.3274214565753937,
       "posY": 0.5612094402313232,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 35
+        }
+      ]
     },
     {
       "mapId": 47,
@@ -384,7 +611,12 @@
       "tier": 7,
       "posX": 0.2720549702644348,
       "posY": 0.6586387157440186,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 35
+        }
+      ]
     },
     {
       "mapId": 48,
@@ -392,7 +624,12 @@
       "tier": 7,
       "posX": 0.3592277467250824,
       "posY": 0.1780104786157608,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 33
+        }
+      ]
     },
     {
       "mapId": 49,
@@ -400,7 +637,12 @@
       "tier": 7,
       "posX": 0.3409685790538788,
       "posY": 0.5811518430709839,
-      "unique": true
+      "unique": true,
+      "parents": [
+        {
+          "mapId": 46
+        }
+      ]
     },
     {
       "mapId": 50,
@@ -408,7 +650,15 @@
       "tier": 8,
       "posX": 0.3896780014038086,
       "posY": 0.1799633502960205,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 45
+        },
+        {
+          "mapId": 48
+        }
+      ]
     },
     {
       "mapId": 51,
@@ -416,7 +666,12 @@
       "tier": 8,
       "posX": 0.5922958254814148,
       "posY": 0.15178534388542175,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 44
+        }
+      ]
     },
     {
       "mapId": 52,
@@ -424,7 +679,12 @@
       "tier": 8,
       "posX": 0.6246962547302246,
       "posY": 0.2228308916091919,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 44
+        }
+      ]
     },
     {
       "mapId": 53,
@@ -432,7 +692,12 @@
       "tier": 8,
       "posX": 0.43579843640327454,
       "posY": 0.16753926873207092,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 45
+        }
+      ]
     },
     {
       "mapId": 54,
@@ -440,7 +705,12 @@
       "tier": 8,
       "posX": 0.3228874206542969,
       "posY": 0.6366021037101746,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 47
+        }
+      ]
     },
     {
       "mapId": 55,
@@ -448,7 +718,12 @@
       "tier": 8,
       "posX": 0.29149213433265686,
       "posY": 0.7276544570922852,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 47
+        }
+      ]
     },
     {
       "mapId": 56,
@@ -456,7 +731,12 @@
       "tier": 8,
       "posX": 0.7085078358650208,
       "posY": 0.7381256818771362,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 42
+        }
+      ]
     },
     {
       "mapId": 57,
@@ -464,7 +744,12 @@
       "tier": 8,
       "posX": 0.7444371581077576,
       "posY": 0.5862932205200195,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 43
+        }
+      ]
     },
     {
       "mapId": 58,
@@ -472,15 +757,28 @@
       "tier": 8,
       "posX": 0.710274875164032,
       "posY": 0.585293173789978,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 57
+        },
+        {
+          "mapId": 42
+        }
+      ]
     },
     {
       "mapId": 59,
-      "name": "Maelstrom of Chaos Atoll",
+      "name": "Maelström of Chaos",
       "tier": 8,
       "posX": 0.6926047205924988,
       "posY": 0.5895287990570068,
-      "unique": true
+      "unique": true,
+      "parents": [
+        {
+          "mapId": 58
+        }
+      ]
     },
     {
       "mapId": 60,
@@ -488,7 +786,15 @@
       "tier": 9,
       "posX": 0.5482984185218811,
       "posY": 0.24193193018436432,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 51
+        },
+        {
+          "mapId": 52
+        }
+      ]
     },
     {
       "mapId": 61,
@@ -496,7 +802,12 @@
       "tier": 9,
       "posX": 0.5275052189826965,
       "posY": 0.22717800736427307,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 60
+        }
+      ]
     },
     {
       "mapId": 62,
@@ -504,7 +815,15 @@
       "tier": 9,
       "posX": 0.4800000786781311,
       "posY": 0.2659858763217926,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 61
+        },
+        {
+          "mapId": 53
+        }
+      ]
     },
     {
       "mapId": 63,
@@ -512,7 +831,12 @@
       "tier": 9,
       "posX": 0.3939790427684784,
       "posY": 0.24079057574272156,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 50
+        }
+      ]
     },
     {
       "mapId": 64,
@@ -520,7 +844,15 @@
       "tier": 9,
       "posX": 0.333900511264801,
       "posY": 0.7287015914916992,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 55
+        },
+        {
+          "mapId":54
+        }
+      ]
     },
     {
       "mapId": 65,
@@ -528,7 +860,12 @@
       "tier": 9,
       "posX": 0.29149213433265686,
       "posY": 0.8544502854347229,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 55
+        }
+      ]
     },
     {
       "mapId": 66,
@@ -536,7 +873,12 @@
       "tier": 9,
       "posX": 0.710274875164032,
       "posY": 0.8020471334457397,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 56
+        }
+      ]
     },
     {
       "mapId": 67,
@@ -544,15 +886,28 @@
       "tier": 9,
       "posX": 0.6496073007583618,
       "posY": 0.7235602140426636,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 66
+        },
+        {
+          "mapId": 58
+        }
+      ]
     },
     {
       "mapId": 68,
       "name": "Acton's Nightmare",
       "tier": 9,
-      "posX": 0.37866491079330444,
+      "posX": 0.35866491079330444,
       "posY": 0.22931937873363495,
-      "unique": true
+      "unique": true,
+      "parents": [
+        {
+          "mapId": 63
+        }
+      ]
     },
     {
       "mapId": 69,
@@ -560,7 +915,12 @@
       "tier": 9,
       "posX": 0.42678430676460266,
       "posY": 0.22717800736427307,
-      "unique": true
+      "unique": true,
+      "parents": [
+        {
+          "mapId": 62
+        }
+      ]
     },
     {
       "mapId": 70,
@@ -568,15 +928,25 @@
       "tier": 9,
       "posX": 0.5429973602294922,
       "posY": 0.21675392985343933,
-      "unique": true
+      "unique": true,
+      "parents": [
+        {
+          "mapId": 61
+        }
+      ]
     },
     {
       "mapId": 71,
       "name": "Coward's Trial",
       "tier": 9,
-      "posX": 0.5665575861930847,
-      "posY": 0.24607330560684204,
-      "unique": true
+      "posX": 0.5765575861930847,
+      "posY": 0.25607330560684204,
+      "unique": true,
+      "parents": [
+        {
+          "mapId": 60
+        }
+      ]
     },
     {
       "mapId": 72,
@@ -584,7 +954,12 @@
       "tier": 9,
       "posX": 0.314463347196579,
       "posY": 0.8408377170562744,
-      "unique": true
+      "unique": true,
+      "parents": [
+        {
+          "mapId": 65
+        }
+      ]
     },
     {
       "mapId": 73,
@@ -592,7 +967,12 @@
       "tier": 10,
       "posX": 0.3727748692035675,
       "posY": 0.8335078358650208,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 64
+        }
+      ]
     },
     {
       "mapId": 74,
@@ -600,7 +980,15 @@
       "tier": 10,
       "posX": 0.4028141498565674,
       "posY": 0.8649214506149292,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 65
+        },
+        {
+          "mapId": 73
+        }
+      ]
     },
     {
       "mapId": 75,
@@ -608,7 +996,12 @@
       "tier": 10,
       "posX": 0.6384162306785583,
       "posY": 0.8303664922714233,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 67
+        }
+      ]
     },
     {
       "mapId": 76,
@@ -616,15 +1009,31 @@
       "tier": 10,
       "posX": 0.5318062901496887,
       "posY": 0.31204187870025635,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 61
+        }
+      ]
     },
     {
       "mapId": 77,
-      "name": "Colonade",
+      "name": "Colonnade",
       "tier": 10,
       "posX": 0.4387434422969818,
       "posY": 0.29733508825302124,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 76
+        },
+        {
+          "mapId": 62
+        }
+      ],
+      "shaperOrb": {
+        "targetTier": 5
+      }
     },
     {
       "mapId": 78,
@@ -632,7 +1041,12 @@
       "tier": 10,
       "posX": 0.6000078320503235,
       "posY": 0.3035999834537506,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 60
+        }
+      ]
     },
     {
       "mapId": 79,
@@ -640,23 +1054,38 @@
       "tier": 10,
       "posX": 0.31681936979293823,
       "posY": 0.2869109809398651,
-      "unique": false
+      "unique": false,
+      "parents": [
+        {
+          "mapId": 63
+        }
+      ]
     },
     {
       "mapId": 80,
       "name": "The Vinktar Square",
       "tier": 10,
-      "posX": 0.5241492390632629,
+      "posX": 0.5141492390632629,
       "posY": 0.2743455469608307,
-      "unique": true
+      "unique": true,
+      "parents": [
+        {
+          "mapId": 76
+        }
+      ]
     },
     {
       "mapId": 81,
       "name": "Poorjoy's Asylum",
-      "tier": 10,
+      "tier": 9,
       "posX": 0.6372382044792175,
       "posY": 0.7068063020706177,
-      "unique": true
+      "unique": true,
+      "parents": [
+        {
+          "mapId": 67
+        }
+      ]
     },
     {
       "mapId": 82,
@@ -664,7 +1093,13 @@
       "tier": 10,
       "posX": 0.4067041873931885,
       "posY": 0.8365078568458557,
-      "unique": true
+      "unique": true,
+      "parents": [
+        {
+          "mapId": 74
+        }
+      ]
+
     },
     {
       "mapId": 83,
@@ -792,7 +1227,7 @@
       "tier": 12,
       "posX": 0.46642670035362244,
       "posY": 0.7664921283721924,
-      "unique": true
+      "unique": false
     },
     {
       "mapId": 99,

@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
 
     let i = 0;
     let clicked;
+    let mapBaseLevel=67;
 
     class Map {
         constructor(id, tier, name, posX, posY) {
@@ -33,11 +34,22 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             })
             .selector('edge')
             .css({
+                'curve-style': 'haystack',
+                'line-style':'dashed',
+                'target-arrow-shape': 'triangle',
+                'target-arrow-color': 'white',
+                'line-color': 'white',
+                'line-opacity':.5,
+                'opacity':.5,
+                'width': 3
+            })
+            .selector('.uptier')
+            .css({
                 'curve-style': 'bezier',
                 // 'line-style':'dashed',
                 'target-arrow-shape': 'triangle',
-                'target-arrow-color': 'ivory',
-                'line-color': 'ivory',
+                'target-arrow-color': 'white',
+                'line-color': 'white',
                 'line-opacity':.5,
                 'opacity':.5,
                 'width': 3
@@ -204,25 +216,33 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      */
     function loadMaps() {
         let div=$('#cy');
-
+        cy.zoom({
+            level: 1.2, // the zoom level
+        });
+        let centeringNodeId=-1;
         $.getJSON('json-prototypes/atlas-2.6.json', function(data) {
             //data is the JSON string
             //console.log(data);
-            console.log(data.maps[data.maps.length-1]);
             for(id=0; id<data.maps.length; id++){
                 //console.log(data.maps[id]);
                 let map=data.maps[id];
                 let posX=div.width()*map.posX;
                 let posY=div.height()*map.posY;
                 //console.log(id+" | n="+map.name);
-                addNode(map.mapId,map.name,'img/maps/blankMap.png',posX,posY,map.unique);
+                addNode(map.mapId,map.name,map.tier,'img/maps/blankMap.png',posX,posY,map.unique);
                 if(map.parents != undefined){
                     for (parent in map.parents){
                         addEdge(id+"-"+map.parents[parent].mapId,map.parents[parent].mapId,map.mapId);
                     }
                 }
             }
+            i=data.maps.length-1;
+            centeringNodeId=data.maps[i].mapId;
+            console.log("centering @ "+centeringNodeId);
+            cy.center("#"+centeringNodeId);
+            // $('#cy').css("background-image", "url("+data.atlasBGImage+")");
         });
+
     }
 
     /**
@@ -234,7 +254,10 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * @param posY - posX relative to the screen
      * @param unique - is the map unique
      */
-    function addNode(id, name, img, posX, posY,unique) {
+    function addNode(id, name,tier, img, posX, posY,unique) {
+        let descriptionText='<img src='+img+'>' + '<br/>' +
+            '<hr> Tier: ' + tier + '<br/>'+
+            'Level: '+ (mapBaseLevel+tier +'<hr><br/> Additional Info:');
         cy.add([{
             group: "nodes",
 
@@ -261,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             // },
             content: {
                 title: name,
-                text: '<img src='+img+'>' + '<br/><hr> Additional Info: ' + id + '<br/> Second line'
+                text: descriptionText,
             }, // content: { title: { text: value } }
 
             position: {
@@ -291,3 +314,4 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         ]);
     }
 }); // on dom ready
+
