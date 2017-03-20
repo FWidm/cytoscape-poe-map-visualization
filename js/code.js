@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'text-valign': 'center',
                 'color': 'white',
                 'text-outline-width': 1,
-                'background-color': 'black',
+                'background-color': 'transparent',
                 'text-outline-color': 'black',
                 "font-size":11
             })
@@ -65,6 +65,12 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'target-arrow-color': '#232323',
                 'source-arrow-color': '#232323',
                 'opacity': 1
+            })
+            .selector('.shaperOrb')
+            .css({
+                'border-color': 'violet',
+                'border-style':'double',
+                'border-width': '3px'
             })
             .selector('.unique')
             .css({
@@ -119,11 +125,17 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         console.log("tap on: [" + e.cyTarget.id() + "| name=+" + e.cyTarget.data('name'));
         clicked = node;
 
-        let neighborhood = node.outgoers().add(node);
-        cy.elements().addClass('faded');
-        cy.elements().removeClass('highlighted');
-        node.removeClass('faded');
-        neighborhood.addClass('highlighted');
+        //let neighborhood = node.outgoers().add(node);
+        //cy.elements().addClass('faded');
+        //node.removeClass('faded');
+        if(node.hasClass('highlighted')){
+            node.removeClass('highlighted');
+            //todo: add to remembered list
+        }
+        else {
+            node.addClass('highlighted');
+            //todo: remove from remembered list
+        }
 
     });
 
@@ -131,11 +143,11 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * General click/tab handler
      */
     cy.on('tap', function (e) {
-        console.log();
-        if (e.cyTarget === cy) {
-            cy.elements().removeClass('faded');
-            cy.elements().removeClass('highlighted');
-        }
+        console.log("tap on target:");
+        console.log(e.cyTarget);
+        // if (e.cyTarget === cy) {
+        //     cy.elements().removeClass('faded');
+        // }
 
     });
 
@@ -233,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 let posX=mapWidth*map.posX;
                 let posY=mapHeight*map.posY;
                 //console.log(id+" | n="+map.name);
-                addNode(map.mapId,map.name,map.tier,'img/maps/blankMap.png',posX,posY,map.unique);
+                addNode(map.mapId,map.name,map.tier,'img/maps/blankMap.png',posX,posY,map.unique,map.shaperOrb);
                 if(map.parents != undefined){
                     for (parent in map.parents){
                         addEdge("e"+id+"-"+map.parents[parent].mapId,map.parents[parent].mapId,map.mapId);
@@ -266,10 +278,12 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * @param posY - posX relative to the screen
      * @param unique - is the map unique
      */
-    function addNode(id, name,tier, img, posX, posY,unique) {
+    function addNode(id, name,tier, img, posX, posY,unique,shaperOrb) {
         let descriptionText='<img src='+img+'>' + '<br/>' +
             '<hr> Tier: ' + tier + '<br/>'+
-            'Level: '+ (mapBaseLevel+tier +'<hr><br/> Additional Info:');
+            'Level: '+ (mapBaseLevel+tier +'<hr>');
+        if(shaperOrb!=undefined)
+            descriptionText+='Shaper Orb: Tier '+shaperOrb.targetTier+' maps.<hr>';
         cy.add([{
             group: "nodes",
 
@@ -285,15 +299,13 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             position: {x: posX, y: posY}
 
         }]);
-        if(unique)
-            cy.$('#' + id).addClass("unique");
         cy.$('#' + id).qtip({
-            // show: {
-            //     event: 'mouseover'
-            // },
-            // hide: {
-            //     event: 'mouseout'
-            // },
+            show: {
+                event: 'cxttap' // cxttap = double finger touch or right click.
+            },
+            hide: {
+                event: 'mouseout'
+            },
             content: {
                 title: name,
                 text: descriptionText,
@@ -311,6 +323,10 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 }
             }
         });
+        if(unique)
+            cy.$('#' + id).addClass("unique");
+        if(shaperOrb!=undefined)
+            cy.$('#'+id).addClass("shaperOrb");
     }
 
     /**
