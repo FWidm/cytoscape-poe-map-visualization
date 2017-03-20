@@ -8,6 +8,8 @@ Current Progress:
 - shows information about the current object when hovering.
 - shows upgrade paths
 - differentiates between unique maps
+- save and load maps via url param
+- comparison between two atlas stats (?maps=20000000000000000000000000000001&compareTo=20000000000000000000000000000000)
 
 ---
 # Expected Map Json:

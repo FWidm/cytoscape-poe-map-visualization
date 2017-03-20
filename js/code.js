@@ -1,20 +1,32 @@
-let mapWidth=window.screen.width;
-let mapHeight=window.screen.height;
+let mapWidth = window.screen.width;
+let mapHeight = window.screen.height;
+let mapBitSet = new BitSet;
+let loadedMaps = [];
 
 document.addEventListener('DOMContentLoaded', function () { // on dom ready
 
     let i = 0;
     let clicked;
-    let mapBaseLevel=67;
+    let mapBaseLevel = 67;
+
 
 
     class Map {
-        constructor(id, tier, name, posX, posY) {
-            this.id=id;
-            this.tier=tier;
-            this.name=name;
-            this.posX=posX;
-            this.posY=posY;
+        constructor(id, tier, name, posX, posY, img, shaperOrb, selected) {
+            //maps.push(new Map(map.mapId,map.tier,map.name,map.posX,map.posY,null,map.shaperOrb,false));
+
+            this.id = id;
+            this.tier = tier;
+            this.name = name;
+            this.posX = posX;
+            this.posY = posY;
+            this.img = img;
+            this.selected = selected;
+            this.shaperOrb = shaperOrb;
+        }
+
+        toString() {
+            return "[id=" + this.id + ", name=" + this.name + ", tier=" + this.tier + ", selected=" + this.selected + "]";
         }
     }
 
@@ -34,28 +46,28 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'text-outline-width': 1,
                 'background-color': 'transparent',
                 'text-outline-color': 'black',
-                "font-size":11
+                "font-size": 11
             })
             .selector('edge')
             .css({
                 'curve-style': 'haystack',
-                'line-style':'dashed',
+                'line-style': 'dashed',
                 'target-arrow-shape': 'triangle',
                 'target-arrow-color': 'white',
                 'line-color': 'white',
-                'line-opacity':.5,
-                'opacity':1,
+                'line-opacity': .5,
+                'opacity': 1,
                 'width': 1
             })
             .selector('.uptier')
             .css({
                 'curve-style': 'bezier',
-                 'line-style':'solid',
+                'line-style': 'solid',
                 'target-arrow-shape': 'triangle',
                 'target-arrow-color': 'white',
                 'line-color': 'white',
-                'line-opacity':.5,
-                'opacity':1,
+                'line-opacity': .5,
+                'opacity': 1,
                 'width': 3
             })
             .selector(':selected')
@@ -69,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             .selector('.shaperOrb')
             .css({
                 'border-color': 'violet',
-                'border-style':'double',
+                'border-style': 'double',
                 'border-width': '3px'
             })
             .selector('.unique')
@@ -128,28 +140,43 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         //let neighborhood = node.outgoers().add(node);
         //cy.elements().addClass('faded');
         //node.removeClass('faded');
-        if(node.hasClass('highlighted')){
+        if (node.hasClass('highlighted')) {
             node.removeClass('highlighted');
             //todo: add to remembered list
+            loadedMaps[node.id()].selected = false;
+            mapBitSet.set(node.id(), 0);
+
         }
         else {
             node.addClass('highlighted');
             //todo: remove from remembered list
+            loadedMaps[node.id()].selected = true;
+            mapBitSet.set(node.id(), 1);
         }
-
+        encodeMapsToUrl(16);
+        console.log(getSelectedMaps().length);
     });
 
-    /**
+    function getSelectedMaps() {
+        let selectedMaps = loadedMaps.filter(function (map) {
+            // console.log("map="+map);
+            return map.selected;
+        });
+        return selectedMaps;
+    }
+
+    /*
+     /!**
      * General click/tab handler
-     */
-    cy.on('tap', function (e) {
-        console.log("tap on target:");
-        console.log(e.cyTarget);
-        // if (e.cyTarget === cy) {
-        //     cy.elements().removeClass('faded');
-        // }
+     *!/
+     cy.on('tap', function (e) {
+     console.log("tap on target:");
+     console.log(e.cyTarget);
+     // if (e.cyTarget === cy) {
+     //     cy.elements().removeClass('faded');
+     // }
 
-    });
+     });*/
 
     /**
      * Log node id on mouseover
@@ -177,7 +204,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         console.log(i);
         cy.add([{
             group: "edges",
-            data: {id: "e" + (i-1), source: (i-1), target: (i-2)}}
+            data: {id: "e" + (i - 1), source: (i - 1), target: (i - 2)}
+        }
         ]);
     });
 
@@ -231,42 +259,67 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * Load sample data
      */
     function loadMaps() {
-        let div=$('#cy');
+        let div = $('#cy');
         cy.zoom({
             level: 1.2, // the zoom level
         });
-        let centeringNodeId=-1;
-        $.getJSON('json-prototypes/atlas-2.6.json', function(data) {
+        let centeringNodeId = -1;
+        $.getJSON('json-prototypes/atlas-2.6.json', function (data) {
             //data is the JSON string
             //console.log(data);
-            for(id=0; id<data.maps.length; id++){
+
+            //nodes
+            for (id = 0; id < data.maps.length; id++) {
                 //console.log(data.maps[id]);
-                let map=data.maps[id];
-                let posX=mapWidth*map.posX;
-                let posY=mapHeight*map.posY;
+                let map = data.maps[id];
+                let posX = mapWidth * map.posX;
+                let posY = mapHeight * map.posY;
                 //console.log(id+" | n="+map.name);
-                addNode(map.mapId,map.name,map.tier,'img/maps/blankMap.png',posX,posY,map.unique,map.shaperOrb);
-                if(map.parents != undefined){
-                    for (parent in map.parents){
-                        addEdge("e"+id+"-"+map.parents[parent].mapId,map.parents[parent].mapId,map.mapId);
+                let img = 'img/maps/blankMap.png';
+                loadedMaps.push(new Map(map.mapId, map.tier, map.name, map.posX, map.posY, img, map.shaperOrb, false));
+                addNode(map.mapId, map.name, map.tier, img, posX, posY, map.unique, map.shaperOrb);
+
+            }
+            //edges
+            for (id = 0; id < data.maps.length; id++) {
+                let map = data.maps[id];
+
+                if (map.upgradesTo != undefined) {
+                    console.log("upgradesTo: " + map.upgradesTo.mapId);
+
+                    addUptier("u" + id + "-" + map.upgradesTo.mapId, map.mapId, map.upgradesTo.mapId)
+                }
+
+                if (map.connections != undefined) {
+                    for (conn  in map.connections) {
+                        addEdge("e" + id + "-" + map.connections[conn].mapId, map.connections[conn].mapId, map.mapId);
                     }
                 }
             }
-            for(id=0; id<data.maps.length;id++){
-                let map = data.maps[id];
-                if(map.upgradesTo!=undefined){
-                    console.log("upgradesTo: "+map.upgradesTo.mapId);
-
-                    addUptier("u"+id+"-"+map.upgradesTo.mapId,map.mapId,map.upgradesTo.mapId)
-                }
-            }
-            i=data.maps.length-1;
-            centeringNodeId=data.maps[i].mapId;
-            console.log("centering @ "+centeringNodeId);
-            cy.center("#"+centeringNodeId);
+            i = data.maps.length - 1;
+            centeringNodeId = data.maps[i].mapId;
+            console.log("centering @ " + centeringNodeId);
+            cy.center("#" + centeringNodeId);
             // $('#cy').css("background-image", "url("+data.atlasBGImage+")");
+            mapBitSet.set(loadedMaps.length, 0);
+            console.log("Loaded... " + loadedMaps.length + " maps! Bitset=" + mapBitSet.toString());
+            setSelectedMapsFromURL();
         });
 
+    }
+
+    function setSelectedMapsFromURL() {
+        decodeMapsFromUri();
+        console.log("Loading from BitSet: " + mapBitSet.toString());
+        console.log("looping through "+loadedMaps.length+" maps.");
+        let bitArray = mapBitSet.toArray();
+        console.log(bitArray);
+        for(i in bitArray){
+            if(i>=loadedMaps.length)
+                break;
+            loadedMaps[i].selected=true;
+            cy.$('#' + bitArray[i]).addClass("highlighted");
+        }
     }
 
     /**
@@ -278,12 +331,12 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * @param posY - posX relative to the screen
      * @param unique - is the map unique
      */
-    function addNode(id, name,tier, img, posX, posY,unique,shaperOrb) {
-        let descriptionText='<img src='+img+'>' + '<br/>' +
-            '<hr> Tier: ' + tier + '<br/>'+
-            'Level: '+ (mapBaseLevel+tier +'<hr>');
-        if(shaperOrb!=undefined)
-            descriptionText+='Shaper Orb: Tier '+shaperOrb.targetTier+' maps.<hr>';
+    function addNode(id, name, tier, img, posX, posY, unique, shaperOrb) {
+        let descriptionText = '<img src=' + img + '>' + '<br/>' +
+            '<hr> Tier: ' + tier + '<br/>' +
+            'Level: ' + (mapBaseLevel + tier + '<hr>');
+        if (shaperOrb != undefined)
+            descriptionText += 'Shaper Orb: Tier ' + shaperOrb.targetTier + ' maps.<hr>';
         cy.add([{
             group: "nodes",
 
@@ -323,10 +376,10 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 }
             }
         });
-        if(unique)
+        if (unique)
             cy.$('#' + id).addClass("unique");
-        if(shaperOrb!=undefined)
-            cy.$('#'+id).addClass("shaperOrb");
+        if (shaperOrb != undefined)
+            cy.$('#' + id).addClass("shaperOrb");
     }
 
     /**
@@ -338,16 +391,18 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     function addEdge(id, srcId, targetId) {
         cy.add([{
             group: "edges",
-            data: {id: id, source: srcId, target: targetId}}
+            data: {id: id, source: srcId, target: targetId}
+        }
         ]);
     }
 
     function addUptier(id, srcId, targetId) {
         cy.add([{
             group: "edges",
-            data: {id: id, source: srcId, target: targetId}}
+            data: {id: id, source: srcId, target: targetId}
+        }
         ]);
-        cy.$('#'+id).addClass("uptier");
+        cy.$('#' + id).addClass("uptier");
     }
 }); // on dom ready
 
