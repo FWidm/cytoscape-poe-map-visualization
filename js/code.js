@@ -1,8 +1,12 @@
+let mapWidth=window.screen.width;
+let mapHeight=window.screen.height;
+
 document.addEventListener('DOMContentLoaded', function () { // on dom ready
 
     let i = 0;
     let clicked;
     let mapBaseLevel=67;
+
 
     class Map {
         constructor(id, tier, name, posX, posY) {
@@ -40,18 +44,18 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'target-arrow-color': 'white',
                 'line-color': 'white',
                 'line-opacity':.5,
-                'opacity':.5,
-                'width': 3
+                'opacity':1,
+                'width': 1
             })
             .selector('.uptier')
             .css({
                 'curve-style': 'bezier',
-                // 'line-style':'dashed',
+                 'line-style':'solid',
                 'target-arrow-shape': 'triangle',
                 'target-arrow-color': 'white',
                 'line-color': 'white',
                 'line-opacity':.5,
-                'opacity':.5,
+                'opacity':1,
                 'width': 3
             })
             .selector(':selected')
@@ -226,14 +230,22 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             for(id=0; id<data.maps.length; id++){
                 //console.log(data.maps[id]);
                 let map=data.maps[id];
-                let posX=div.width()*map.posX;
-                let posY=div.height()*map.posY;
+                let posX=mapWidth*map.posX;
+                let posY=mapHeight*map.posY;
                 //console.log(id+" | n="+map.name);
                 addNode(map.mapId,map.name,map.tier,'img/maps/blankMap.png',posX,posY,map.unique);
                 if(map.parents != undefined){
                     for (parent in map.parents){
-                        addEdge(id+"-"+map.parents[parent].mapId,map.parents[parent].mapId,map.mapId);
+                        addEdge("e"+id+"-"+map.parents[parent].mapId,map.parents[parent].mapId,map.mapId);
                     }
+                }
+            }
+            for(id=0; id<data.maps.length;id++){
+                let map = data.maps[id];
+                if(map.upgradesTo!=undefined){
+                    console.log("upgradesTo: "+map.upgradesTo.mapId);
+
+                    addUptier("u"+id+"-"+map.upgradesTo.mapId,map.mapId,map.upgradesTo.mapId)
                 }
             }
             i=data.maps.length-1;
@@ -312,6 +324,14 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             group: "edges",
             data: {id: id, source: srcId, target: targetId}}
         ]);
+    }
+
+    function addUptier(id, srcId, targetId) {
+        cy.add([{
+            group: "edges",
+            data: {id: id, source: srcId, target: targetId}}
+        ]);
+        cy.$('#'+id).addClass("uptier");
     }
 }); // on dom ready
 

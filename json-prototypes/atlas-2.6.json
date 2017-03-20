@@ -9,7 +9,10 @@
       "tier": 1,
       "posX": 0.18193717300891876,
       "posY": 0.14764398336410522,
-      "unique": false
+      "unique": false,
+      "upgradesTo":{
+        "mapId":4
+      }
     },
     {
       "mapId": 1,
@@ -46,7 +49,10 @@
         {
           "mapId": 0
         }
-      ]
+      ],
+      "upgradesTo":{
+        "mapId":8
+      }
     },
     {
       "mapId": 5,
