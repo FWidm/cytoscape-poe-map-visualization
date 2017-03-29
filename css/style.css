@@ -4,20 +4,22 @@ body {
 
 #cy {
     height: 100%;
-    width: 90%;
+    width: 100%;
     position: absolute;
     left: 0;
     top: 0;
     background-color: #232323;
+    z-index:0;
 }
 
 #buttons{
     position: absolute;
-    top: 0;
-    left:90%;
-    width:9%;
-    height: 99%;
-    border: dotted gray;
+    top: 94%;
+    height: inherit;
+    z-index: 1;
+    border: dotted gray 1px;
+    background: white;
+    left: 1%;
 }
 
 #info {

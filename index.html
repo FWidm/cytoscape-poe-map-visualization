@@ -6,20 +6,22 @@
     <meta charset=utf-8/>
     <meta name="viewport"
           content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
-    <title>Cytoscape.js initialisation</title>
-    <link href="css/jquery.qtip.min.css" rel="stylesheet"
-          type="text/css"/>
+    <title>Atlas Progression</title>
+    <link href="css/jquery.qtip.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
 <div id="cy"></div>
 <div id="buttons">
-    <div>
-        <p><h1>Usage:</h1></p>
-        <p>A click with left mouse button/single tap marks the map as completed.</p>
-        <p>A click with the right mouse button/double finger tap brings up more information.</p>
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Comparison url...">
+        <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button" id="compare">Compare!</button>
+        </span>
+
     </div>
-    <button id="randomize">randomize</button>
+
     <!--<button id="addNode">add Node</button>-->
     <!--<button id="connect">connect last two nodes</button>-->
 

@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
 
             position: {
                 my: 'top center',
-                at: 'top center'
+                at: 'bottom center'
             },
             style: {
                 classes: 'qtip-dark',
@@ -354,10 +354,12 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         }]);
         cy.$('#' + id).qtip({
             show: {
-                event: 'cxttap' // cxttap = double finger touch or right click.
+                event: 'mouseover' // cxttap = double finger touch or right click.
             },
             hide: {
-                event: 'mouseout'
+                event: 'mouseout',
+                fixed: true,
+                delay: 100
             },
             content: {
                 title: name,
@@ -365,15 +367,11 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             }, // content: { title: { text: value } }
 
             position: {
-                my: 'top center',
-                at: 'top center'
+                my: 'bottom center',  // Position my top left...
+                at: 'top center' // at the bottom right of...
             },
             style: {
-                classes: 'qtip-dark',
-                tip: {
-                    width: 16,
-                    height: 8
-                }
+                classes: 'qtip-bootstrap'
             }
         });
         if (unique)

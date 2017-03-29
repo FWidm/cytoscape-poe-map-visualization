@@ -10,7 +10,10 @@ Current Progress:
 - differentiates between unique maps
 - save and load maps via url param
 - comparison between two atlas stats (?maps=20000000000000000000000000000001&compareTo=20000000000000000000000000000000)
-
+Todo:
+- Remove right click context menu opening due to the QTIP placement
+- Add max Zoom/min Zoom
+- Compare more than 1 tree
 ---
 # Expected Map Json:
 Required: id, name, tier, posX, posY - dotted lines are connected to all "parents". Normal arrow line is connected to the map it upgrades to.
