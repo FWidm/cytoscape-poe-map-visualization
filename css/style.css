@@ -17,7 +17,7 @@ body {
     top: 94%;
     height: inherit;
     z-index: 1;
-    border: dotted gray 1px;
+    /*border: dotted gray 1px;*/
     background: white;
     left: 1%;
 }

@@ -158,11 +158,11 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     });
 
     function getSelectedMaps() {
-        let selectedMaps = loadedMaps.filter(function (map) {
+
+        return loadedMaps.filter(function (map) {
             // console.log("map="+map);
             return map.selected;
         });
-        return selectedMaps;
     }
 
     /*
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * Load sample data
      */
     function loadMaps() {
-        let div = $('#cy');
+        // let div = $('#cy');
         cy.zoom({
             level: 1.2, // the zoom level
         });
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             //console.log(data);
 
             //nodes
-            for (id = 0; id < data.maps.length; id++) {
+            for (let id = 0; id < data.maps.length; id++) {
                 //console.log(data.maps[id]);
                 let map = data.maps[id];
                 let posX = mapWidth * map.posX;
@@ -284,13 +284,13 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             for (id = 0; id < data.maps.length; id++) {
                 let map = data.maps[id];
 
-                if (map.upgradesTo != undefined) {
+                if (map.upgradesTo !== undefined) {
                     console.log("upgradesTo: " + map.upgradesTo.mapId);
 
                     addUptier("u" + id + "-" + map.upgradesTo.mapId, map.mapId, map.upgradesTo.mapId)
                 }
 
-                if (map.connections != undefined) {
+                if (map.connections !== undefined) {
                     for (conn  in map.connections) {
                         addEdge("e" + id + "-" + map.connections[conn].mapId, map.connections[conn].mapId, map.mapId);
                     }
@@ -326,16 +326,18 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * add a note to the grid
      * @param id - id of the map
      * @param name - name of the map
+     * @param tier
      * @param img - img of the node
      * @param posX - posY relative to the screen
      * @param posY - posX relative to the screen
      * @param unique - is the map unique
+     * @param shaperOrb
      */
     function addNode(id, name, tier, img, posX, posY, unique, shaperOrb) {
         let descriptionText = '<img src=' + img + '>' + '<br/>' +
             '<hr> Tier: ' + tier + '<br/>' +
             'Level: ' + (mapBaseLevel + tier + '<hr>');
-        if (shaperOrb != undefined)
+        if (shaperOrb !== undefined)
             descriptionText += 'Shaper Orb: Tier ' + shaperOrb.targetTier + ' maps.<hr>';
         cy.add([{
             group: "nodes",
@@ -376,7 +378,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         });
         if (unique)
             cy.$('#' + id).addClass("unique");
-        if (shaperOrb != undefined)
+        if (shaperOrb !== undefined)
             cy.$('#' + id).addClass("shaperOrb");
     }
 
