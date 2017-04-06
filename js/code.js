@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     "<hr>Buttons:" +
         "<ul>" +
         "<li><b>Clear</b> - clears all selected maps</li>" +
-        "<li><b>Highlight all</b> - sets all maps as selected</li>" +
+        "<li><b>mark as completed</b> - sets all previously searched for maps as completed.</li>" +
         "</ul>";
 
     let cy = cytoscape({
@@ -196,12 +196,18 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         targetNodes.addClass('searchHl');
     });
 
+    /**
+     * Clear the map search input field, remove searchHL class from all nodes
+     */
     $("#clear").click(function () {
         cy.filter().removeClass('searchHl');
         $('#search').val("");
     });
 
-    $("#highlight").click(function () {
+    /**
+     * Add the last searched maps to the selected list and adapt URL
+     */
+    $("#selectMaps").click(function () {
         for (let i = 0; i < searchedNodes.length; i++) {
             console.log(searchedNodes[i].id());
             searchedNodes[i].addClass('highlighted');
@@ -211,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         encodeMapsToUrl(16);
     });
 
-    $('#search').qtip({ // Grab some elements to apply the tooltip to
+    $('#buttons').qtip({ // Grab some elements to apply the tooltip to
         show: {
             event: 'mouseover',
         },
@@ -275,6 +281,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     }
 
     loadMaps();
+
     /**
      * Load sample data
      */
@@ -286,7 +293,6 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         let centeringNodeId = -1;
         $.getJSON('json-prototypes/atlas-2.6.json', function (data) {
             //data is the JSON string
-            //console.log(data);
 
             //nodes
             for (let id = 0; id < data.maps.length; id++) {
@@ -329,6 +335,9 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
 
     }
 
+    /**
+     * Read the given URL and set the corresponding bits in the bitset.
+     */
     function setSelectedMapsFromURL() {
         decodeMapsFromUri();
         console.log("Loading from BitSet: " + mapBitSet.toString());
@@ -366,6 +375,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             }
         }
 
+        //add the node
         cy.add([{
             group: "nodes",
 
@@ -384,6 +394,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             position: {x: posX, y: posY}
 
         }]);
+
+        //add the tooltip
         cy.$('#' + id).qtip({
             show: {
                 event: 'mouseover', // cxttap = double finger touch or right click.
@@ -407,6 +419,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 classes: 'qtip-bootstrap'
             }
         });
+
+        //postprocessing the created node by adding corresponding classes.
         if (unique)
             cy.$('#' + id).addClass("unique");
         if (shaperOrb !== undefined)
@@ -414,7 +428,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     }
 
     /**
-     * Add an edge to the grid
+     * Add an edge to the graph
      * @param id
      * @param srcId
      * @param targetId
@@ -427,6 +441,12 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         ]);
     }
 
+    /**
+     * Adds an uptier edge to the graph
+     * @param id
+     * @param srcId
+     * @param targetId
+     */
     function addUptier(id, srcId, targetId) {
         cy.add([{
             group: "edges",
