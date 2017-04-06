@@ -20,6 +20,8 @@ Current Progress:
     - Unique maps: `unique`
     - Shaper orbs: `shaper orb` or by shaper orb tier: `shaper orb tier: x`
     - Tooltip
+    - highlight the last selected maps
+    - unselect searched maps
 
 Todo:
 - Remove right click context menu opening due to the QTIP placement
