@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         "<li><b>unique</b> - highlights unique maps.</li>" +
         "<li><b>shaper</b> - highlights maps that contain a shaper's orb.</li>" +
         "<li><b>shaper tier: x</b> - highlights all maps that contain a shaper's orb for the specified tier.</li>" +
-        "<li><b>ier: x</b> - highlights all maps have the specified map tier.</li>" +
+        "<li><b>tier: x</b> - highlights all maps have the specified map tier.</li>" +
         "</ul>";
 
     let cy = cytoscape({
