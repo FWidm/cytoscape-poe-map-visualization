@@ -8,26 +8,13 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     let i = 0;
     let clicked;
     let mapBaseLevel = 67;
-
-
-    class Map {
-        constructor(id, tier, name, posX, posY, img, shaperOrb, selected) {
-            //maps.push(new Map(map.mapId,map.tier,map.name,map.posX,map.posY,null,map.shaperOrb,false));
-
-            this.id = id;
-            this.tier = tier;
-            this.name = name;
-            this.posX = posX;
-            this.posY = posY;
-            this.img = img;
-            this.selected = selected;
-            this.shaperOrb = shaperOrb;
-        }
-
-        toString() {
-            return "[id=" + this.id + ", name=" + this.name + ", tier=" + this.tier + ", selected=" + this.selected + "]";
-        }
-    }
+    let searchbarHelpText = "When typing the atlas will highlight all maps that start with your given string.<br/>Special commands:<br/>" +
+        "<ul>" +
+        "<li><b>unique</b> - highlights unique maps.</li>" +
+        "<li><b>shaper</b> - highlights maps that contain a shaper's orb.</li>" +
+        "<li><b>shaper tier: x</b> - highlights all maps that contain a shaper's orb for the specified tier.</li>" +
+        "<li><b>ier: x</b> - highlights all maps have the specified map tier.</li>" +
+        "</ul>";
 
     let cy = cytoscape({
         container: document.querySelector('#cy'),
@@ -197,10 +184,60 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     $("#search").on('change keyup paste', function () {
         let inputVal = $("#search").val();
         console.log("change: " + inputVal);
-        let targetNodes = cy.filter(function (i, element) {
-            if (inputVal.toUpperCase().startsWith("TIER:")) {
+        let targetNodes = filterNodes();
+        console.log(targetNodes.length);
+        cy.filter().removeClass('searchHl');
+        targetNodes.addClass('searchHl');
+    });
+
+    $('#search').qtip({ // Grab some elements to apply the tooltip to
+        show: {
+            event: 'mouseover',
+        },
+        hide: {
+            event: 'mouseout',
+            fixed: true,
+            delay: 100
+        },
+        content: {
+            title: "Using the search bar",
+            text: searchbarHelpText,
+        }, // content: { title: { text: value } }
+
+        position: {
+            my: 'bottom center',  // Position my top ...
+            at: 'top right' // at the bottom  of...
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        }
+    });
+
+    /**
+     * Filters nodes depending on how the entered string starts:
+     *  - "unique" is entered   --> highlight unique maps
+     *  - "shaper"              --> highlight ALL maps containing a shaper orb
+     *  - "shaper tier: x"      --> highlight all maps that drop a shaper orb for tier x
+     *  - "tier: x"             --> highlight all maps that have the specific tier x
+     *  else
+     *  - highlight all maps that start with the entered string
+     * @returns list of cytoscape nodes.
+     */
+    function filterNodes() {
+        return cy.filter(function (i, element) {
+            if (inputVal.toUpperCase().startsWith("UNIQUE")) {
+                return element.isNode() && element.data("unique");
+            }
+            else if (inputVal.toUpperCase().startsWith("SHAPER")) {
+                if (inputVal.toUpperCase().startsWith("SHAPER TIER:")) {
+                    let tier = parseInt(inputVal.split(":")[1].replace(/ /g, ""));
+                    return element.isNode() && element.data("shaperOrbTier") === tier;
+                }
+                return element.isNode() && element.data("shaperOrbTier") > 0;
+            }
+            else if (inputVal.toUpperCase().startsWith("TIER:")) {
                 let tierNumber = inputVal.split(":")[1].replace(/ /g, "");
-                if (element.isNode()){
+                if (element.isNode()) {
                     console.log(element.data("tier"));
                     if (element.data("tier") === parseInt(tierNumber)) {
                         return true;
@@ -214,79 +251,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             }
             return false;
         });
-        console.log(targetNodes.length);
-        cy.filter().removeClass('searchHl');
-        targetNodes.addClass('searchHl');
-    });
-
-
-    /**
-     * Handle randomize button
-     */
-    $("#randomize").click(function () {
-        let layout = cy.makeLayout({
-            name: 'random'
-        });
-
-        layout.run();
-    });
-
-    /**
-     * handle connect button
-     */
-    $("#connect").click(function () {
-        console.log(i);
-        cy.add([{
-            group: "edges",
-            data: {id: "e" + (i - 1), source: (i - 1), target: (i - 2)}
-        }
-        ]);
-    });
-
-
-    /**
-     * handle addNode button
-     */
-    $("#addNode").click(function () {
-        cy.add([{
-            group: "nodes",
-
-            data: {
-                id: i,
-                class: "map",
-                name: 'Add-' + i
-            },
-            style: {
-                'background-image': 'img/maps/blankMap.png',
-                'background-width': '100%',
-                'background-height': '100%'
-            },
-            position: {x: 200, y: 200}
-
-        }]);
-
-        cy.$('#' + i).qtip({
-            content: {
-                title: 'Add-' + i,
-                text: '<img src="img/maps/blankMap.png">' + i + '<br/><hr> Additional Info: ' + i + '<br/> Second line'
-            }, // content: { title: { text: value } }
-
-            position: {
-                my: 'top center',
-                at: 'bottom center'
-            },
-            style: {
-                classes: 'qtip-dark',
-                tip: {
-                    width: 16,
-                    height: 8
-                }
-            }
-        });
-
-        i++;
-
-    });
+    }
 
     loadMaps();
     /**
@@ -368,18 +333,26 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * @param shaperOrb
      */
     function addNode(id, name, tier, img, posX, posY, unique, shaperOrb) {
+        let shaperOrbTier = 0;
         let descriptionText = '<img src=' + img + '>' + '<br/>' +
             '<hr> Tier: ' + tier + '<br/>' +
             'Level: ' + (mapBaseLevel + tier + '<hr>');
-        if (shaperOrb !== undefined)
+        if (shaperOrb !== undefined) {
             descriptionText += 'Shaper Orb: Tier ' + shaperOrb.targetTier + ' maps.<hr>';
+            if (shaperOrb.targetTier !== null) {
+                shaperOrbTier = shaperOrb.targetTier;
+            }
+        }
+
         cy.add([{
             group: "nodes",
 
             data: {
                 id: id,
                 name: name,
-                tier: tier
+                tier: tier,
+                unique: unique,
+                shaperOrbTier: shaperOrbTier
             },
             style: {
                 'background-image': img,
