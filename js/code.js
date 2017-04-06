@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     $("#search").on('change keyup paste', function () {
         let inputVal = $("#search").val();
         console.log("change: " + inputVal);
-        let targetNodes = filterNodes();
+        let targetNodes = filterNodes(inputVal);
         console.log(targetNodes.length);
         cy.filter().removeClass('searchHl');
         targetNodes.addClass('searchHl');
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      *  - highlight all maps that start with the entered string
      * @returns list of cytoscape nodes.
      */
-    function filterNodes() {
+    function filterNodes(inputVal) {
         return cy.filter(function (i, element) {
             if (inputVal.toUpperCase().startsWith("UNIQUE")) {
                 return element.isNode() && element.data("unique");
