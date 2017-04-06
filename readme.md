@@ -41,4 +41,4 @@ Required: id, name, tier, posX, posY - dotted lines are connected to all "parent
 | ------- | ----- |
 | Qtip on Click | ![current progress visualized. Displays hl of a map and maps after the selected one.](img/progress.PNG) |
 | Dotted lines for possible map drops, arrow lines to show upgrade paths | ![](img/linetypes.PNG) |
-| Search for either Map names (that start with the string) or filter by tiers by searching with `tier: x` | ![](img/search_tier.pNG) |
+| Search for either Map names (that start with the string) or filter by tiers by searching with `tier: x` | ![](img/search_tier.PNG) |
