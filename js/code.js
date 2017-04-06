@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     let searchbarHelpText = "When typing the atlas will highlight all maps that start with your given string.<br/>Special commands:<br/>" +
         "<ul>" +
         "<li><b>unique</b> - highlights unique maps.</li>" +
-        "<li><b>shaper</b> - highlights maps that contain a shaper's orb.</li>" +
-        "<li><b>shaper tier: x</b> - highlights all maps that contain a shaper's orb for the specified tier.</li>" +
+        "<li><b>shaper orb</b> - highlights maps that contain a shaper's orb.</li>" +
+        "<li><b>shaper orb tier: x</b> - highlights all maps that contain a shaper's orb for the specified tier.</li>" +
         "<li><b>tier: x</b> - highlights all maps have the specified map tier.</li>" +
         "</ul>";
 
@@ -228,8 +228,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             if (inputVal.toUpperCase().startsWith("UNIQUE")) {
                 return element.isNode() && element.data("unique");
             }
-            else if (inputVal.toUpperCase().startsWith("SHAPER")) {
-                if (inputVal.toUpperCase().startsWith("SHAPER TIER:")) {
+            else if (inputVal.toUpperCase().startsWith("SHAPER ORB")) {
+                if (inputVal.toUpperCase().startsWith("SHAPER ORB TIER:")) {
                     let tier = parseInt(inputVal.split(":")[1].replace(/ /g, ""));
                     return element.isNode() && element.data("shaperOrbTier") === tier;
                 }
@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 }
 
             }
-            else if (element.isNode() && inputVal !== "" && element.data("name").toUpperCase().startsWith(inputVal.toUpperCase())) {
+            else if (element.isNode() && inputVal !== "" && element.data("name").toUpperCase().indexOf(inputVal.toUpperCase())>0) {
                 return true;
             }
             return false;
