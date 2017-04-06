@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     let mapBaseLevel = 67;
 
 
-
     class Map {
         constructor(id, tier, name, posX, posY, img, shaperOrb, selected) {
             //maps.push(new Map(map.mapId,map.tier,map.name,map.posX,map.posY,null,map.shaperOrb,false));
@@ -81,6 +80,12 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             .selector('.shaperOrb')
             .css({
                 'border-color': 'violet',
+                'border-style': 'double',
+                'border-width': '3px'
+            })
+            .selector('.searchHl')
+            .css({
+                'border-color': 'yellow',
                 'border-style': 'double',
                 'border-width': '3px'
             })
@@ -185,6 +190,24 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         //let node = e.cyTarget;
         //console.log(node.id());
     });
+
+    /**
+     * Search maps - highlight corresponding maps via the class "searchHl".
+     */
+    $("#search").on('change keyup paste', function() {
+        let inputVal = $("#search").val();
+        console.log("change: " + inputVal);
+        let targetNodes=cy.filter(function(i, element){
+            if( element.isNode() && inputVal!=="" && element.data("name").startsWith(inputVal) ){
+                return true;
+            }
+            return false;
+        });
+        console.log(targetNodes.length);
+        cy.filter().removeClass('searchHl');
+        targetNodes.addClass('searchHl');
+    });
+
 
     /**
      * Handle randomize button
@@ -311,13 +334,13 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     function setSelectedMapsFromURL() {
         decodeMapsFromUri();
         console.log("Loading from BitSet: " + mapBitSet.toString());
-        console.log("looping through "+loadedMaps.length+" maps.");
+        console.log("looping through " + loadedMaps.length + " maps.");
         let bitArray = mapBitSet.toArray();
         console.log(bitArray);
-        for(i in bitArray){
-            if(i>=loadedMaps.length)
+        for (i in bitArray) {
+            if (i >= loadedMaps.length)
                 break;
-            loadedMaps[i].selected=true;
+            loadedMaps[i].selected = true;
             cy.$('#' + bitArray[i]).addClass("highlighted");
         }
     }
