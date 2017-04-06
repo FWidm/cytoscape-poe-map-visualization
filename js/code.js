@@ -296,7 +296,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 let posY = mapHeight * map.posY;
                 //console.log(id+" | n="+map.name);
                 let img = 'img/maps/blankMap.png';
-                loadedMaps.push(new Map(map.mapId, map.tier, map.name, map.posX, map.posY, img, map.shaperOrb, false));
+                let selected=false;
+                loadedMaps.push(new Map(map.mapId, map.tier, map.name, map.posX, map.posY, img, map.shaperOrb, selected));
                 addNode(map.mapId, map.name, map.tier, img, posX, posY, map.unique, map.shaperOrb);
 
             }
