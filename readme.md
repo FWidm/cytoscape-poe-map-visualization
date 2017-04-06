@@ -1,4 +1,9 @@
 # Atlas visualization in JS
+
+Test it here: https://fwidm.github.io/cytoscape-poe-map-visualization/
+
+----------------------------------------------------------------------
+
 In an attempt to rewrite the atlas visualization from the forked ShareAtlas repo we will utilize cytoscope to build the entire atlas. Instead of using one pre-defined image as the original author did before.
 Current Progress:
 - added basic functionality to add/remove nodes
