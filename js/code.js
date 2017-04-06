@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         let inputVal = $("#search").val();
         console.log("change: " + inputVal);
         let targetNodes=cy.filter(function(i, element){
-            if( element.isNode() && inputVal!=="" && element.data("name").startsWith(inputVal) ){
+            if( element.isNode() && inputVal!=="" && element.data("name").toUpperCase().startsWith(inputVal.toUpperCase()) ){
                 return true;
             }
             return false;
