@@ -194,11 +194,22 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     /**
      * Search maps - highlight corresponding maps via the class "searchHl".
      */
-    $("#search").on('change keyup paste', function() {
+    $("#search").on('change keyup paste', function () {
         let inputVal = $("#search").val();
         console.log("change: " + inputVal);
-        let targetNodes=cy.filter(function(i, element){
-            if( element.isNode() && inputVal!=="" && element.data("name").toUpperCase().startsWith(inputVal.toUpperCase()) ){
+        let targetNodes = cy.filter(function (i, element) {
+            if (inputVal.toUpperCase().startsWith("TIER:")) {
+                let tierNumber = inputVal.split(":")[1].replace(/ /g, "");
+                if (element.isNode()){
+                    console.log(element.data("tier"));
+                    if (element.data("tier") === parseInt(tierNumber)) {
+                        return true;
+
+                    }
+                }
+
+            }
+            else if (element.isNode() && inputVal !== "" && element.data("name").toUpperCase().startsWith(inputVal.toUpperCase())) {
                 return true;
             }
             return false;
@@ -368,6 +379,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             data: {
                 id: id,
                 name: name,
+                tier: tier
             },
             style: {
                 'background-image': img,
