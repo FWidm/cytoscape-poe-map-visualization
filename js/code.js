@@ -379,7 +379,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         }]);
         cy.$('#' + id).qtip({
             show: {
-                event: 'mouseover' // cxttap = double finger touch or right click.
+                event: 'mouseover', // cxttap = double finger touch or right click.
+                solo: true
             },
             hide: {
                 event: 'mouseout',
