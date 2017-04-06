@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     /**
      * Search maps - highlight corresponding maps via the class "searchHl".
      */
-    $("#highlight").on('change keyup paste', function () {
+    $("#search").on('change keyup paste', function () {
         let inputVal = $("#search").val();
         // console.log("change: " + inputVal);
         let targetNodes = filterNodes(inputVal);
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         $('#search').val("");
     });
 
-    $("#select").click(function () {
+    $("#highlight").click(function () {
         for (let i = 0; i < searchedNodes.length; i++) {
             console.log(searchedNodes[i].id());
             searchedNodes[i].addClass('highlighted');
