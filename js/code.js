@@ -134,14 +134,12 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         //node.removeClass('faded');
         if (node.hasClass('highlighted')) {
             node.removeClass('highlighted');
-            //todo: add to remembered list
             loadedMaps[node.id()].selected = false;
             mapBitSet.set(node.id(), 0);
 
         }
         else {
             node.addClass('highlighted');
-            //todo: remove from remembered list
             loadedMaps[node.id()].selected = true;
             mapBitSet.set(node.id(), 1);
         }
@@ -178,16 +176,34 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         //console.log(node.id());
     });
 
+    let searchedNodes = [];
     /**
      * Search maps - highlight corresponding maps via the class "searchHl".
      */
-    $("#search").on('change keyup paste', function () {
+    $("#highlight").on('change keyup paste', function () {
         let inputVal = $("#search").val();
-        console.log("change: " + inputVal);
+        // console.log("change: " + inputVal);
         let targetNodes = filterNodes(inputVal);
+        searchedNodes = targetNodes;
+
         console.log(targetNodes.length);
         cy.filter().removeClass('searchHl');
         targetNodes.addClass('searchHl');
+    });
+
+    $("#clear").click(function () {
+        cy.filter().removeClass('searchHl');
+        $('#search').val("");
+    });
+
+    $("#select").click(function () {
+        for (let i = 0; i < searchedNodes.length; i++) {
+            console.log(searchedNodes[i].id());
+            searchedNodes[i].addClass('highlighted');
+            loadedMaps[searchedNodes[i].id()].selected = true;
+            mapBitSet.set(searchedNodes[i].id(), 1);
+        }
+        encodeMapsToUrl(16);
     });
 
     $('#search').qtip({ // Grab some elements to apply the tooltip to
@@ -246,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 }
 
             }
-            else if (element.isNode() && inputVal !== "" && element.data("name").toUpperCase().indexOf(inputVal.toUpperCase())>0) {
+            else if (element.isNode() && inputVal !== "" && element.data("name").toUpperCase().indexOf(inputVal.toUpperCase()) > 0) {
                 return true;
             }
             return false;
