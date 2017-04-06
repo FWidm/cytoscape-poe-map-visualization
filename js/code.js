@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         "<li><b>shaper orb</b> - highlights maps that contain a shaper's orb.</li>" +
         "<li><b>shaper orb tier: x</b> - highlights all maps that contain a shaper's orb for the specified tier.</li>" +
         "<li><b>tier: x</b> - highlights all maps have the specified map tier.</li>" +
+        "</ul>"+
+    "<hr>Buttons:" +
+        "<ul>" +
+        "<li><b>Clear</b> - clears all selected maps</li>" +
+        "<li><b>Highlight all</b> - sets all maps as selected</li>" +
         "</ul>";
 
     let cy = cytoscape({
