@@ -9,9 +9,10 @@
       "tier": 1,
       "posX": 0.18193717300891876,
       "posY": 0.14764398336410522,
+      "imageUrl": "http://web.poecdn.com/image/Art/2DItems/Maps/AtlasMaps/Arcade1.png",
       "unique": false,
-      "upgradesTo":{
-        "mapId":4
+      "upgradesTo": {
+        "mapId": 4
       }
     },
     {
@@ -50,8 +51,8 @@
           "mapId": 0
         }
       ],
-      "upgradesTo":{
-        "mapId":8
+      "upgradesTo": {
+        "mapId": 8
       }
     },
     {
@@ -144,7 +145,7 @@
           "mapId": 5
         },
         {
-          "mapId":10
+          "mapId": 10
         }
       ]
     },
@@ -236,6 +237,9 @@
       "connections": [
         {
           "mapId": 11
+        },
+        {
+          "mapId": 9
         }
       ]
     },
@@ -262,6 +266,9 @@
       "connections": [
         {
           "mapId": 12
+        },
+        {
+          "mapId": 14
         }
       ]
     },
@@ -314,6 +321,9 @@
       "connections": [
         {
           "mapId": 20
+        },
+        {
+          "mapId": 21
         }
       ]
     },
@@ -334,10 +344,13 @@
       "mapId": 26,
       "name": "Spider Lair",
       "tier": 5,
-      "posX": 0.8215968608856201,
+      "posX": 0.8415968608856201,
       "posY": 0.48206281661987305,
       "unique": false,
       "connections": [
+        {
+          "mapId": 21
+        },
         {
           "mapId": 23
         }
@@ -379,6 +392,9 @@
       "connections": [
         {
           "mapId": 16
+        },
+        {
+          "mapId": 17
         }
       ]
     },
@@ -392,7 +408,8 @@
       "connections": [
         {
           "mapId": 18
-        },{
+        },
+        {
           "mapId": 17
         }
       ]
@@ -418,6 +435,9 @@
       "posY": 0.13179580867290497,
       "unique": false,
       "connections": [
+        {
+          "mapId": 29
+        },
         {
           "mapId": 28
         }
@@ -445,7 +465,13 @@
       "unique": false,
       "connections": [
         {
+          "mapId": 29
+        },
+        {
           "mapId": 30
+        },
+        {
+          "mapId": 31
         }
       ]
     },
@@ -498,6 +524,9 @@
       "connections": [
         {
           "mapId": 25
+        },
+        {
+          "mapId": 37
         }
       ]
     },
@@ -521,12 +550,15 @@
       "mapId": 40,
       "name": "Thicket",
       "tier": 6,
-      "posX": 0.8151177763938904,
+      "posX": 0.7851177763938904,
       "posY": 0.4292251169681549,
       "unique": false,
       "connections": [
         {
           "mapId": 25
+        },
+        {
+          "mapId": 26
         }
       ]
     },
@@ -566,6 +598,12 @@
       "connections": [
         {
           "mapId": 40
+        },
+        {
+          "mapId": 38
+        },
+        {
+          "mapId": 39
         }
       ]
     },
@@ -595,6 +633,9 @@
       "connections": [
         {
           "mapId": 32
+        },
+        {
+          "mapId": 33
         }
       ]
     },
@@ -608,6 +649,9 @@
       "connections": [
         {
           "mapId": 35
+        },
+        {
+          "mapId": 34
         }
       ]
     },
@@ -689,6 +733,9 @@
       "connections": [
         {
           "mapId": 44
+        },
+        {
+          "mapId": 51
         }
       ]
     },
@@ -702,6 +749,9 @@
       "connections": [
         {
           "mapId": 45
+        },
+        {
+          "mapId": 51
         }
       ]
     },
@@ -713,6 +763,9 @@
       "posY": 0.6366021037101746,
       "unique": false,
       "connections": [
+        {
+          "mapId": 46
+        },
         {
           "mapId": 47
         }
@@ -753,6 +806,9 @@
       "unique": false,
       "connections": [
         {
+          "mapId": 42
+        },
+        {
           "mapId": 43
         }
       ]
@@ -765,9 +821,6 @@
       "posY": 0.585293173789978,
       "unique": false,
       "connections": [
-        {
-          "mapId": 57
-        },
         {
           "mapId": 42
         }
@@ -794,9 +847,6 @@
       "posY": 0.24193193018436432,
       "unique": false,
       "connections": [
-        {
-          "mapId": 51
-        },
         {
           "mapId": 52
         }
@@ -856,7 +906,7 @@
           "mapId": 55
         },
         {
-          "mapId":54
+          "mapId": 54
         }
       ]
     },
@@ -1051,6 +1101,9 @@
       "connections": [
         {
           "mapId": 60
+        },
+        {
+          "mapId": 76
         }
       ]
     },
@@ -1064,6 +1117,9 @@
       "connections": [
         {
           "mapId": 63
+        },
+        {
+          "mapId": 77
         }
       ]
     },
@@ -1105,7 +1161,6 @@
           "mapId": 74
         }
       ]
-
     },
     {
       "mapId": 83,
@@ -1113,7 +1168,15 @@
       "tier": 11,
       "posX": 0.3456806242465973,
       "posY": 0.35811519622802734,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 77
+        },
+        {
+          "mapId": 79
+        }
+      ]
     },
     {
       "mapId": 84,
@@ -1121,7 +1184,12 @@
       "tier": 11,
       "posX": 0.6394162178039551,
       "posY": 0.2962879538536072,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 78
+        }
+      ]
     },
     {
       "mapId": 85,
@@ -1129,7 +1197,12 @@
       "tier": 11,
       "posX": 0.5665005445480347,
       "posY": 0.37587958574295044,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 76
+        }
+      ]
     },
     {
       "mapId": 86,
@@ -1137,7 +1210,12 @@
       "tier": 11,
       "posX": 0.5954188704490662,
       "posY": 0.7801046967506409,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 75
+        }
+      ]
     },
     {
       "mapId": 87,
@@ -1145,7 +1223,12 @@
       "tier": 11,
       "posX": 0.4817408323287964,
       "posY": 0.8052356243133545,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 74
+        }
+      ]
     },
     {
       "mapId": 88,
@@ -1153,7 +1236,12 @@
       "tier": 11,
       "posX": 0.42384031414985657,
       "posY": 0.7665863633155823,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 73
+        }
+      ]
     },
     {
       "mapId": 89,
@@ -1161,7 +1249,15 @@
       "tier": 11,
       "posX": 0.3737199008464813,
       "posY": 0.7654450535774231,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 73
+        },
+        {
+          "mapId": 88
+        }
+      ]
     },
     {
       "mapId": 90,
@@ -1169,15 +1265,25 @@
       "tier": 11,
       "posX": 0.6507853269577026,
       "posY": 0.3204188346862793,
-      "unique": true
+      "unique": true,
+      "connections": [
+        {
+          "mapId": 84
+        }
+      ]
     },
     {
       "mapId": 91,
       "name": "Oba's Cursed Trove",
       "tier": 11,
       "posX": 0.4393324553966522,
-      "posY": 0.7706806063652039,
-      "unique": true
+      "posY": 0.7806806063652039,
+      "unique": true,
+      "connections": [
+        {
+          "mapId": 88
+        }
+      ]
     },
     {
       "mapId": 92,
@@ -1185,7 +1291,12 @@
       "tier": 12,
       "posX": 0.30032721161842346,
       "posY": 0.36225655674934387,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 83
+        }
+      ]
     },
     {
       "mapId": 93,
@@ -1193,7 +1304,12 @@
       "tier": 12,
       "posX": 0.3631727695465088,
       "posY": 0.6785340309143066,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 89
+        }
+      ]
     },
     {
       "mapId": 94,
@@ -1201,7 +1317,12 @@
       "tier": 12,
       "posX": 0.43720942735671997,
       "posY": 0.7182303667068481,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 88
+        }
+      ]
     },
     {
       "mapId": 95,
@@ -1209,7 +1330,15 @@
       "tier": 12,
       "posX": 0.6042539477348328,
       "posY": 0.3612094223499298,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 84
+        },
+        {
+          "mapId": 85
+        }
+      ]
     },
     {
       "mapId": 96,
@@ -1217,7 +1346,12 @@
       "tier": 12,
       "posX": 0.6607984304428101,
       "posY": 0.4407905638217926,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 84
+        }
+      ]
     },
     {
       "mapId": 97,
@@ -1225,7 +1359,12 @@
       "tier": 12,
       "posX": 0.6046649217605591,
       "posY": 0.7225130796432495,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 86
+        }
+      ]
     },
     {
       "mapId": 98,
@@ -1233,7 +1372,12 @@
       "tier": 12,
       "posX": 0.46642670035362244,
       "posY": 0.7664921283721924,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 87
+        }
+      ]
     },
     {
       "mapId": 99,
@@ -1241,7 +1385,12 @@
       "tier": 12,
       "posX": 0.4691937267780304,
       "posY": 0.6586387157440186,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 94
+        }
+      ]
     },
     {
       "mapId": 100,
@@ -1249,7 +1398,12 @@
       "tier": 12,
       "posX": 0.6199240684509277,
       "posY": 0.7393612861633301,
-      "unique": true
+      "unique": true,
+      "connections": [
+        {
+          "mapId": 97
+        }
+      ]
     },
     {
       "mapId": 101,
@@ -1257,7 +1411,15 @@
       "tier": 13,
       "posX": 0.5388743281364441,
       "posY": 0.7811518311500549,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 97
+        },
+        {
+          "mapId": 98
+        }
+      ]
     },
     {
       "mapId": 102,
@@ -1265,15 +1427,28 @@
       "tier": 13,
       "posX": 0.4261963367462158,
       "posY": 0.6314136385917664,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 99
+        },
+        {
+          "mapId": 93
+        }
+      ]
     },
     {
       "mapId": 103,
       "name": "Plaza",
       "tier": 13,
       "posX": 0.3863219916820526,
-      "posY": 0.6397905945777893,
-      "unique": false
+      "posY": 0.6297905945777893,
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 93
+        }
+      ]
     },
     {
       "mapId": 104,
@@ -1281,7 +1456,12 @@
       "tier": 13,
       "posX": 0.32212042808532715,
       "posY": 0.48691099882125854,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 92
+        }
+      ]
     },
     {
       "mapId": 105,
@@ -1289,7 +1469,12 @@
       "tier": 13,
       "posX": 0.3715968728065491,
       "posY": 0.4167539179325104,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 92
+        }
+      ]
     },
     {
       "mapId": 106,
@@ -1297,7 +1482,12 @@
       "tier": 13,
       "posX": 0.6974947452545166,
       "posY": 0.5109476447105408,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 96
+        }
+      ]
     },
     {
       "mapId": 107,
@@ -1305,7 +1495,15 @@
       "tier": 13,
       "posX": 0.6294031143188477,
       "posY": 0.46810993552207947,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 95
+        },
+        {
+          "mapId": 96
+        }
+      ]
     },
     {
       "mapId": 108,
@@ -1313,7 +1511,12 @@
       "tier": 13,
       "posX": 0.6299921274185181,
       "posY": 0.649167537689209,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 97
+        }
+      ]
     },
     {
       "mapId": 109,
@@ -1321,7 +1524,15 @@
       "tier": 14,
       "posX": 0.3674738109111786,
       "posY": 0.4701099395751953,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 104
+        },
+        {
+          "mapId": 105
+        }
+      ]
     },
     {
       "mapId": 110,
@@ -1329,7 +1540,15 @@
       "tier": 14,
       "posX": 0.40045812726020813,
       "posY": 0.5560209155082703,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 102
+        },
+        {
+          "mapId": 103
+        }
+      ]
     },
     {
       "mapId": 111,
@@ -1337,7 +1556,12 @@
       "tier": 14,
       "posX": 0.42248427867889404,
       "posY": 0.39467015862464905,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 105
+        }
+      ]
     },
     {
       "mapId": 112,
@@ -1345,7 +1569,15 @@
       "tier": 14,
       "posX": 0.6292251348495483,
       "posY": 0.5486910939216614,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 106
+        },
+        {
+          "mapId": 107
+        }
+      ]
     },
     {
       "mapId": 113,
@@ -1353,7 +1585,12 @@
       "tier": 14,
       "posX": 0.5954188704490662,
       "posY": 0.5811518430709839,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 108
+        }
+      ]
     },
     {
       "mapId": 114,
@@ -1361,7 +1598,12 @@
       "tier": 14,
       "posX": 0.537696361541748,
       "posY": 0.7319371700286865,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 101
+        }
+      ]
     },
     {
       "mapId": 115,
@@ -1369,7 +1611,12 @@
       "tier": 15,
       "posX": 0.43579843640327454,
       "posY": 0.545549750328064,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 110
+        }
+      ]
     },
     {
       "mapId": 116,
@@ -1377,7 +1624,12 @@
       "tier": 15,
       "posX": 0.4087041914463043,
       "posY": 0.45445024967193604,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 109
+        }
+      ]
     },
     {
       "mapId": 117,
@@ -1385,7 +1637,15 @@
       "tier": 15,
       "posX": 0.5783376693725586,
       "posY": 0.6596387624740601,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 113
+        },
+        {
+          "mapId": 114
+        }
+      ]
     },
     {
       "mapId": 118,
@@ -1409,7 +1669,12 @@
       "tier": 15,
       "posX": 0.5960078239440918,
       "posY": 0.4459790587425232,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 112
+        }
+      ]
     },
     {
       "mapId": 120,
@@ -1478,6 +1743,7 @@
       "posX": 0.5075092315673828,
       "posY": 0.4999476373195648,
       "unique": false,
+      "imageUrl": "http://web.poecdn.com/image/Art/2DItems/Maps/AtlasMaps/Atlas.png?scale=1&w=3&h=3",
       "connections": [
         {
           "mapId": 123

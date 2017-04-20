@@ -1,5 +1,9 @@
-let mapWidth = window.screen.width;
-let mapHeight = window.screen.height;
+let minWidth=1920;
+let minHeight=1080;
+
+let mapWidth = window.screen.width<minWidth?minWidth:window.screen.width;
+let mapHeight = window.screen.height<minHeight?minHeight:window.screen.height;
+console.log("w:h="+mapWidth+":"+mapHeight);
 let mapBitSet = new BitSet;
 let loadedMaps = [];
 
@@ -302,6 +306,10 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 let posY = mapHeight * map.posY;
                 //console.log(id+" | n="+map.name);
                 let img = 'img/maps/blankMap.png';
+                if(map.imageUrl!==undefined){
+                    img=map.imageUrl;
+                    console.log("Found image for map... "+map.name+" | url="+map.imageUrl);
+                }
                 let selected=false;
                 loadedMaps.push(new Map(map.mapId, map.tier, map.name, map.posX, map.posY, img, map.shaperOrb, selected));
                 addNode(map.mapId, map.name, map.tier, img, posX, posY, map.unique, map.shaperOrb);
