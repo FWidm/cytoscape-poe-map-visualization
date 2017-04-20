@@ -1,9 +1,9 @@
-let minWidth=1920;
-let minHeight=1080;
+let minWidth = 1920;
+let minHeight = 1080;
 
-let mapWidth = window.screen.width<minWidth?minWidth:window.screen.width;
-let mapHeight = window.screen.height<minHeight?minHeight:window.screen.height;
-console.log("w:h="+mapWidth+":"+mapHeight);
+let mapWidth = window.screen.width < minWidth ? minWidth : window.screen.width;
+let mapHeight = window.screen.height < minHeight ? minHeight : window.screen.height;
+console.log("w:h=" + mapWidth + ":" + mapHeight);
 let mapBitSet = new BitSet;
 let loadedMaps = [];
 
@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         "<li><b>shaper orb</b> - highlights maps that contain a shaper's orb.</li>" +
         "<li><b>shaper orb tier: x</b> - highlights all maps that contain a shaper's orb for the specified tier.</li>" +
         "<li><b>tier: x</b> - highlights all maps have the specified map tier.</li>" +
-        "</ul>"+
-    "<hr>Buttons:" +
+        "</ul>" +
+        "<hr>Buttons:" +
         "<ul>" +
         "<li><b>Clear</b> - clears all selected maps</li>" +
         "<li><b>mark as completed</b> - sets all previously searched for maps as completed.</li>" +
@@ -68,10 +68,11 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             .selector(':selected')
             .css({
                 'background-color': '#232323',
+                'background-blacken':1,
                 'line-color': '#232323',
                 'target-arrow-color': '#232323',
                 'source-arrow-color': '#232323',
-                'opacity': 1
+                'opacity': 0
             })
             .selector('.shaperOrb')
             .css({
@@ -81,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             })
             .selector('.searchHl')
             .css({
-                'border-color': 'yellow',
+                'border-color': 'teal',
                 'border-style': 'double',
                 'border-width': '3px'
             })
@@ -91,25 +92,33 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'opacity': 1,
                 'text-opacity': 1,
                 'background-color': 'gold',
-                'color': 'gold',
                 'target-arrow-color': 'gold',
                 'line-color': 'gold',
             })
             .selector('.highlighted')
             .css({
-                'background-image-opacity': 1,
-                'opacity': 1,
-                'text-opacity': 1,
-                'background-color': 'red',
-                'color': 'red',
-                'target-arrow-color': 'red',
-                'line-color': 'red',
+                'border-color': '#71cc7b',
+                'border-style': 'double',
+                'border-width': '5px'
             })
             .selector('.faded')
             .css({
                 'background-image-opacity': 0.25,
                 'opacity': 0.25,
                 'text-opacity': 0
+            })
+            .selector('.whiteMap')
+            .css({
+                'color': '#fff4f3',
+            })
+            .selector('.yellowMap')
+            .css({
+                'color': '#daa919',
+            })
+            .selector('.redMap')
+            .css({
+                'color': '#ff5945',
+
             }),
 
         layout: {
@@ -195,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         let targetNodes = filterNodes(inputVal);
         searchedNodes = targetNodes;
 
-        console.log(targetNodes.length);
+        //console.log(targetNodes.length);
         cy.filter().removeClass('searchHl');
         targetNodes.addClass('searchHl');
     });
@@ -277,7 +286,9 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 }
 
             }
-            else if (element.isNode() && inputVal !== "" && element.data("name").toUpperCase().indexOf(inputVal.toUpperCase()) > 0) {
+            else if (element.isNode() && inputVal !== "" &&
+                (element.data("name").toUpperCase().indexOf(inputVal.toUpperCase()) > 0
+                || element.data("name").toUpperCase().startsWith(inputVal.toUpperCase()))) {
                 return true;
             }
             return false;
@@ -305,12 +316,9 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 let posX = mapWidth * map.posX;
                 let posY = mapHeight * map.posY;
                 //console.log(id+" | n="+map.name);
-                let img = 'img/maps/blankMap.png';
-                if(map.imageUrl!==undefined){
-                    img=map.imageUrl;
-                    console.log("Found image for map... "+map.name+" | url="+map.imageUrl);
-                }
-                let selected=false;
+                let img = map.imageUrl;
+
+                let selected = false;
                 loadedMaps.push(new Map(map.mapId, map.tier, map.name, map.posX, map.posY, img, map.shaperOrb, selected));
                 addNode(map.mapId, map.name, map.tier, img, posX, posY, map.unique, map.shaperOrb);
 
@@ -372,6 +380,10 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * @param shaperOrb
      */
     function addNode(id, name, tier, img, posX, posY, unique, shaperOrb) {
+        let defaultImg='img/maps/blankMap.png';
+        if(img===undefined){
+            img = defaultImg
+        }
         let shaperOrbTier = 0;
         let descriptionText = '<img src=' + img + '>' + '<br/>' +
             '<hr> Tier: ' + tier + '<br/>' +
@@ -395,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 shaperOrbTier: shaperOrbTier
             },
             style: {
-                'background-image': img,
+                'background-image': defaultImg,
                 'background-width': '100%',
                 'background-height': '100%'
             },
@@ -429,12 +441,27 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         });
 
         //postprocessing the created node by adding corresponding classes.
+
+        styleByTier(id, tier);
         if (unique)
             cy.$('#' + id).addClass("unique");
         if (shaperOrb !== undefined)
             cy.$('#' + id).addClass("shaperOrb");
     }
 
+    function styleByTier(id, tier) {
+        let mapNode = cy.$('#'+id);
+        if(tier<6){
+            mapNode.addClass("whiteMap");
+        }
+        else if(tier>=6&&tier<=10){
+            mapNode.addClass("yellowMap");
+        }
+        else {
+            mapNode.addClass("redMap");
+
+        }
+    }
     /**
      * Add an edge to the graph
      * @param id
