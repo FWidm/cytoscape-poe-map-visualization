@@ -14,12 +14,22 @@ body {
 
 #buttons{
     position: absolute;
-    top: 94%;
+    bottom: 3%;
     height: inherit;
     z-index: 1;
     /*border: dotted gray 1px;*/
     background: white;
     left: 1%;
+}
+
+#comparison{
+    position: absolute;
+    bottom: 3%;
+    height: inherit;
+    z-index: 1;
+    /*border: dotted gray 1px;*/
+    background: white;
+    left: 90%;
 }
 
 #info {

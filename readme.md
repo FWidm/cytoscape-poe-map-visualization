@@ -26,6 +26,7 @@ Current Progress:
 Todo:
 - Compare more than 1 tree
 - Add a comparison button that takes one url for each tree we want to compare to our tree
+- After clicking into the search bar, the qtip explanation doesn't disapper when clicking inside the nodes
 
 ---
 # Expected Map Json:
