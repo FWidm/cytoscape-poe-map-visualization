@@ -24,10 +24,9 @@ Current Progress:
     - unselect searched maps
 
 Todo:
-- Remove right click context menu opening due to the QTIP placement
-- Add max Zoom/min Zoom
 - Compare more than 1 tree
-- Do not only compare the start of the string to the search term
+- Add a comparison button that takes one url for each tree we want to compare to our tree
+
 ---
 # Expected Map Json:
 Required: id, name, tier, posX, posY - dotted lines are connected to all "parents". Normal arrow line is connected to the map it upgrades to.

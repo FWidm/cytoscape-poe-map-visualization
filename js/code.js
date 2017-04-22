@@ -134,7 +134,9 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         motionBlur: false,
         motionBlurOpacity: 0.2,
         wheelSensitivity: .15,
-        pixelRatio: 'auto'
+        pixelRatio: 'auto',
+        minZoom: .3,
+        maxZoom: 3
     });
 
 
