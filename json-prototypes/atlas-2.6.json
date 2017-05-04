@@ -24,7 +24,7 @@
       "unique": false
     },
     {
-      "imageUrl": "img/maps/01/Dessert.png",
+      "imageUrl": "img/maps/01/Desert.png",
       "mapId": 2,
       "name": "Desert",
       "posX": 0.8127617835998535,
@@ -206,7 +206,7 @@
           "mapId": 11
         }
       ],
-      "imageUrl": "../img/maps/unique/VaultsofAtziri.png",
+      "imageUrl": "img/maps/unique/VaultsofAtziri.png",
       "mapId": 15,
       "name": "Vaults of Atziri",
       "posX": 0.24790576100349426,
@@ -310,7 +310,7 @@
           "mapId": 19
         }
       ],
-      "imageUrl": "../img/maps/unique/HallowedGround.png",
+      "imageUrl": "img/maps/unique/HallowedGround.png",
       "mapId": 22,
       "name": "Hallowed Ground",
       "posX": 0.7273560166358948,
@@ -606,7 +606,7 @@
           "mapId": 36
         }
       ],
-      "imageUrl": "../img/maps/unique/WhakawairuaTuahu.png",
+      "imageUrl": "img/maps/unique/WhakawairuaTuahu.png",
       "mapId": 41,
       "name": "Whakawairua Tuahu",
       "posX": 0.7114529013633728,
@@ -732,7 +732,7 @@
           "mapId": 46
         }
       ],
-      "imageUrl": "../img/maps/unique/OlmecsSanctum.png",
+      "imageUrl": "img/maps/unique/OlmecsSanctum.png",
       "mapId": 49,
       "name": "Olmec's Sanctum",
       "posX": 0.3409685790538788,
@@ -887,7 +887,7 @@
           "mapId": 58
         }
       ],
-      "imageUrl": "../img/maps/unique/MaelstroemofChaos.png",
+      "imageUrl": "img/maps/unique/MaelstroemofChaos.png",
       "mapId": 59,
       "name": "Maelström of Chaos",
       "posX": 0.6926047205924988,
@@ -1022,7 +1022,7 @@
           "mapId": 63
         }
       ],
-      "imageUrl": "../img/maps/unique/ActonsNightmare.png",
+      "imageUrl": "img/maps/unique/ActonsNightmare.png",
       "mapId": 68,
       "name": "Acton's Nightmare",
       "posX": 0.3586649107933044,
@@ -1036,7 +1036,7 @@
           "mapId": 62
         }
       ],
-      "imageUrl": "../img/maps/unique/HallofGrandmasters.png",
+      "imageUrl": "img/maps/unique/HallofGrandmasters.png",
       "mapId": 69,
       "name": "Hall of Grandmasters",
       "posX": 0.42678430676460266,
@@ -1050,7 +1050,7 @@
           "mapId": 61
         }
       ],
-      "imageUrl": "../img/maps/unique/PutridCloister.png",
+      "imageUrl": "img/maps/unique/PutridCloister.png",
       "mapId": 70,
       "name": "Putrid Cloister",
       "posX": 0.5429973602294922,
@@ -1078,7 +1078,7 @@
           "mapId": 65
         }
       ],
-      "imageUrl": "../img/maps/unique/MaoKun.png",
+      "imageUrl": "img/maps/unique/MaoKun.png",
       "mapId": 72,
       "name": "Mao Kun",
       "posX": 0.314463347196579,
@@ -1205,7 +1205,7 @@
           "mapId": 76
         }
       ],
-      "imageUrl": "../img/maps/unique/VinktarSquare.png",
+      "imageUrl": "img/maps/unique/VinktarSquare.png",
       "mapId": 80,
       "name": "The Vinktar Square",
       "posX": 0.5141492390632629,
@@ -1219,7 +1219,7 @@
           "mapId": 67
         }
       ],
-      "imageUrl": "img/maps/unique/Poorjoy'sAsylum.png",
+      "imageUrl": "img/maps/unique/PoorjoysAsylum.png",
       "mapId": 81,
       "name": "Poorjoy's Asylum",
       "posX": 0.6372382044792175,
@@ -1233,7 +1233,7 @@
           "mapId": 74
         }
       ],
-      "imageUrl": "../img/maps/unique/CaerBlaidd,WolfpacksDen.png",
+      "imageUrl": "img/maps/unique/CaerBlaidd,WolfpacksDen.png",
       "mapId": 82,
       "name": "Caer Blaidd",
       "posX": 0.4067041873931885,
@@ -1351,7 +1351,7 @@
           "mapId": 84
         }
       ],
-      "imageUrl": "../img/maps/unique/PerandusManor.png",
+      "imageUrl": "img/maps/unique/PerandusManor.png",
       "mapId": 90,
       "name": "Perandus Manor",
       "posX": 0.6507853269577026,
@@ -1365,7 +1365,7 @@
           "mapId": 88
         }
       ],
-      "imageUrl": "../img/maps/unique/ObasCursedTrove.png",
+      "imageUrl": "img/maps/unique/ObasCursedTrove.png",
       "mapId": 91,
       "name": "Oba's Cursed Trove",
       "posX": 0.4393324553966522,
@@ -1494,7 +1494,7 @@
           "mapId": 97
         }
       ],
-      "imageUrl": "../img/maps/unique/DeathandTaxes.png",
+      "imageUrl": "img/maps/unique/DeathandTaxes.png",
       "mapId": 100,
       "name": "Death and Taxes",
       "posX": 0.6199240684509277,
@@ -1872,7 +1872,7 @@
           "mapId": 120
         }
       ],
-      "imageUrl": "http://web.poecdn.com/image/Art/2DItems/Maps/AtlasMaps/Atlas.png?scale=1&w=3&h=3",
+      "imageUrl": "img/maps/17/ShapersRealm.png",
       "mapId": 125,
       "name": "The Shaper's Realm",
       "posX": 0.5075092315673828,
