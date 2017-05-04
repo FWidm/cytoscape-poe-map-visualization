@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             .selector('node')
             .css({
                 'content': 'data(name)',
-                'text-valign': 'center',
+                'text-valign': 'top',
+                'text-halign': 'center',
                 'color': 'white',
                 'text-outline-width': 1,
                 'background-color': 'transparent',
@@ -91,7 +92,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'background-image-opacity': 1,
                 'opacity': 1,
                 'text-opacity': 1,
-                'background-color': 'gold',
+                'background-color': '#00000000',
+                'background-opacity': 0,
                 'target-arrow-color': 'gold',
                 'line-color': 'gold',
             })
@@ -133,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         textureOnViewport: false,
         motionBlur: false,
         motionBlurOpacity: 0.2,
-        wheelSensitivity: .15,
+        wheelSensitivity: .05,
         pixelRatio: 'auto',
         minZoom: .3,
         maxZoom: 3
@@ -409,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 shaperOrbTier: shaperOrbTier
             },
             style: {
-                'background-image': defaultImg,
+                'background-image': img,
                 'background-width': '100%',
                 'background-height': '100%'
             },

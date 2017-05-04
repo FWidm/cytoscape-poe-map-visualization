@@ -1,148 +1,156 @@
 {
-  "atlasBGImage": "https://web.poecdn.com/image/Art/2DArt/Atlas/Atlas.png?scale=2&w=1&h=1&v=0e123ff2ea520a943138e8c8d793ec6f3",
+  "version": "2.6",
   "description": "init",
+  "atlasBGImage": "https://web.poecdn.com/image/Art/2DArt/Atlas/Atlas.png?scale=2&w=1&h=1&v=0e123ff2ea520a943138e8c8d793ec6f3",
   "maps": [
     {
-      "imageUrl": "img/maps/01/CrystalOre.png",
       "mapId": 0,
       "name": "Crystal Ore",
+      "tier": 1,
       "posX": 0.18193717300891876,
       "posY": 0.14764398336410522,
-      "tier": 1,
+      "imageUrl": "img/maps/01/CrystalOre.png",
       "unique": false,
       "upgradesTo": {
         "mapId": 4
       }
     },
     {
-      "imageUrl": "img/maps/01/JungleValley.png",
       "mapId": 1,
       "name": "Jungle Valley",
+      "tier": 1,
       "posX": 0.23082460463047028,
       "posY": 0.7748690843582153,
-      "tier": 1,
+      "imageUrl": "img/maps/01/JungleValley.png",
       "unique": false
     },
     {
-      "imageUrl": "img/maps/01/Dessert.png",
       "mapId": 2,
       "name": "Desert",
+      "tier": 1,
       "posX": 0.8127617835998535,
       "posY": 0.1538795828819275,
-      "tier": 1,
-      "unique": false
+      "unique": false,
+      "imageUrl": "img/maps/01/Dessert.png"
     },
     {
-      "imageUrl": "img/maps/01/Arcade.png",
       "mapId": 3,
       "name": "Arcade",
+      "tier": 1,
       "posX": 0.8316099643707275,
       "posY": 0.7685863971710205,
-      "tier": 1,
-      "unique": false
+      "unique": false,
+      "imageUrl": "img/maps/01/Arcade.png"
     },
     {
+      "mapId": 4,
+      "name": "Factory",
+      "tier": 2,
+      "posX": 0.17781414091587067,
+      "posY": 0.24188481271266937,
+      "unique": false,
       "connections": [
         {
           "mapId": 0
         }
       ],
-      "imageUrl": "img/maps/02/Factory.png",
-      "mapId": 4,
-      "name": "Factory",
-      "posX": 0.17781414091587067,
-      "posY": 0.24188481271266937,
-      "tier": 2,
-      "unique": false,
       "upgradesTo": {
         "mapId": 8
-      }
+      },
+      "imageUrl": "img/maps/02/Factory.png"
+
     },
     {
+      "mapId": 5,
+      "name": "Beach",
+      "tier": 2,
+      "posX": 0.25202879309654236,
+      "posY": 0.726701557636261,
+      "unique": false,
       "connections": [
         {
           "mapId": 1
         }
       ],
-      "imageUrl": "img/maps/02/Beach.png",
-      "mapId": 5,
-      "name": "Beach",
-      "posX": 0.25202879309654236,
-      "posY": 0.726701557636261,
-      "tier": 2,
-      "unique": false
+      "imageUrl": "img/maps/02/Beach.png"
     },
     {
+      "mapId": 6,
+      "name": "Ghetto",
+      "tier": 2,
+      "posX": 0.792146623134613,
+      "posY": 0.7424083948135376,
+      "unique": false,
       "connections": [
         {
           "mapId": 3
         }
       ],
-      "imageUrl": "img/maps/02/Ghetto.png",
-      "mapId": 6,
-      "name": "Ghetto",
-      "posX": 0.792146623134613,
-      "posY": 0.7424083948135376,
-      "tier": 2,
-      "unique": false
+      "imageUrl": "img/maps/02/Ghetto.png"
+
     },
     {
+      "mapId": 7,
+      "name": "Oasis",
+      "tier": 2,
+      "posX": 0.808049738407135,
+      "posY": 0.2083769589662552,
+      "unique": false,
       "connections": [
         {
           "mapId": 2
         }
       ],
-      "imageUrl": "img/maps/02/Oasis.png",
-      "mapId": 7,
-      "name": "Oasis",
-      "posX": 0.808049738407135,
-      "posY": 0.2083769589662552,
-      "tier": 2,
-      "unique": false
+      "imageUrl": "img/maps/02/Oasis.png"
+
     },
     {
-      "connections": [
-        {
-          "mapId": 4
-        }
-      ],
-      "imageUrl": "img/maps/03/Channel.png",
       "mapId": 8,
       "name": "Channel",
+      "tier": 3,
       "posX": 0.20785340666770935,
       "posY": 0.30261778831481934,
-      "tier": 3,
-      "unique": false
-    },
-    {
+      "unique": false,
       "connections": [
         {
           "mapId": 4
         }
       ],
-      "imageUrl": "img/maps/03/Cavern.png",
-      "mapId": 9,
-      "name": "Cavern",
-      "posX": 0.18134817481040955,
-      "posY": 0.42094239592552185,
-      "tier": 3,
-      "unique": false
+      "imageUrl": "img/maps/03/Channel.png"
     },
     {
+      "mapId": 9,
+      "name": "Cavern",
+      "tier": 3,
+      "posX": 0.18134817481040955,
+      "posY": 0.42094239592552185,
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 4
+        }
+      ]
+    },
+    {
+      "mapId": 10,
+      "name": "Marshes",
+      "tier": 3,
+      "posX": 0.19018325209617615,
+      "posY": 0.6502617597579956,
+      "unique": false,
       "connections": [
         {
           "mapId": 5
         }
-      ],
-      "imageUrl": "img/maps/03/Marshes.png",
-      "mapId": 10,
-      "name": "Marshes",
-      "posX": 0.19018325209617615,
-      "posY": 0.6502617597579956,
-      "tier": 3,
-      "unique": false
+      ]
     },
     {
+      "mapId": 11,
+      "name": "Vaal Pyramid",
+      "tier": 3,
+      "posX": 0.23023560643196106,
+      "posY": 0.6230366230010986,
+      "unique": false,
       "connections": [
         {
           "mapId": 5
@@ -150,99 +158,93 @@
         {
           "mapId": 10
         }
-      ],
-      "imageUrl": "img/maps/03/VaalPyramid.png",
-      "mapId": 11,
-      "name": "Vaal Pyramid",
-      "posX": 0.23023560643196106,
-      "posY": 0.6230366230010986,
-      "tier": 3,
-      "unique": false
+      ]
     },
     {
+      "mapId": 12,
+      "name": "Arid Lake",
+      "tier": 3,
+      "posX": 0.8021596670150757,
+      "posY": 0.2534031271934509,
+      "unique": false,
       "connections": [
         {
           "mapId": 7
         }
-      ],
-      "imageUrl": "img/maps/03/AridLake.png",
-      "mapId": 12,
-      "name": "Arid Lake",
-      "posX": 0.8021596670150757,
-      "posY": 0.2534031271934509,
-      "tier": 3,
-      "unique": false
+      ]
     },
     {
+      "mapId": 13,
+      "name": "Sewers",
+      "tier": 3,
+      "posX": 0.7785995006561279,
+      "posY": 0.800000011920929,
+      "unique": false,
       "connections": [
         {
           "mapId": 6
         }
-      ],
-      "mapId": 13,
-      "name": "Sewers",
-      "posX": 0.7785995006561279,
-      "posY": 0.800000011920929,
-      "tier": 3,
-      "unique": false
+      ]
     },
     {
+      "mapId": 14,
+      "name": "Grotto",
+      "tier": 3,
+      "posX": 0.8427748870849609,
+      "posY": 0.35183244943618774,
+      "unique": false,
       "connections": [
         {
           "mapId": 7
         }
-      ],
-      "imageUrl": "img/maps/03/Grotto.png",
-      "mapId": 14,
-      "name": "Grotto",
-      "posX": 0.842774887084961,
-      "posY": 0.35183244943618774,
-      "tier": 3,
-      "unique": false
+      ]
     },
     {
+      "mapId": 15,
+      "name": "Vaults of Atziri",
+      "tier": 3,
+      "posX": 0.24790576100349426,
+      "posY": 0.6052355766296387,
+      "unique": true,
       "connections": [
         {
           "mapId": 11
         }
-      ],
-      "imageUrl": "../img/maps/unique/VaultsofAtziri.png",
-      "mapId": 15,
-      "name": "Vaults of Atziri",
-      "posX": 0.24790576100349426,
-      "posY": 0.6052355766296387,
-      "tier": 3,
-      "unique": true
+      ]
     },
     {
+      "mapId": 16,
+      "name": "Acid Lakes",
+      "tier": 4,
+      "posX": 0.20667539536952972,
+      "posY": 0.2178010493516922,
+      "unique": false,
       "connections": [
         {
           "mapId": 8
         }
-      ],
-      "imageUrl": "img/maps/04/AcidLakes.png",
-      "mapId": 16,
-      "name": "Acid Lakes",
-      "posX": 0.20667539536952972,
-      "posY": 0.2178010493516922,
-      "tier": 4,
-      "unique": false
+      ]
     },
     {
+      "mapId": 17,
+      "name": "Waste Pool",
+      "tier": 4,
+      "posX": 0.2184554934501648,
+      "posY": 0.3968586325645447,
+      "unique": false,
       "connections": [
         {
           "mapId": 9
         }
-      ],
-      "imageUrl": "img/maps/04/WastePool.png",
-      "mapId": 17,
-      "name": "Waste Pool",
-      "posX": 0.2184554934501648,
-      "posY": 0.3968586325645447,
-      "tier": 4,
-      "unique": false
+      ]
     },
     {
+      "mapId": 18,
+      "name": "Phantasmagoria",
+      "tier": 4,
+      "posX": 0.1972513049840927,
+      "posY": 0.5664921402931213,
+      "unique": false,
       "connections": [
         {
           "mapId": 11
@@ -250,30 +252,28 @@
         {
           "mapId": 9
         }
-      ],
-      "imageUrl": "img/maps/04/Phantasmagoria.png",
-      "mapId": 18,
-      "name": "Phantasmagoria",
-      "posX": 0.1972513049840927,
-      "posY": 0.5664921402931213,
-      "tier": 4,
-      "unique": false
+      ]
     },
     {
+      "mapId": 19,
+      "name": "Graveyard",
+      "tier": 4,
+      "posX": 0.7338351011276245,
+      "posY": 0.7476440072059631,
+      "unique": false,
       "connections": [
         {
           "mapId": 13
         }
-      ],
-      "imageUrl": "img/maps/04/Graveyard.png",
-      "mapId": 19,
-      "name": "Graveyard",
-      "posX": 0.7338351011276245,
-      "posY": 0.7476440072059631,
-      "tier": 4,
-      "unique": false
+      ]
     },
     {
+      "mapId": 20,
+      "name": "Dungeon",
+      "tier": 4,
+      "posX": 0.8151177763938904,
+      "posY": 0.3078534007072449,
+      "unique": false,
       "connections": [
         {
           "mapId": 12
@@ -281,58 +281,54 @@
         {
           "mapId": 14
         }
-      ],
-      "imageUrl": "img/maps/04/Dungeon.png",
-      "mapId": 20,
-      "name": "Dungeon",
-      "posX": 0.8151177763938904,
-      "posY": 0.3078534007072449,
-      "tier": 4,
-      "unique": false
+      ]
     },
     {
+      "mapId": 21,
+      "name": "Villa",
+      "tier": 4,
+      "posX": 0.7717044353485107,
+      "posY": 0.34869110584259033,
+      "unique": false,
       "connections": [
         {
           "mapId": 14
         }
-      ],
-      "imageUrl": "img/maps/04/Villa.png",
-      "mapId": 21,
-      "name": "Villa",
-      "posX": 0.7717044353485107,
-      "posY": 0.34869110584259033,
-      "tier": 4,
-      "unique": false
+      ]
     },
     {
-      "connections": [
-        {
-          "mapId": 19
-        }
-      ],
-      "imageUrl": "../img/maps/unique/HallowedGround.png",
       "mapId": 22,
       "name": "Hallowed Ground",
+      "tier": 4,
       "posX": 0.7273560166358948,
       "posY": 0.7905759215354919,
-      "tier": 4,
-      "unique": true
-    },
-    {
+      "unique": true,
       "connections": [
         {
           "mapId": 19
         }
-      ],
-      "imageUrl": "img/maps/04/Academy.png",
-      "mapId": 23,
-      "name": "Academy",
-      "posX": 0.8304319381713867,
-      "posY": 0.6984293460845947,
-      "tier": 4,
-      "unique": false
+      ]
     },
     {
+      "mapId": 23,
+      "name": "Academy",
+      "tier": 4,
+      "posX": 0.8304319381713867,
+      "posY": 0.6984293460845947,
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 19
+        }
+      ]
+    },
+    {
+      "mapId": 24,
+      "name": "Dunes",
+      "tier": 5,
+      "posX": 0.7542722225189209,
+      "posY": 0.26497435569763184,
+      "unique": false,
       "connections": [
         {
           "mapId": 20
@@ -340,30 +336,28 @@
         {
           "mapId": 21
         }
-      ],
-      "imageUrl": "img/maps/05/Dunes.png",
-      "mapId": 24,
-      "name": "Dunes",
-      "posX": 0.7542722225189209,
-      "posY": 0.26497435569763184,
-      "tier": 5,
-      "unique": false
+      ]
     },
     {
+      "mapId": 25,
+      "name": "Peninsula",
+      "tier": 5,
+      "posX": 0.7346020936965942,
+      "posY": 0.3560209572315216,
+      "unique": false,
       "connections": [
         {
           "mapId": 21
         }
-      ],
-      "imageUrl": "img/maps/05/Peninsula.png",
-      "mapId": 25,
-      "name": "Peninsula",
-      "posX": 0.7346020936965942,
-      "posY": 0.3560209572315216,
-      "tier": 5,
-      "unique": false
+      ]
     },
     {
+      "mapId": 26,
+      "name": "Spider Lair",
+      "tier": 5,
+      "posX": 0.8415968608856201,
+      "posY": 0.48206281661987305,
+      "unique": false,
       "connections": [
         {
           "mapId": 21
@@ -371,44 +365,41 @@
         {
           "mapId": 23
         }
-      ],
-      "imageUrl": "img/maps/05/SpiderLair.png",
-      "mapId": 26,
-      "name": "Spider Lair",
-      "posX": 0.8415968608856201,
-      "posY": 0.48206281661987305,
-      "tier": 5,
-      "unique": false
+      ]
     },
     {
+      "mapId": 27,
+      "name": "Tower",
+      "tier": 5,
+      "posX": 0.7880235314369202,
+      "posY": 0.5926230549812317,
+      "unique": false,
       "connections": [
         {
           "mapId": 19
         }
-      ],
-      "imageUrl": "img/maps/05/Tower.png",
-      "mapId": 27,
-      "name": "Tower",
-      "posX": 0.7880235314369202,
-      "posY": 0.5926230549812317,
-      "tier": 5,
-      "unique": false
+      ]
     },
     {
-      "connections": [
-        {
-          "mapId": 16
-        }
-      ],
-      "imageUrl": "img/maps/05/Pit.png",
       "mapId": 28,
       "name": "Pit",
+      "tier": 5,
       "posX": 0.21727748215198517,
       "posY": 0.16753926873207092,
-      "tier": 5,
-      "unique": false
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 16
+        }
+      ]
     },
     {
+      "mapId": 29,
+      "name": "Mesa",
+      "tier": 5,
+      "posX": 0.2543848156929016,
+      "posY": 0.27843979001045227,
+      "unique": false,
       "connections": [
         {
           "mapId": 16
@@ -416,16 +407,15 @@
         {
           "mapId": 17
         }
-      ],
-      "imageUrl": "img/maps/05/Mesa.png",
-      "mapId": 29,
-      "name": "Mesa",
-      "posX": 0.2543848156929016,
-      "posY": 0.27843979001045227,
-      "tier": 5,
-      "unique": false
+      ]
     },
     {
+      "mapId": 30,
+      "name": "Primordial Pool",
+      "tier": 5,
+      "posX": 0.2147434502840042,
+      "posY": 0.48581674695014954,
+      "unique": false,
       "connections": [
         {
           "mapId": 18
@@ -433,30 +423,28 @@
         {
           "mapId": 17
         }
-      ],
-      "imageUrl": "img/maps/05/PrimordialPool.png",
-      "mapId": 30,
-      "name": "Primordial Pool",
-      "posX": 0.2147434502840042,
-      "posY": 0.48581674695014954,
-      "tier": 5,
-      "unique": false
+      ]
     },
     {
+      "mapId": 31,
+      "name": "Burial Chamber",
+      "tier": 5,
+      "posX": 0.25182878971099854,
+      "posY": 0.5420141220092773,
+      "unique": false,
       "connections": [
         {
           "mapId": 18
         }
-      ],
-      "imageUrl": "img/maps/05/BurialChambers.png",
-      "mapId": 31,
-      "name": "Burial Chamber",
-      "posX": 0.25182878971099854,
-      "posY": 0.5420141220092773,
-      "tier": 5,
-      "unique": false
+      ]
     },
     {
+      "mapId": 32,
+      "name": "Racecourse",
+      "tier": 6,
+      "posX": 0.25597381591796875,
+      "posY": 0.13179580867290497,
+      "unique": false,
       "connections": [
         {
           "mapId": 29
@@ -464,30 +452,28 @@
         {
           "mapId": 28
         }
-      ],
-      "imageUrl": "img/maps/06/Racecourse.png",
-      "mapId": 32,
-      "name": "Racecourse",
-      "posX": 0.25597381591796875,
-      "posY": 0.13179580867290497,
-      "tier": 6,
-      "unique": false
+      ]
     },
     {
+      "mapId": 33,
+      "name": "Quarry",
+      "tier": 6,
+      "posX": 0.2836570739746094,
+      "posY": 0.21675392985343933,
+      "unique": false,
       "connections": [
         {
           "mapId": 29
         }
-      ],
-      "imageUrl": "img/maps/06/Quarry.png",
-      "mapId": 33,
-      "name": "Quarry",
-      "posX": 0.2836570739746094,
-      "posY": 0.21675392985343933,
-      "tier": 6,
-      "unique": false
+      ]
     },
     {
+      "mapId": 34,
+      "name": "Canyon",
+      "tier": 6,
+      "posX": 0.2610638737678528,
+      "posY": 0.4326607286930084,
+      "unique": false,
       "connections": [
         {
           "mapId": 29
@@ -498,58 +484,54 @@
         {
           "mapId": 31
         }
-      ],
-      "imageUrl": "img/maps/06/Canyon.png",
-      "mapId": 34,
-      "name": "Canyon",
-      "posX": 0.2610638737678528,
-      "posY": 0.4326607286930084,
-      "tier": 6,
-      "unique": false
+      ]
     },
     {
+      "mapId": 35,
+      "name": "Vaal City",
+      "tier": 6,
+      "posX": 0.2883691191673279,
+      "posY": 0.5999528765678406,
+      "unique": false,
       "connections": [
         {
           "mapId": 31
         }
-      ],
-      "imageUrl": "img/maps/06/VaalCity.png",
-      "mapId": 35,
-      "name": "Vaal City",
-      "posX": 0.2883691191673279,
-      "posY": 0.5999528765678406,
-      "tier": 6,
-      "unique": false
+      ]
     },
     {
+      "mapId": 36,
+      "name": "Strand",
+      "tier": 6,
+      "posX": 0.7114529013633728,
+      "posY": 0.262780100107193,
+      "unique": false,
       "connections": [
         {
           "mapId": 24
         }
-      ],
-      "imageUrl": "img/maps/06/Strand.png",
-      "mapId": 36,
-      "name": "Strand",
-      "posX": 0.7114529013633728,
-      "posY": 0.262780100107193,
-      "tier": 6,
-      "unique": false
+      ]
     },
     {
+      "mapId": 37,
+      "name": "Wharf",
+      "tier": 6,
+      "posX": 0.6837696433067322,
+      "posY": 0.3162303566932678,
+      "unique": false,
       "connections": [
         {
           "mapId": 25
         }
-      ],
-      "imageUrl": "img/maps/06/Wharf.png",
-      "mapId": 37,
-      "name": "Wharf",
-      "posX": 0.6837696433067322,
-      "posY": 0.3162303566932678,
-      "tier": 6,
-      "unique": false
+      ]
     },
     {
+      "mapId": 38,
+      "name": "Ramparts",
+      "tier": 6,
+      "posX": 0.7202879786491394,
+      "posY": 0.44397905468940735,
+      "unique": false,
       "connections": [
         {
           "mapId": 25
@@ -557,16 +539,15 @@
         {
           "mapId": 37
         }
-      ],
-      "imageUrl": "img/maps/06/Ramparts.png",
-      "mapId": 38,
-      "name": "Ramparts",
-      "posX": 0.7202879786491394,
-      "posY": 0.44397905468940735,
-      "tier": 6,
-      "unique": false
+      ]
     },
     {
+      "mapId": 39,
+      "name": "Spider Forest",
+      "tier": 6,
+      "posX": 0.7952696084976196,
+      "posY": 0.4941937029361725,
+      "unique": false,
       "connections": [
         {
           "mapId": 26
@@ -574,16 +555,15 @@
         {
           "mapId": 27
         }
-      ],
-      "imageUrl": "img/maps/06/SpiderForest.png",
-      "mapId": 39,
-      "name": "Spider Forest",
-      "posX": 0.7952696084976196,
-      "posY": 0.4941937029361725,
-      "tier": 6,
-      "unique": false
+      ]
     },
     {
+      "mapId": 40,
+      "name": "Thicket",
+      "tier": 6,
+      "posX": 0.7851177763938904,
+      "posY": 0.4292251169681549,
+      "unique": false,
       "connections": [
         {
           "mapId": 25
@@ -591,43 +571,41 @@
         {
           "mapId": 26
         }
-      ],
-      "imageUrl": "img/maps/06/Thicket.png",
-      "mapId": 40,
-      "name": "Thicket",
-      "posX": 0.7851177763938904,
-      "posY": 0.4292251169681549,
-      "tier": 6,
-      "unique": false
+      ]
     },
     {
+      "mapId": 41,
+      "name": "Whakawairua Tuahu",
+      "tier": 6,
+      "posX": 0.7114529013633728,
+      "posY": 0.29842931032180786,
+      "unique": true,
       "connections": [
         {
           "mapId": 36
         }
-      ],
-      "imageUrl": "../img/maps/unique/WhakawairuaTuahu.png",
-      "mapId": 41,
-      "name": "Whakawairua Tuahu",
-      "posX": 0.7114529013633728,
-      "posY": 0.29842931032180786,
-      "tier": 6,
-      "unique": true
+      ]
     },
     {
+      "mapId": 42,
+      "name": "Armory",
+      "tier": 7,
+      "posX": 0.7314790487289429,
+      "posY": 0.6732984185218811,
+      "unique": false,
       "connections": [
         {
           "mapId": 39
         }
-      ],
-      "mapId": 42,
-      "name": "Armory",
-      "posX": 0.7314790487289429,
-      "posY": 0.6732984185218811,
-      "tier": 7,
-      "unique": false
+      ]
     },
     {
+      "mapId": 43,
+      "name": "Mud Geyser",
+      "tier": 7,
+      "posX": 0.7591623067855835,
+      "posY": 0.4984293282032013,
+      "unique": false,
       "connections": [
         {
           "mapId": 40
@@ -638,16 +616,15 @@
         {
           "mapId": 39
         }
-      ],
-      "imageUrl": "img/maps/07/MudGeyser.png",
-      "mapId": 43,
-      "name": "Mud Geyser",
-      "posX": 0.7591623067855835,
-      "posY": 0.4984293282032013,
-      "tier": 7,
-      "unique": false
+      ]
     },
     {
+      "mapId": 44,
+      "name": "Castle Ruins",
+      "tier": 7,
+      "posX": 0.6778795719146729,
+      "posY": 0.1946701556444168,
+      "unique": false,
       "connections": [
         {
           "mapId": 37
@@ -655,16 +632,15 @@
         {
           "mapId": 36
         }
-      ],
-      "imageUrl": "img/maps/07/CastleRuins.png",
-      "mapId": 44,
-      "name": "Castle Ruins",
-      "posX": 0.6778795719146729,
-      "posY": 0.1946701556444168,
-      "tier": 7,
-      "unique": false
+      ]
     },
     {
+      "mapId": 45,
+      "name": "Cells",
+      "tier": 7,
+      "posX": 0.3015052378177643,
+      "posY": 0.1371256560087204,
+      "unique": false,
       "connections": [
         {
           "mapId": 32
@@ -672,16 +648,15 @@
         {
           "mapId": 33
         }
-      ],
-      "imageUrl": "img/maps/07/Cells.png",
-      "mapId": 45,
-      "name": "Cells",
-      "posX": 0.3015052378177643,
-      "posY": 0.1371256560087204,
-      "tier": 7,
-      "unique": false
+      ]
     },
     {
+      "mapId": 46,
+      "name": "Catacombs",
+      "tier": 7,
+      "posX": 0.3274214565753937,
+      "posY": 0.5612094402313232,
+      "unique": false,
       "connections": [
         {
           "mapId": 35
@@ -689,58 +664,54 @@
         {
           "mapId": 34
         }
-      ],
-      "imageUrl": "img/maps/07/Catacombs.png",
-      "mapId": 46,
-      "name": "Catacombs",
-      "posX": 0.3274214565753937,
-      "posY": 0.5612094402313232,
-      "tier": 7,
-      "unique": false
+      ]
     },
     {
+      "mapId": 47,
+      "name": "Arachnid Tomb",
+      "tier": 7,
+      "posX": 0.2720549702644348,
+      "posY": 0.6586387157440186,
+      "unique": false,
       "connections": [
         {
           "mapId": 35
         }
-      ],
-      "imageUrl": "img/maps/07/ArachnidTomb.png",
-      "mapId": 47,
-      "name": "Arachnid Tomb",
-      "posX": 0.2720549702644348,
-      "posY": 0.6586387157440186,
-      "tier": 7,
-      "unique": false
+      ]
     },
     {
+      "mapId": 48,
+      "name": "Ashen Wood",
+      "tier": 7,
+      "posX": 0.3592277467250824,
+      "posY": 0.1780104786157608,
+      "unique": false,
       "connections": [
         {
           "mapId": 33
         }
-      ],
-      "imageUrl": "img/maps/07/AshenWood.png",
-      "mapId": 48,
-      "name": "Ashen Wood",
-      "posX": 0.3592277467250824,
-      "posY": 0.1780104786157608,
-      "tier": 7,
-      "unique": false
+      ]
     },
     {
+      "mapId": 49,
+      "name": "Olmec's Sanctum",
+      "tier": 7,
+      "posX": 0.3409685790538788,
+      "posY": 0.5811518430709839,
+      "unique": true,
       "connections": [
         {
           "mapId": 46
         }
-      ],
-      "imageUrl": "../img/maps/unique/OlmecsSanctum.png",
-      "mapId": 49,
-      "name": "Olmec's Sanctum",
-      "posX": 0.3409685790538788,
-      "posY": 0.5811518430709839,
-      "tier": 7,
-      "unique": true
+      ]
     },
     {
+      "mapId": 50,
+      "name": "Arachnid Nest",
+      "tier": 8,
+      "posX": 0.3896780014038086,
+      "posY": 0.1799633502960205,
+      "unique": false,
       "connections": [
         {
           "mapId": 45
@@ -748,30 +719,28 @@
         {
           "mapId": 48
         }
-      ],
-      "imageUrl": "img/maps/08/ArachnidNest.png",
-      "mapId": 50,
-      "name": "Arachnid Nest",
-      "posX": 0.3896780014038086,
-      "posY": 0.1799633502960205,
-      "tier": 8,
-      "unique": false
+      ]
     },
     {
+      "mapId": 51,
+      "name": "Bog",
+      "tier": 8,
+      "posX": 0.5922958254814148,
+      "posY": 0.15178534388542175,
+      "unique": false,
       "connections": [
         {
           "mapId": 44
         }
-      ],
-      "imageUrl": "img/maps/08/Bog.png",
-      "mapId": 51,
-      "name": "Bog",
-      "posX": 0.5922958254814148,
-      "posY": 0.15178534388542175,
-      "tier": 8,
-      "unique": false
+      ]
     },
     {
+      "mapId": 52,
+      "name": "Cemetery",
+      "tier": 8,
+      "posX": 0.6246962547302246,
+      "posY": 0.2228308916091919,
+      "unique": false,
       "connections": [
         {
           "mapId": 44
@@ -779,16 +748,15 @@
         {
           "mapId": 51
         }
-      ],
-      "imageUrl": "img/maps/08/Cemetery.png",
-      "mapId": 52,
-      "name": "Cemetery",
-      "posX": 0.6246962547302246,
-      "posY": 0.2228308916091919,
-      "tier": 8,
-      "unique": false
+      ]
     },
     {
+      "mapId": 53,
+      "name": "Barrows",
+      "tier": 8,
+      "posX": 0.43579843640327454,
+      "posY": 0.16753926873207092,
+      "unique": false,
       "connections": [
         {
           "mapId": 45
@@ -796,16 +764,15 @@
         {
           "mapId": 51
         }
-      ],
-      "imageUrl": "img/maps/08/Barrows.png",
-      "mapId": 53,
-      "name": "Barrows",
-      "posX": 0.43579843640327454,
-      "posY": 0.16753926873207092,
-      "tier": 8,
-      "unique": false
+      ]
     },
     {
+      "mapId": 54,
+      "name": "Shore",
+      "tier": 8,
+      "posX": 0.3228874206542969,
+      "posY": 0.6366021037101746,
+      "unique": false,
       "connections": [
         {
           "mapId": 46
@@ -813,44 +780,41 @@
         {
           "mapId": 47
         }
-      ],
-      "imageUrl": "img/maps/08/Shore.png",
-      "mapId": 54,
-      "name": "Shore",
-      "posX": 0.3228874206542969,
-      "posY": 0.6366021037101746,
-      "tier": 8,
-      "unique": false
+      ]
     },
     {
+      "mapId": 55,
+      "name": "Tropical Island",
+      "tier": 8,
+      "posX": 0.29149213433265686,
+      "posY": 0.7276544570922852,
+      "unique": false,
       "connections": [
         {
           "mapId": 47
         }
-      ],
-      "imageUrl": "img/maps/08/TropicalIsland.png",
-      "mapId": 55,
-      "name": "Tropical Island",
-      "posX": 0.29149213433265686,
-      "posY": 0.7276544570922852,
-      "tier": 8,
-      "unique": false
+      ]
     },
     {
+      "mapId": 56,
+      "name": "Arena",
+      "tier": 8,
+      "posX": 0.7085078358650208,
+      "posY": 0.7381256818771362,
+      "unique": false,
       "connections": [
         {
           "mapId": 42
         }
-      ],
-      "imageUrl": "img/maps/08/Arena.png",
-      "mapId": 56,
-      "name": "Arena",
-      "posX": 0.7085078358650208,
-      "posY": 0.7381256818771362,
-      "tier": 8,
-      "unique": false
+      ]
     },
     {
+      "mapId": 57,
+      "name": "Pier",
+      "tier": 8,
+      "posX": 0.7444371581077576,
+      "posY": 0.5862932205200195,
+      "unique": false,
       "connections": [
         {
           "mapId": 42
@@ -858,72 +822,67 @@
         {
           "mapId": 43
         }
-      ],
-      "imageUrl": "img/maps/08/Pier.png",
-      "mapId": 57,
-      "name": "Pier",
-      "posX": 0.7444371581077576,
-      "posY": 0.5862932205200195,
-      "tier": 8,
-      "unique": false
+      ]
     },
     {
+      "mapId": 58,
+      "name": "Atoll",
+      "tier": 8,
+      "posX": 0.710274875164032,
+      "posY": 0.585293173789978,
+      "unique": false,
       "connections": [
         {
           "mapId": 42
         }
-      ],
-      "imageUrl": "img/maps/08/Atoll.png",
-      "mapId": 58,
-      "name": "Atoll",
-      "posX": 0.710274875164032,
-      "posY": 0.585293173789978,
-      "tier": 8,
-      "unique": false
+      ]
     },
     {
+      "mapId": 59,
+      "name": "Maelström of Chaos",
+      "tier": 8,
+      "posX": 0.6926047205924988,
+      "posY": 0.5895287990570068,
+      "unique": true,
       "connections": [
         {
           "mapId": 58
         }
-      ],
-      "imageUrl": "../img/maps/unique/MaelstroemofChaos.png",
-      "mapId": 59,
-      "name": "Maelström of Chaos",
-      "posX": 0.6926047205924988,
-      "posY": 0.5895287990570068,
-      "tier": 8,
-      "unique": true
+      ]
     },
     {
+      "mapId": 60,
+      "name": "Crypt",
+      "tier": 9,
+      "posX": 0.5482984185218811,
+      "posY": 0.24193193018436432,
+      "unique": false,
       "connections": [
         {
           "mapId": 52
         }
-      ],
-      "imageUrl": "img/maps/09/Crypt.png",
-      "mapId": 60,
-      "name": "Crypt",
-      "posX": 0.5482984185218811,
-      "posY": 0.24193193018436432,
-      "tier": 9,
-      "unique": false
+      ]
     },
     {
+      "mapId": 61,
+      "name": "Museum",
+      "tier": 9,
+      "posX": 0.5275052189826965,
+      "posY": 0.22717800736427307,
+      "unique": false,
       "connections": [
         {
           "mapId": 60
         }
-      ],
-      "imageUrl": "img/maps/09/Museum.png",
-      "mapId": 61,
-      "name": "Museum",
-      "posX": 0.5275052189826965,
-      "posY": 0.22717800736427307,
-      "tier": 9,
-      "unique": false
+      ]
     },
     {
+      "mapId": 62,
+      "name": "Promenade",
+      "tier": 9,
+      "posX": 0.4800000786781311,
+      "posY": 0.2659858763217926,
+      "unique": false,
       "connections": [
         {
           "mapId": 61
@@ -931,30 +890,28 @@
         {
           "mapId": 53
         }
-      ],
-      "imageUrl": "img/maps/09/Promenade.png",
-      "mapId": 62,
-      "name": "Promenade",
-      "posX": 0.4800000786781311,
-      "posY": 0.2659858763217926,
-      "tier": 9,
-      "unique": false
+      ]
     },
     {
+      "mapId": 63,
+      "name": "Overgrown Shrine",
+      "tier": 9,
+      "posX": 0.3939790427684784,
+      "posY": 0.24079057574272156,
+      "unique": false,
       "connections": [
         {
           "mapId": 50
         }
-      ],
-      "imageUrl": "img/maps/09/OvergrownShrine.png",
-      "mapId": 63,
-      "name": "Overgrown Shrine",
-      "posX": 0.3939790427684784,
-      "posY": 0.24079057574272156,
-      "tier": 9,
-      "unique": false
+      ]
     },
     {
+      "mapId": 64,
+      "name": "Coves",
+      "tier": 9,
+      "posX": 0.333900511264801,
+      "posY": 0.7287015914916992,
+      "unique": false,
       "connections": [
         {
           "mapId": 55
@@ -962,44 +919,41 @@
         {
           "mapId": 54
         }
-      ],
-      "imageUrl": "img/maps/09/Coves.png",
-      "mapId": 64,
-      "name": "Coves",
-      "posX": 0.333900511264801,
-      "posY": 0.7287015914916992,
-      "tier": 9,
-      "unique": false
+      ]
     },
     {
+      "mapId": 65,
+      "name": "Reef",
+      "tier": 9,
+      "posX": 0.29149213433265686,
+      "posY": 0.8544502854347229,
+      "unique": false,
       "connections": [
         {
           "mapId": 55
         }
-      ],
-      "imageUrl": "img/maps/09/Reef.png",
-      "mapId": 65,
-      "name": "Reef",
-      "posX": 0.29149213433265686,
-      "posY": 0.8544502854347229,
-      "tier": 9,
-      "unique": false
+      ]
     },
     {
+      "mapId": 66,
+      "name": "Orchard",
+      "tier": 9,
+      "posX": 0.710274875164032,
+      "posY": 0.8020471334457397,
+      "unique": false,
       "connections": [
         {
           "mapId": 56
         }
-      ],
-      "imageUrl": "img/maps/09/Orchard.png",
-      "mapId": 66,
-      "name": "Orchard",
-      "posX": 0.710274875164032,
-      "posY": 0.8020471334457397,
-      "tier": 9,
-      "unique": false
+      ]
     },
     {
+      "mapId": 67,
+      "name": "Temple",
+      "tier": 9,
+      "posX": 0.6496073007583618,
+      "posY": 0.7235602140426636,
+      "unique": false,
       "connections": [
         {
           "mapId": 66
@@ -1007,100 +961,95 @@
         {
           "mapId": 58
         }
-      ],
-      "imageUrl": "img/maps/09/Temple.png",
-      "mapId": 67,
-      "name": "Temple",
-      "posX": 0.6496073007583618,
-      "posY": 0.7235602140426636,
-      "tier": 9,
-      "unique": false
+      ]
     },
     {
+      "mapId": 68,
+      "name": "Acton's Nightmare",
+      "tier": 9,
+      "posX": 0.35866491079330444,
+      "posY": 0.22931937873363495,
+      "unique": true,
       "connections": [
         {
           "mapId": 63
         }
-      ],
-      "imageUrl": "../img/maps/unique/ActonsNightmare.png",
-      "mapId": 68,
-      "name": "Acton's Nightmare",
-      "posX": 0.3586649107933044,
-      "posY": 0.22931937873363495,
-      "tier": 9,
-      "unique": true
+      ]
     },
     {
+      "mapId": 69,
+      "name": "Hall of Grandmasters",
+      "tier": 9,
+      "posX": 0.42678430676460266,
+      "posY": 0.22717800736427307,
+      "unique": true,
       "connections": [
         {
           "mapId": 62
         }
-      ],
-      "imageUrl": "../img/maps/unique/HallofGrandmasters.png",
-      "mapId": 69,
-      "name": "Hall of Grandmasters",
-      "posX": 0.42678430676460266,
-      "posY": 0.22717800736427307,
-      "tier": 9,
-      "unique": true
+      ]
     },
     {
+      "mapId": 70,
+      "name": "Putrid Cloister",
+      "tier": 9,
+      "posX": 0.5429973602294922,
+      "posY": 0.21675392985343933,
+      "unique": true,
       "connections": [
         {
           "mapId": 61
         }
-      ],
-      "imageUrl": "../img/maps/unique/PutridCloister.png",
-      "mapId": 70,
-      "name": "Putrid Cloister",
-      "posX": 0.5429973602294922,
-      "posY": 0.21675392985343933,
-      "tier": 9,
-      "unique": true
+      ]
     },
     {
+      "mapId": 71,
+      "name": "Coward's Trial",
+      "tier": 9,
+      "posX": 0.5765575861930847,
+      "posY": 0.25607330560684204,
+      "unique": true,
       "connections": [
         {
           "mapId": 60
         }
       ],
-      "imageUrl": "img/maps/unique/CowardsTrial.png",
-      "mapId": 71,
-      "name": "Coward's Trial",
-      "posX": 0.5765575861930847,
-      "posY": 0.25607330560684205,
-      "tier": 9,
-      "unique": true
+      "imageUrl": "img/maps/unique/CowardsTrial.png"
+
     },
     {
+      "mapId": 72,
+      "name": "Mao Kun",
+      "tier": 9,
+      "posX": 0.314463347196579,
+      "posY": 0.8408377170562744,
+      "unique": true,
       "connections": [
         {
           "mapId": 65
         }
-      ],
-      "imageUrl": "../img/maps/unique/MaoKun.png",
-      "mapId": 72,
-      "name": "Mao Kun",
-      "posX": 0.314463347196579,
-      "posY": 0.8408377170562744,
-      "tier": 9,
-      "unique": true
+      ]
     },
     {
+      "mapId": 73,
+      "name": "Quay",
+      "tier": 10,
+      "posX": 0.3727748692035675,
+      "posY": 0.8335078358650208,
+      "unique": false,
       "connections": [
         {
           "mapId": 64
         }
-      ],
-      "imageUrl": "img/maps/10/Quay.png",
-      "mapId": 73,
-      "name": "Quay",
-      "posX": 0.3727748692035675,
-      "posY": 0.8335078358650208,
-      "tier": 10,
-      "unique": false
+      ]
     },
     {
+      "mapId": 74,
+      "name": "Underground River",
+      "tier": 10,
+      "posX": 0.4028141498565674,
+      "posY": 0.8649214506149292,
+      "unique": false,
       "connections": [
         {
           "mapId": 65
@@ -1108,44 +1057,41 @@
         {
           "mapId": 73
         }
-      ],
-      "imageUrl": "img/maps/10/UndergroundRiver.png",
-      "mapId": 74,
-      "name": "Underground River",
-      "posX": 0.4028141498565674,
-      "posY": 0.8649214506149292,
-      "tier": 10,
-      "unique": false
+      ]
     },
     {
+      "mapId": 75,
+      "name": "Malformation",
+      "tier": 10,
+      "posX": 0.6384162306785583,
+      "posY": 0.8303664922714233,
+      "unique": false,
       "connections": [
         {
           "mapId": 67
         }
-      ],
-      "imageUrl": "img/maps/10/Malformation.png",
-      "mapId": 75,
-      "name": "Malformation",
-      "posX": 0.6384162306785583,
-      "posY": 0.8303664922714233,
-      "tier": 10,
-      "unique": false
+      ]
     },
     {
+      "mapId": 76,
+      "name": "Courtyard",
+      "tier": 10,
+      "posX": 0.5318062901496887,
+      "posY": 0.31204187870025635,
+      "unique": false,
       "connections": [
         {
           "mapId": 61
         }
-      ],
-      "imageUrl": "img/maps/10/Courtyard.png",
-      "mapId": 76,
-      "name": "Courtyard",
-      "posX": 0.5318062901496887,
-      "posY": 0.31204187870025635,
-      "tier": 10,
-      "unique": false
+      ]
     },
     {
+      "mapId": 77,
+      "name": "Colonnade",
+      "tier": 10,
+      "posX": 0.4387434422969818,
+      "posY": 0.29733508825302124,
+      "unique": false,
       "connections": [
         {
           "mapId": 76
@@ -1154,18 +1100,17 @@
           "mapId": 62
         }
       ],
-      "imageUrl": "img/maps/10/Colonnade.png",
-      "mapId": 77,
-      "name": "Colonnade",
-      "posX": 0.4387434422969818,
-      "posY": 0.29733508825302124,
       "shaperOrb": {
         "targetTier": 5
-      },
-      "tier": 10,
-      "unique": false
+      }
     },
     {
+      "mapId": 78,
+      "name": "Arsenal",
+      "tier": 10,
+      "posX": 0.6000078320503235,
+      "posY": 0.3035999834537506,
+      "unique": false,
       "connections": [
         {
           "mapId": 60
@@ -1173,16 +1118,15 @@
         {
           "mapId": 76
         }
-      ],
-      "imageUrl": "img/maps/10/Arsenal.png",
-      "mapId": 78,
-      "name": "Arsenal",
-      "posX": 0.6000078320503235,
-      "posY": 0.3035999834537506,
-      "tier": 10,
-      "unique": false
+      ]
     },
     {
+      "mapId": 79,
+      "name": "Terrace",
+      "tier": 10,
+      "posX": 0.31681936979293823,
+      "posY": 0.2869109809398651,
+      "unique": false,
       "connections": [
         {
           "mapId": 63
@@ -1190,58 +1134,55 @@
         {
           "mapId": 77
         }
-      ],
-      "imageUrl": "img/maps/10/Terrace.png",
-      "mapId": 79,
-      "name": "Terrace",
-      "posX": 0.31681936979293823,
-      "posY": 0.2869109809398651,
-      "tier": 10,
-      "unique": false
+      ]
     },
     {
+      "mapId": 80,
+      "name": "The Vinktar Square",
+      "tier": 10,
+      "posX": 0.5141492390632629,
+      "posY": 0.2743455469608307,
+      "unique": true,
       "connections": [
         {
           "mapId": 76
         }
-      ],
-      "imageUrl": "../img/maps/unique/VinktarSquare.png",
-      "mapId": 80,
-      "name": "The Vinktar Square",
-      "posX": 0.5141492390632629,
-      "posY": 0.2743455469608307,
-      "tier": 10,
-      "unique": true
+      ]
     },
     {
+      "mapId": 81,
+      "name": "Poorjoy's Asylum",
+      "tier": 9,
+      "posX": 0.6372382044792175,
+      "posY": 0.7068063020706177,
+      "unique": true,
       "connections": [
         {
           "mapId": 67
         }
       ],
-      "imageUrl": "img/maps/unique/Poorjoy'sAsylum.png",
-      "mapId": 81,
-      "name": "Poorjoy's Asylum",
-      "posX": 0.6372382044792175,
-      "posY": 0.7068063020706177,
-      "tier": 9,
-      "unique": true
+      "imageUrl": "img/maps/unique/Poorjoy'sAsylum.png"
     },
     {
+      "mapId": 82,
+      "name": "Caer Blaidd",
+      "tier": 10,
+      "posX": 0.4067041873931885,
+      "posY": 0.8365078568458557,
+      "unique": true,
       "connections": [
         {
           "mapId": 74
         }
-      ],
-      "imageUrl": "../img/maps/unique/CaerBlaidd,WolfpacksDen.png",
-      "mapId": 82,
-      "name": "Caer Blaidd",
-      "posX": 0.4067041873931885,
-      "posY": 0.8365078568458557,
-      "tier": 10,
-      "unique": true
+      ]
     },
     {
+      "mapId": 83,
+      "name": "Bazaar",
+      "tier": 11,
+      "posX": 0.3456806242465973,
+      "posY": 0.35811519622802734,
+      "unique": false,
       "connections": [
         {
           "mapId": 77
@@ -1249,86 +1190,80 @@
         {
           "mapId": 79
         }
-      ],
-      "imageUrl": "img/maps/11/Bazaar.png",
-      "mapId": 83,
-      "name": "Bazaar",
-      "posX": 0.3456806242465973,
-      "posY": 0.35811519622802734,
-      "tier": 11,
-      "unique": false
+      ]
     },
     {
+      "mapId": 84,
+      "name": "Chateau",
+      "tier": 11,
+      "posX": 0.6394162178039551,
+      "posY": 0.2962879538536072,
+      "unique": false,
       "connections": [
         {
           "mapId": 78
         }
-      ],
-      "imageUrl": "img/maps/11/Chateau.png",
-      "mapId": 84,
-      "name": "Chateau",
-      "posX": 0.6394162178039551,
-      "posY": 0.2962879538536072,
-      "tier": 11,
-      "unique": false
+      ]
     },
     {
+      "mapId": 85,
+      "name": "Wasteland",
+      "tier": 11,
+      "posX": 0.5665005445480347,
+      "posY": 0.37587958574295044,
+      "unique": false,
       "connections": [
         {
           "mapId": 76
         }
-      ],
-      "imageUrl": "img/maps/11/Wasteland.png",
-      "mapId": 85,
-      "name": "Wasteland",
-      "posX": 0.5665005445480347,
-      "posY": 0.37587958574295044,
-      "tier": 11,
-      "unique": false
+      ]
     },
     {
+      "mapId": 86,
+      "name": "Excavation",
+      "tier": 11,
+      "posX": 0.5954188704490662,
+      "posY": 0.7801046967506409,
+      "unique": false,
       "connections": [
         {
           "mapId": 75
         }
-      ],
-      "imageUrl": "img/maps/11/Excavation.png",
-      "mapId": 86,
-      "name": "Excavation",
-      "posX": 0.5954188704490662,
-      "posY": 0.7801046967506409,
-      "tier": 11,
-      "unique": false
+      ]
     },
     {
+      "mapId": 87,
+      "name": "Underground Sea",
+      "tier": 11,
+      "posX": 0.4817408323287964,
+      "posY": 0.8052356243133545,
+      "unique": false,
       "connections": [
         {
           "mapId": 74
         }
-      ],
-      "imageUrl": "img/maps/11/UndergroundSea.png",
-      "mapId": 87,
-      "name": "Underground Sea",
-      "posX": 0.4817408323287964,
-      "posY": 0.8052356243133545,
-      "tier": 11,
-      "unique": false
+      ]
     },
     {
+      "mapId": 88,
+      "name": "Torture Chamber",
+      "tier": 11,
+      "posX": 0.42384031414985657,
+      "posY": 0.7665863633155823,
+      "unique": false,
       "connections": [
         {
           "mapId": 73
         }
-      ],
-      "imageUrl": "img/maps/11/TortureChamber.png",
-      "mapId": 88,
-      "name": "Torture Chamber",
-      "posX": 0.42384031414985657,
-      "posY": 0.7665863633155823,
-      "tier": 11,
-      "unique": false
+      ]
     },
     {
+      "mapId": 89,
+      "name": "Precinct",
+      "tier": 11,
+      "posX": 0.3737199008464813,
+      "posY": 0.7654450535774231,
+      "unique": false,
       "connections": [
         {
           "mapId": 73
@@ -1336,86 +1271,80 @@
         {
           "mapId": 88
         }
-      ],
-      "imageUrl": "img/maps/11/Precinct.png",
-      "mapId": 89,
-      "name": "Precinct",
-      "posX": 0.3737199008464813,
-      "posY": 0.7654450535774231,
-      "tier": 11,
-      "unique": false
+      ]
     },
     {
+      "mapId": 90,
+      "name": "Perandus Manor",
+      "tier": 11,
+      "posX": 0.6507853269577026,
+      "posY": 0.3204188346862793,
+      "unique": true,
       "connections": [
         {
           "mapId": 84
         }
-      ],
-      "imageUrl": "../img/maps/unique/PerandusManor.png",
-      "mapId": 90,
-      "name": "Perandus Manor",
-      "posX": 0.6507853269577026,
-      "posY": 0.3204188346862793,
-      "tier": 11,
-      "unique": true
+      ]
     },
     {
+      "mapId": 91,
+      "name": "Oba's Cursed Trove",
+      "tier": 11,
+      "posX": 0.4393324553966522,
+      "posY": 0.7806806063652039,
+      "unique": true,
       "connections": [
         {
           "mapId": 88
         }
-      ],
-      "imageUrl": "../img/maps/unique/ObasCursedTrove.png",
-      "mapId": 91,
-      "name": "Oba's Cursed Trove",
-      "posX": 0.4393324553966522,
-      "posY": 0.7806806063652039,
-      "tier": 11,
-      "unique": true
+      ]
     },
     {
+      "mapId": 92,
+      "name": "Shipyard",
+      "tier": 12,
+      "posX": 0.30032721161842346,
+      "posY": 0.36225655674934387,
+      "unique": false,
       "connections": [
         {
           "mapId": 83
         }
-      ],
-      "imageUrl": "img/maps/12/Shipyard.png",
-      "mapId": 92,
-      "name": "Shipyard",
-      "posX": 0.30032721161842346,
-      "posY": 0.36225655674934387,
-      "tier": 12,
-      "unique": false
+      ]
     },
     {
+      "mapId": 93,
+      "name": "Ivory Temple",
+      "tier": 12,
+      "posX": 0.3631727695465088,
+      "posY": 0.6785340309143066,
+      "unique": false,
       "connections": [
         {
           "mapId": 89
         }
-      ],
-      "imageUrl": "img/maps/12/IvoryTemple.png",
-      "mapId": 93,
-      "name": "Ivory Temple",
-      "posX": 0.3631727695465088,
-      "posY": 0.6785340309143066,
-      "tier": 12,
-      "unique": false
+      ]
     },
     {
+      "mapId": 94,
+      "name": "Residence",
+      "tier": 12,
+      "posX": 0.43720942735671997,
+      "posY": 0.7182303667068481,
+      "unique": false,
       "connections": [
         {
           "mapId": 88
         }
-      ],
-      "imageUrl": "img/maps/12/Residence.png",
-      "mapId": 94,
-      "name": "Residence",
-      "posX": 0.43720942735671997,
-      "posY": 0.7182303667068481,
-      "tier": 12,
-      "unique": false
+      ]
     },
     {
+      "mapId": 95,
+      "name": "Crematorium",
+      "tier": 12,
+      "posX": 0.6042539477348328,
+      "posY": 0.3612094223499298,
+      "unique": false,
       "connections": [
         {
           "mapId": 84
@@ -1423,86 +1352,80 @@
         {
           "mapId": 85
         }
-      ],
-      "imageUrl": "img/maps/12/Crematorium.png",
-      "mapId": 95,
-      "name": "Crematorium",
-      "posX": 0.6042539477348328,
-      "posY": 0.3612094223499298,
-      "tier": 12,
-      "unique": false
+      ]
     },
     {
+      "mapId": 96,
+      "name": "Estuary",
+      "tier": 12,
+      "posX": 0.6607984304428101,
+      "posY": 0.4407905638217926,
+      "unique": false,
       "connections": [
         {
           "mapId": 84
         }
-      ],
-      "imageUrl": "img/maps/12/Estuary.png",
-      "mapId": 96,
-      "name": "Estuary",
-      "posX": 0.6607984304428101,
-      "posY": 0.4407905638217926,
-      "tier": 12,
-      "unique": false
+      ]
     },
     {
+      "mapId": 97,
+      "name": "Necropolis",
+      "tier": 12,
+      "posX": 0.6046649217605591,
+      "posY": 0.7225130796432495,
+      "unique": false,
       "connections": [
         {
           "mapId": 86
         }
-      ],
-      "imageUrl": "img/maps/12/Necropolis.png",
-      "mapId": 97,
-      "name": "Necropolis",
-      "posX": 0.6046649217605591,
-      "posY": 0.7225130796432495,
-      "tier": 12,
-      "unique": false
+      ]
     },
     {
+      "mapId": 98,
+      "name": "Vault",
+      "tier": 12,
+      "posX": 0.46642670035362244,
+      "posY": 0.7664921283721924,
+      "unique": false,
       "connections": [
         {
           "mapId": 87
         }
-      ],
-      "imageUrl": "img/maps/12/Vault.png",
-      "mapId": 98,
-      "name": "Vault",
-      "posX": 0.46642670035362244,
-      "posY": 0.7664921283721924,
-      "tier": 12,
-      "unique": false
+      ]
     },
     {
+      "mapId": 99,
+      "name": "Plateau",
+      "tier": 12,
+      "posX": 0.4691937267780304,
+      "posY": 0.6586387157440186,
+      "unique": false,
       "connections": [
         {
           "mapId": 94
         }
-      ],
-      "imageUrl": "img/maps/12/Plateau.png",
-      "mapId": 99,
-      "name": "Plateau",
-      "posX": 0.4691937267780304,
-      "posY": 0.6586387157440186,
-      "tier": 12,
-      "unique": false
+      ]
     },
     {
+      "mapId": 100,
+      "name": "Death and Taxes",
+      "tier": 12,
+      "posX": 0.6199240684509277,
+      "posY": 0.7393612861633301,
+      "unique": true,
       "connections": [
         {
           "mapId": 97
         }
-      ],
-      "imageUrl": "../img/maps/unique/DeathandTaxes.png",
-      "mapId": 100,
-      "name": "Death and Taxes",
-      "posX": 0.6199240684509277,
-      "posY": 0.7393612861633301,
-      "tier": 12,
-      "unique": true
+      ]
     },
     {
+      "mapId": 101,
+      "name": "Gorge",
+      "tier": 13,
+      "posX": 0.5388743281364441,
+      "posY": 0.7811518311500549,
+      "unique": false,
       "connections": [
         {
           "mapId": 97
@@ -1510,16 +1433,15 @@
         {
           "mapId": 98
         }
-      ],
-      "imageUrl": "img/maps/13/Gorge.png",
-      "mapId": 101,
-      "name": "Gorge",
-      "posX": 0.5388743281364441,
-      "posY": 0.7811518311500549,
-      "tier": 13,
-      "unique": false
+      ]
     },
     {
+      "mapId": 102,
+      "name": "Scriptorium",
+      "tier": 13,
+      "posX": 0.4261963367462158,
+      "posY": 0.6314136385917664,
+      "unique": false,
       "connections": [
         {
           "mapId": 99
@@ -1527,72 +1449,67 @@
         {
           "mapId": 93
         }
-      ],
-      "imageUrl": "img/maps/13/Scriptorium.png",
-      "mapId": 102,
-      "name": "Scriptorium",
-      "posX": 0.4261963367462158,
-      "posY": 0.6314136385917664,
-      "tier": 13,
-      "unique": false
+      ]
     },
     {
+      "mapId": 103,
+      "name": "Plaza",
+      "tier": 13,
+      "posX": 0.3863219916820526,
+      "posY": 0.6297905945777893,
+      "unique": false,
       "connections": [
         {
           "mapId": 93
         }
-      ],
-      "imageUrl": "img/maps/13/Plaza.png",
-      "mapId": 103,
-      "name": "Plaza",
-      "posX": 0.3863219916820526,
-      "posY": 0.6297905945777893,
-      "tier": 13,
-      "unique": false
+      ]
     },
     {
-      "connections": [
-        {
-          "mapId": 92
-        }
-      ],
-      "imageUrl": "img/maps/13/HighGardens.png",
       "mapId": 104,
       "name": "High Gardens",
+      "tier": 13,
       "posX": 0.32212042808532715,
       "posY": 0.48691099882125854,
-      "tier": 13,
-      "unique": false
-    },
-    {
+      "unique": false,
       "connections": [
         {
           "mapId": 92
         }
-      ],
-      "imageUrl": "img/maps/13/Waterways.png",
-      "mapId": 105,
-      "name": "Waterways",
-      "posX": 0.3715968728065491,
-      "posY": 0.4167539179325104,
-      "tier": 13,
-      "unique": false
+      ]
     },
     {
+      "mapId": 105,
+      "name": "Waterways",
+      "tier": 13,
+      "posX": 0.3715968728065491,
+      "posY": 0.4167539179325104,
+      "unique": false,
+      "connections": [
+        {
+          "mapId": 92
+        }
+      ]
+    },
+    {
+      "mapId": 106,
+      "name": "Beacon",
+      "tier": 13,
+      "posX": 0.6974947452545166,
+      "posY": 0.5109476447105408,
+      "unique": false,
       "connections": [
         {
           "mapId": 96
         }
-      ],
-      "imageUrl": "img/maps/13/Beacon.png",
-      "mapId": 106,
-      "name": "Beacon",
-      "posX": 0.6974947452545166,
-      "posY": 0.5109476447105408,
-      "tier": 13,
-      "unique": false
+      ]
     },
     {
+      "mapId": 107,
+      "name": "Sulphur Wastes",
+      "tier": 13,
+      "posX": 0.6294031143188477,
+      "posY": 0.46810993552207947,
+      "unique": false,
       "connections": [
         {
           "mapId": 95
@@ -1600,30 +1517,28 @@
         {
           "mapId": 96
         }
-      ],
-      "imageUrl": "img/maps/13/SulphurWastes.png",
-      "mapId": 107,
-      "name": "Sulphur Wastes",
-      "posX": 0.6294031143188477,
-      "posY": 0.46810993552207947,
-      "tier": 13,
-      "unique": false
+      ]
     },
     {
+      "mapId": 108,
+      "name": "Lair",
+      "tier": 13,
+      "posX": 0.6299921274185181,
+      "posY": 0.649167537689209,
+      "unique": false,
       "connections": [
         {
           "mapId": 97
         }
-      ],
-      "imageUrl": "img/maps/13/Lair.png",
-      "mapId": 108,
-      "name": "Lair",
-      "posX": 0.6299921274185181,
-      "posY": 0.649167537689209,
-      "tier": 13,
-      "unique": false
+      ]
     },
     {
+      "mapId": 109,
+      "name": "Palace",
+      "tier": 14,
+      "posX": 0.3674738109111786,
+      "posY": 0.4701099395751953,
+      "unique": false,
       "connections": [
         {
           "mapId": 104
@@ -1631,16 +1546,15 @@
         {
           "mapId": 105
         }
-      ],
-      "imageUrl": "img/maps/14/Palace.png",
-      "mapId": 109,
-      "name": "Palace",
-      "posX": 0.3674738109111786,
-      "posY": 0.4701099395751953,
-      "tier": 14,
-      "unique": false
+      ]
     },
     {
+      "mapId": 110,
+      "name": "Maze",
+      "tier": 14,
+      "posX": 0.40045812726020813,
+      "posY": 0.5560209155082703,
+      "unique": false,
       "connections": [
         {
           "mapId": 102
@@ -1648,30 +1562,28 @@
         {
           "mapId": 103
         }
-      ],
-      "imageUrl": "img/maps/14/Maze.png",
-      "mapId": 110,
-      "name": "Maze",
-      "posX": 0.40045812726020813,
-      "posY": 0.5560209155082703,
-      "tier": 14,
-      "unique": false
+      ]
     },
     {
+      "mapId": 111,
+      "name": "Springs",
+      "tier": 14,
+      "posX": 0.42248427867889404,
+      "posY": 0.39467015862464905,
+      "unique": false,
       "connections": [
         {
           "mapId": 105
         }
-      ],
-      "imageUrl": "img/maps/14/Springs.png",
-      "mapId": 111,
-      "name": "Springs",
-      "posX": 0.42248427867889404,
-      "posY": 0.39467015862464905,
-      "tier": 14,
-      "unique": false
+      ]
     },
     {
+      "mapId": 112,
+      "name": "Volcano",
+      "tier": 14,
+      "posX": 0.6292251348495483,
+      "posY": 0.5486910939216614,
+      "unique": false,
       "connections": [
         {
           "mapId": 106
@@ -1679,72 +1591,67 @@
         {
           "mapId": 107
         }
-      ],
-      "imageUrl": "img/maps/14/Volcano.png",
-      "mapId": 112,
-      "name": "Volcano",
-      "posX": 0.6292251348495483,
-      "posY": 0.5486910939216614,
-      "tier": 14,
-      "unique": false
+      ]
     },
     {
+      "mapId": 113,
+      "name": "Mineral Pools",
+      "tier": 14,
+      "posX": 0.5954188704490662,
+      "posY": 0.5811518430709839,
+      "unique": false,
       "connections": [
         {
           "mapId": 108
         }
-      ],
-      "imageUrl": "img/maps/14/MineralPools.png",
-      "mapId": 113,
-      "name": "Mineral Pools",
-      "posX": 0.5954188704490662,
-      "posY": 0.5811518430709839,
-      "tier": 14,
-      "unique": false
+      ]
     },
     {
+      "mapId": 114,
+      "name": "Shrine",
+      "tier": 14,
+      "posX": 0.537696361541748,
+      "posY": 0.7319371700286865,
+      "unique": false,
       "connections": [
         {
           "mapId": 101
         }
-      ],
-      "imageUrl": "img/maps/14/Shrine.png",
-      "mapId": 114,
-      "name": "Shrine",
-      "posX": 0.537696361541748,
-      "posY": 0.7319371700286865,
-      "tier": 14,
-      "unique": false
+      ]
     },
     {
+      "mapId": 115,
+      "name": "Colosseum",
+      "tier": 15,
+      "posX": 0.43579843640327454,
+      "posY": 0.545549750328064,
+      "unique": false,
       "connections": [
         {
           "mapId": 110
         }
-      ],
-      "imageUrl": "img/maps/15/Colosseum.png",
-      "mapId": 115,
-      "name": "Colosseum",
-      "posX": 0.43579843640327454,
-      "posY": 0.545549750328064,
-      "tier": 15,
-      "unique": false
+      ]
     },
     {
+      "mapId": 116,
+      "name": "Dark Forest",
+      "tier": 15,
+      "posX": 0.4087041914463043,
+      "posY": 0.45445024967193604,
+      "unique": false,
       "connections": [
         {
           "mapId": 109
         }
-      ],
-      "imageUrl": "img/maps/15/DarkForest.png",
-      "mapId": 116,
-      "name": "Dark Forest",
-      "posX": 0.4087041914463043,
-      "posY": 0.45445024967193604,
-      "tier": 15,
-      "unique": false
+      ]
     },
     {
+      "mapId": 117,
+      "name": "Abyss",
+      "tier": 15,
+      "posX": 0.5783376693725586,
+      "posY": 0.6596387624740601,
+      "unique": false,
       "connections": [
         {
           "mapId": 113
@@ -1752,16 +1659,15 @@
         {
           "mapId": 114
         }
-      ],
-      "imageUrl": "img/maps/15/Abyss.png",
-      "mapId": 117,
-      "name": "Abyss",
-      "posX": 0.5783376693725586,
-      "posY": 0.6596387624740601,
-      "tier": 15,
-      "unique": false
+      ]
     },
     {
+      "mapId": 118,
+      "name": "Overgrown Ruin",
+      "tier": 15,
+      "posX": 0.45894765853881836,
+      "posY": 0.3590680658817291,
+      "unique": false,
       "connections": [
         {
           "mapId": 111
@@ -1769,95 +1675,89 @@
         {
           "mapId": 116
         }
-      ],
-      "imageUrl": "img/maps/15/OvergrownRuin.png",
-      "mapId": 118,
-      "name": "Overgrown Ruin",
-      "posX": 0.45894765853881836,
-      "posY": 0.3590680658817291,
-      "tier": 15,
-      "unique": false
+      ]
     },
     {
+      "mapId": 119,
+      "name": "Core",
+      "tier": 15,
+      "posX": 0.5960078239440918,
+      "posY": 0.4459790587425232,
+      "unique": false,
       "connections": [
         {
           "mapId": 112
         }
-      ],
-      "imageUrl": "img/maps/15/Core.png",
-      "mapId": 119,
-      "name": "Core",
-      "posX": 0.5960078239440918,
-      "posY": 0.4459790587425232,
-      "tier": 15,
-      "unique": false
+      ]
     },
     {
+      "mapId": 120,
+      "name": "Pit of the Chimera",
+      "tier": 16,
+      "posX": 0.4611256420612335,
+      "posY": 0.5905759334564209,
+      "unique": false,
       "connections": [
         {
           "mapId": 115
         }
-      ],
-      "imageUrl": "img/maps/16/PitoftheChimera.png",
-      "mapId": 120,
-      "name": "Pit of the Chimera",
-      "posX": 0.4611256420612335,
-      "posY": 0.5905759334564209,
-      "tier": 16,
-      "unique": false
+      ]
     },
     {
+      "mapId": 121,
+      "name": "Maze of the Minotaur",
+      "tier": 16,
+      "posX": 0.5547775030136108,
+      "posY": 0.5916230082511902,
+      "unique": false,
       "connections": [
         {
           "mapId": 117
         }
-      ],
-      "imageUrl": "img/maps/16/MazeoftheMinotaur.png",
-      "mapId": 121,
-      "name": "Maze of the Minotaur",
-      "posX": 0.5547775030136108,
-      "posY": 0.5916230082511902,
-      "tier": 16,
-      "unique": false
+      ]
     },
     {
+      "mapId": 122,
+      "name": "Forge of the Phoenix",
+      "tier": 16,
+      "posX": 0.5545994639396667,
+      "posY": 0.4198952913284302,
+      "unique": false,
       "connections": [
         {
           "mapId": 119
         }
-      ],
-      "imageUrl": "img/maps/16/ForgeofthePhoenix.png",
-      "mapId": 122,
-      "name": "Forge of the Phoenix",
-      "posX": 0.5545994639396667,
-      "posY": 0.4198952913284302,
-      "tier": 16,
-      "unique": false
+      ]
     },
     {
+      "mapId": 123,
+      "name": "Lair of the Hydra",
+      "tier": 16,
+      "posX": 0.45876961946487427,
+      "posY": 0.4157068133354187,
+      "unique": false,
       "connections": [
         {
           "mapId": 118
         }
-      ],
-      "imageUrl": "img/maps/16/LairoftheHydra.png",
-      "mapId": 123,
-      "name": "Lair of the Hydra",
-      "posX": 0.45876961946487427,
-      "posY": 0.4157068133354187,
-      "tier": 16,
-      "unique": false
+      ]
     },
     {
-      "imageUrl": "img/maps/16/VaalTemple.png",
       "mapId": 124,
       "name": "Vaal Temple",
+      "tier": 16,
       "posX": 0.36117276549339294,
       "posY": 0.5329371690750122,
-      "tier": 16,
       "unique": false
     },
     {
+      "mapId": 125,
+      "name": "The Shaper's Realm",
+      "tier": 17,
+      "posX": 0.5075092315673828,
+      "posY": 0.4999476373195648,
+      "unique": false,
+      "imageUrl": "http://web.poecdn.com/image/Art/2DItems/Maps/AtlasMaps/Atlas.png?scale=1&w=3&h=3",
       "connections": [
         {
           "mapId": 123
@@ -1871,15 +1771,7 @@
         {
           "mapId": 120
         }
-      ],
-      "imageUrl": "http://web.poecdn.com/image/Art/2DItems/Maps/AtlasMaps/Atlas.png?scale=1&w=3&h=3",
-      "mapId": 125,
-      "name": "The Shaper's Realm",
-      "posX": 0.5075092315673828,
-      "posY": 0.4999476373195648,
-      "tier": 17,
-      "unique": false
+      ]
     }
-  ],
-  "version": "2.6"
+  ]
 }
