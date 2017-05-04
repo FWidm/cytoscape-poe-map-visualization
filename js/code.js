@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         "<hr>Buttons:" +
         "<ul>" +
         "<li><b>Clear</b> - clears all selected maps</li>" +
-        "<li><b>mark as completed</b> - sets all previously searched for maps as completed.</li>" +
+        "<li><b>mark as completed</b> - mark highlighted maps.</li>" +
         "</ul>";
 
     let cy = cytoscape({
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'text-halign': 'center',
                 'color': 'white',
                 'text-outline-width': 1,
-                'background-color': 'transparent',
+                'background-opacity': 0,
                 'text-outline-color': 'black',
                 "font-size": 11
             })
@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             .selector('.whiteMap')
             .css({
                 'color': '#fff4f3',
+
             })
             .selector('.yellowMap')
             .css({
@@ -250,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
 
         position: {
             my: 'bottom left',  // Position my top ...
-            at: 'top left' // at the bottom  of...
+            at: 'top middle' // at the bottom  of...
         },
         style: {
             classes: 'qtip-bootstrap'

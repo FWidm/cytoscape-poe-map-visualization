@@ -15,31 +15,50 @@
 
 <body>
 <div id="cy"></div>
-<div id="buttons" class="rounded">
-    <div class="input-group ">
-        <input type="text" autocomplete="off" id="search" class="form-control" placeholder="Search">
-        <span class="input-group-btn">
-            <button class="btn btn-secondary" type="button" id="clear">clear</button>
-        </span>
-        <span class="input-group-btn">
-            <button class="btn btn-secondary" type="button" id="selectMaps">mark as completed</button>
-        </span>
+
+<div id="showEdges" class="rounded">
+    <div class="btn-group btn-group-vertical">
+
+        <button class="btn btn-default" type="button" id="displayUpgrade"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+        </button>
+
+        <button class="btn btn-default" type="button" id="displayFatedUpgrade"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button>
+
     </div>
 
-    <!--<button id="addNode">add Node</button>-->
-    <!--<button id="connect">connect last two nodes</button>-->
-
 </div>
-<div id="comparison" class="rounded">
-    <div id="comparison input">
+
+<!--<div id="buttons" class="rounded">-->
+    <!--<div class="input-group ">-->
+        <!--<input type="text" autocomplete="off" id="search" class="form-control" placeholder="Search">-->
+        <!--<span class="input-group-btn">-->
+        <!--<button class="btn btn-default" type="button" id="clear">clear</button>-->
+        <!--</span>-->
+        <!--<span class="input-group-btn">-->
+        <!--<button class="btn btn-default" type="button" id="selectMaps">mark as completed</button>-->
+        <!--</span>-->
+
+    <!--</div>-->
+<div id="buttons" class="col-lg-3 col-md-5">
+    <div class="input-group">
+        <input type="text" autocomplete="off" id="search" class="form-control" placeholder="Search">
+
+        <div class="input-group-btn">
+            <!-- Buttons -->
+            <button class="btn btn-default" type="button" id="selectMaps">mark as completed</button>
+            <button class="btn btn-default" type="button" id="clear">clear</button>
+
+        </div>
+    </div><!-- /input-group -->
+</div>
+<div id="comparison" >
+    <div id="comparison-input">
         x
     </div>
     <div class="input-group ">
-            <button class="btn btn-primary" type="button" id="compareTo"> add comparison</button>
+        <button class="btn btn-primary" type="button" id="compareTo"> add comparison</button>
     </div>
-
-    <!--<button id="addNode">add Node</button>-->
-    <!--<button id="connect">connect last two nodes</button>-->
 
 </div>
 <!-- scripts -->

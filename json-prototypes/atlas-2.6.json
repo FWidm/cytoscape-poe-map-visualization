@@ -621,7 +621,8 @@
         }
       ],
       "mapId": 42,
-      "name": "Armory",
+      "imageUrl": "img/maps/07/Armoury.png",
+      "name": "Armoury",
       "posX": 0.7314790487289429,
       "posY": 0.6732984185218811,
       "tier": 7,

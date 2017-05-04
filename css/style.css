@@ -1,7 +1,6 @@
 body {
     font: 14px helvetica neue, helvetica, arial, sans-serif;
 }
-
 #cy {
     height: 100%;
     width: 100%;
@@ -18,7 +17,6 @@ body {
     height: inherit;
     z-index: 1;
     /*border: dotted gray 1px;*/
-    background: white;
     left: 1%;
 }
 
@@ -28,8 +26,11 @@ body {
     height: inherit;
     z-index: 1;
     /*border: dotted gray 1px;*/
-    background: white;
     left: 90%;
+}
+
+#comparison-input{
+    background: white;
 }
 
 #info {
@@ -41,3 +42,12 @@ body {
     top: 1em;
 }
 
+
+#showEdges{
+    position: absolute;
+    top: 1%;
+    height: inherit;
+    z-index: 1;
+    /*border: dotted gray 1px;*/
+    left: 2%;
+}
