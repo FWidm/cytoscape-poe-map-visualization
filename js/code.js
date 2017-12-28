@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
 
     let i = 0;
     let clicked;
-    let mapBaseLevel = 67;
     let searchbarHelpText = "When typing the atlas will highlight all maps that start with your given string.<br/>Special commands:<br/>" +
         "<ul>" +
         "<li><b>unique</b> - highlights unique maps.</li>" +
@@ -69,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             .selector(':selected')
             .css({
                 'background-color': '#232323',
-                'background-blacken':1,
+                'background-blacken': 1,
                 'line-color': '#232323',
                 'target-arrow-color': '#232323',
                 'source-arrow-color': '#232323',
@@ -173,23 +172,9 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
     function getSelectedMaps() {
 
         return loadedMaps.filter(function (map) {
-            // console.log("map="+map);
             return map.selected;
         });
     }
-
-    /*
-     /!**
-     * General click/tab handler
-     *!/
-     cy.on('tap', function (e) {
-     console.log("tap on target:");
-     console.log(e.cyTarget);
-     // if (e.cyTarget === cy) {
-     //     cy.elements().removeClass('faded');
-     // }
-
-     });*/
 
     /**
      * Log node id on mouseover
@@ -235,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         encodeMapsToUrl(16);
     });
 
-    $('#buttons').qtip({ // Grab some elements to apply the tooltip to
+    $('#search').qtip({ // Grab some elements to apply the tooltip to
         show: {
             event: 'mouseover',
         },
@@ -311,41 +296,47 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             level: 1.2, // the zoom level
         });
         let centeringNodeId = -1;
-        $.getJSON('json-prototypes/atlas-2.6.json', function (data) {
+        $.getJSON('json-prototypes/maps_3_1.json', function (data) {
+            // $.getJSON('json-prototypes/atlas-2.6.json', function (data) {
             //data is the JSON string
 
             //nodes
-            for (let id = 0; id < data.maps.length; id++) {
-                //console.log(data.maps[id]);
-                let map = data.maps[id];
-                let posX = mapWidth * map.posX;
-                let posY = mapHeight * map.posY;
-                //console.log(id+" | n="+map.name);
-                let img = map.imageUrl;
-
-                let selected = false;
-                loadedMaps.push(new Map(map.mapId, map.tier, map.name, map.posX, map.posY, img, map.shaperOrb, selected));
-                addNode(map.mapId, map.name, map.tier, img, posX, posY, map.unique, map.shaperOrb);
+            for (let id = 0; id < data.length; id++) {
+                let map = new Map(id,data[id]);
+                loadedMaps.push(map);
+                addNode(map);
 
             }
             //edges
-            for (id = 0; id < data.maps.length; id++) {
-                let map = data.maps[id];
+            for (id = 0; id < loadedMaps.length; id++) {
+                let map = loadedMaps[id];
 
-                if (map.upgradesTo !== undefined) {
-                    console.log("upgradesTo: " + map.upgradesTo.mapId);
+                // if(map.unique)
+                //     continue;
 
-                    addUptier("u" + id + "-" + map.upgradesTo.mapId, map.mapId, map.upgradesTo.mapId)
+                if (map.upgrade && !map.unique) {
+                    let uptier=loadedMaps.filter(function (el) {
+                        return map.upgrade.startsWith(el.name+" Map");
+                    })[0];
+                    addUptier("u" + id + "-" + uptier.id, map.id, uptier.id)
                 }
 
-                if (map.connections !== undefined) {
-                    for (conn  in map.connections) {
-                        addEdge("e" + id + "-" + map.connections[conn].mapId, map.connections[conn].mapId, map.mapId);
+                if (map.connected_to) {
+                    console.log(map.connected_to);
+
+                    for (key in map.connected_to) {
+                        let neighbor=loadedMaps.filter(function (el) {
+                            return map.connected_to[key].name.startsWith(el.name+" Map");
+                        })[0];
+                        if(neighbor.name === "Vaal Temple")
+                            continue;
+
+                        addEdge("e" + id + "-" + neighbor.id, map.id, neighbor.id);
                     }
                 }
             }
-            i = data.maps.length - 1;
-            centeringNodeId = data.maps[i].mapId;
+
+            centeringNodeId = loadedMaps[loadedMaps.length-1].id;
             console.log("centering @ " + centeringNodeId);
             cy.center("#" + centeringNodeId);
             // $('#cy').css("background-image", "url("+data.atlasBGImage+")");
@@ -375,98 +366,36 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
 
     /**
      * add a note to the grid
-     * @param id - id of the map
-     * @param name - name of the map
-     * @param tier
-     * @param img - img of the node
-     * @param posX - posY relative to the screen
-     * @param posY - posX relative to the screen
-     * @param unique - is the map unique
-     * @param shaperOrb
+     * param map class Map
      */
-    function addNode(id, name, tier, img, posX, posY, unique, shaperOrb) {
-        let defaultImg='img/maps/blankMap.png';
-        if(img===undefined){
-            img = defaultImg
-        }
-        let shaperOrbTier = 0;
-        let descriptionText = '<img src=' + img + '>' + '<br/>' +
-            '<hr> Tier: ' + tier + '<br/>' +
-            'Level: ' + (mapBaseLevel + tier + '<hr>');
-        if (shaperOrb !== undefined) {
-            descriptionText += 'Shaper Orb: Tier ' + shaperOrb.targetTier + ' maps.<hr>';
-            if (shaperOrb.targetTier !== null) {
-                shaperOrbTier = shaperOrb.targetTier;
-            }
-        }
-
+    function addNode(map) {
         //add the node
-        cy.add([{
-            group: "nodes",
-
-            data: {
-                id: id,
-                name: name,
-                tier: tier,
-                unique: unique,
-                shaperOrbTier: shaperOrbTier
-            },
-            style: {
-                'background-image': img,
-                'background-width': '100%',
-                'background-height': '100%'
-            },
-            position: {x: posX, y: posY}
-
-        }]);
+        cy.add(create_map_node(map));
 
         //add the tooltip
-        cy.$('#' + id).qtip({
-            show: {
-                event: 'mouseover', // cxttap = double finger touch or right click.
-                solo: true
-            },
-            hide: {
-                event: 'mouseout',
-                fixed: true,
-                delay: 100
-            },
-            content: {
-                title: name,
-                text: descriptionText,
-            }, // content: { title: { text: value } }
-
-            position: {
-                my: 'bottom center',  // Position my top left...
-                at: 'top center' // at the bottom right of...
-            },
-            style: {
-                classes: 'qtip-bootstrap'
-            }
-        });
+        let node = cy.getElementById(map.id);
+        node.qtip(create_map_tooltip(map));
 
         //postprocessing the created node by adding corresponding classes.
+        styleByTier(node, map.tier);
+        if (map.unique)
+            node.addClass("unique");
 
-        styleByTier(id, tier);
-        if (unique)
-            cy.$('#' + id).addClass("unique");
-        if (shaperOrb !== undefined)
-            cy.$('#' + id).addClass("shaperOrb");
     }
 
-    function styleByTier(id, tier) {
-        let mapNode = cy.$('#'+id);
-        if(tier<6){
-            mapNode.addClass("whiteMap");
+    function styleByTier(node, tier) {
+        if (tier < 6) {
+            node.addClass("whiteMap");
         }
-        else if(tier>=6&&tier<=10){
-            mapNode.addClass("yellowMap");
+        else if (tier >= 6 && tier <= 10) {
+            node.addClass("yellowMap");
         }
         else {
-            mapNode.addClass("redMap");
+            node.addClass("redMap");
 
         }
     }
+
     /**
      * Add an edge to the graph
      * @param id
@@ -474,6 +403,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * @param targetId
      */
     function addEdge(id, srcId, targetId) {
+        console.log("id="+id+"; srcId="+srcId+" targetId="+targetId);
+
         cy.add([{
             group: "edges",
             data: {id: id, source: srcId, target: targetId}
@@ -488,12 +419,14 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * @param targetId
      */
     function addUptier(id, srcId, targetId) {
-        cy.add([{
+        // console.log("id="+id+"; srcId="+srcId+" targetId="+targetId);
+        elem=cy.add([{
             group: "edges",
             data: {id: id, source: srcId, target: targetId}
         }
         ]);
-        cy.$('#' + id).addClass("uptier");
+        elem.addClass("uptier");
+        // cy.$('#' + id).addClass("uptier");
     }
 }); // on dom ready
 
