@@ -23,4 +23,5 @@ def read_inputfile(filename):
             if 'fatedImageUrl'  in item:
                 urllib.request.urlretrieve(item['fatedImageUrl'], "out/"+subfolder+"/"+item['name'].replace(" ", "")+ "_fated.png")
                 print()
+
 read_inputfile("../json-prototypes/_maps.json")

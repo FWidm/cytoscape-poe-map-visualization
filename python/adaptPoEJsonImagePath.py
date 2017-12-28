@@ -38,11 +38,11 @@ def read_inputfile(filename):
                                 print(entry.name)
                                 item["imageUrl"]="img/maps/"+tier+"/"+entry.name
 
-        with open('atlas-2.6.json', 'w') as outfile:
-            json.dump(jsonData, outfile, sort_keys=True, indent=4,
-                      ensure_ascii=False)
+        # with open('atlas-2.6.json', 'w') as outfile:
+        #     json.dump(jsonData, outfile, sort_keys=True, indent=4,
+        #               ensure_ascii=False)
 
 
 
-read_inputfile("in/atlas-2.6.json")
+read_inputfile("../json-prototypes/atlas-2.6.json")
 

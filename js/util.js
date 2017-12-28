@@ -1,8 +1,11 @@
 /**
  * Created by Fabian-Desktop on 28.12.2017.
  */
+
+
+
 function create_map_node(map) {
-    let defaultImg = 'img/maps/blankMap.png';
+    let defaultImg = 'img/icon.png';
     return [{
         group: "nodes",
 
@@ -39,8 +42,6 @@ function create_description(map) {
 }
 
 function create_map_tooltip(map) {
-
-
     let descriptionText = create_description(map);
     return {
         show: {

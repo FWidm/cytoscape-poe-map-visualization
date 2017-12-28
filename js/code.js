@@ -6,7 +6,6 @@ let mapHeight = window.screen.height < minHeight ? minHeight : window.screen.hei
 console.log("w:h=" + mapWidth + ":" + mapHeight);
 let mapBitSet = new BitSet;
 let loadedMaps = [];
-
 document.addEventListener('DOMContentLoaded', function () { // on dom ready
 
     let i = 0;
@@ -39,9 +38,15 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'text-halign': 'center',
                 'color': 'white',
                 'text-outline-width': 1,
-                'background-opacity': 0,
+                'background-opacity': 1,
+                'background-color': '#19181a',
+                'border-color': '#000',
+                'border-width': '1px',
                 'text-outline-color': 'black',
-                "font-size": 11
+                "font-size": 11,
+                'shape': 'polygon',
+                'shape-polygon-points': getPolygonMapShape()
+
             })
             .selector('edge')
             .css({
@@ -95,6 +100,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'background-opacity': 0,
                 'target-arrow-color': 'gold',
                 'line-color': 'gold',
+                'border-width': '0px',
+
             })
             .selector('.highlighted')
             .css({
@@ -302,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
 
             //nodes
             for (let id = 0; id < data.length; id++) {
-                let map = new Map(id,data[id]);
+                let map = new Map(id, data[id]);
                 loadedMaps.push(map);
                 addNode(map);
 
@@ -315,18 +322,18 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 //     continue;
 
                 if (map.upgrade && !map.unique) {
-                    let uptier=loadedMaps.filter(function (el) {
-                        return map.upgrade.startsWith(el.name+" Map");
+                    let uptier = loadedMaps.filter(function (el) {
+                        return map.upgrade.startsWith(el.name + " Map");
                     })[0];
                     addUptier("u" + id + "-" + uptier.id, map.id, uptier.id)
                 }
 
                 if (map.connected_to) {
                     for (key in map.connected_to) {
-                        let neighbor=loadedMaps.filter(function (el) {
-                            return map.connected_to[key].name.startsWith(el.name+" Map");
+                        let neighbor = loadedMaps.filter(function (el) {
+                            return map.connected_to[key].name.startsWith(el.name + " Map");
                         })[0];
-                        if(neighbor.name === "Vaal Temple")
+                        if (neighbor.name === "Vaal Temple")
                             continue;
 
                         addEdge("e" + id + "-" + neighbor.id, map.id, neighbor.id);
@@ -334,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 }
             }
 
-            centeringNodeId = loadedMaps[loadedMaps.length-1].id;
+            centeringNodeId = loadedMaps[loadedMaps.length - 1].id;
             console.log("centering @ " + centeringNodeId);
             cy.center("#" + centeringNodeId);
             // $('#cy').css("background-image", "url("+data.atlasBGImage+")");
@@ -415,13 +422,60 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * @param targetId
      */
     function addUptier(id, srcId, targetId) {
-        elem=cy.add([{
+        elem = cy.add([{
             group: "edges",
             data: {id: id, source: srcId, target: targetId}
         }
         ]);
         elem.addClass("uptier");
         // cy.$('#' + id).addClass("uptier");
+    }
+
+    /**
+     * Creates the new map shape of poe as polygon.
+     * @returns {string}
+     */
+    function getPolygonMapShape(){
+        return '-.65, -.9' + //line top
+            ',  -.65, -.9.5' +
+            ',  0, -1' +
+            ',  .65, -.95' +
+            ',  .65, -.9' +
+            //spike upper right
+            ',  .55, -.65' +
+            ',  .7, -.7' +
+            ',  .65, -.55' +
+            //line right
+            ',  .9, -.65' +
+            ',  .95, -.65' +
+            ',  1, 0' +
+            ',  .95, .65' +
+            ',  .9, .65' +
+            //spike r bott
+            ',  .65, .55' +
+            ',  .7, .7' +
+            ',  .55, .65' +
+
+            //line bottom
+            ',  .65, .9' +
+            ',  .65, .95' +
+            ',  0, 1' +
+            ',  -.65, .95' +
+            ',  -.65, .9' +
+            //spike left bottom
+            ',  -.55, .65' +
+            ',  -.7, .7' +
+            ',  -.65, .55' +
+            //line left
+            ',  -.9, .65' +
+            ',  -.95, .65'+
+            ',  -1, 0'+
+            ',  -.95, -.65'+
+            ',  -.9, -.65'+
+            //topleft
+            ',  -.65, -.55' +
+            ',  -.7, -.7' +
+            ',  -.55, -.65';
     }
 }); // on dom ready
 
