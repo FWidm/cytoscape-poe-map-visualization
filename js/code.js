@@ -322,8 +322,6 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 }
 
                 if (map.connected_to) {
-                    console.log(map.connected_to);
-
                     for (key in map.connected_to) {
                         let neighbor=loadedMaps.filter(function (el) {
                             return map.connected_to[key].name.startsWith(el.name+" Map");
@@ -403,8 +401,6 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * @param targetId
      */
     function addEdge(id, srcId, targetId) {
-        console.log("id="+id+"; srcId="+srcId+" targetId="+targetId);
-
         cy.add([{
             group: "edges",
             data: {id: id, source: srcId, target: targetId}
@@ -419,7 +415,6 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * @param targetId
      */
     function addUptier(id, srcId, targetId) {
-        // console.log("id="+id+"; srcId="+srcId+" targetId="+targetId);
         elem=cy.add([{
             group: "edges",
             data: {id: id, source: srcId, target: targetId}

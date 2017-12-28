@@ -2,7 +2,7 @@
  * Created by Fabian-Desktop on 28.12.2017.
  */
 function create_map_node(map) {
-    let defaultImg='img/maps/blankMap.png';
+    let defaultImg = 'img/maps/blankMap.png';
     return [{
         group: "nodes",
 
@@ -17,18 +17,31 @@ function create_map_node(map) {
             'background-width': '100%',
             'background-height': '100%'
         },
-        position: {x: 2*map.coordinates.x, y: 2*map.coordinates.y}
+        position: {x: 2 * map.coordinates.x, y: 2 * map.coordinates.y}
 
     }];
 }
 
-function create_map_tooltip(map) {
+function create_description(map) {
     let mapBaseLevel = 67;
-    let defaultImg='img/maps/blankMap.png';
+    let bossNames = "";
+    map.boss.forEach(function (item) {
+        bossNames += item.name + " "
+    });
+    let defaultImg = 'img/maps/blankMap.png';
+//'<img src=' + defaultImg + '>' + '<br/>' +
+    return '<b>Tier:</b> ' + map.tier + '<br/>' +
+        '<b>Level</b>: ' + (mapBaseLevel + map.tier + '<hr>') +
+        '<b>Guild Character</b>: ' + map.guild_character + '<br>' +
+        '<b>Boss</b>: ' + bossNames //todo: insert wiki link
+        +'<hr>' +
+        '<i>'+map.flavour_text + '</i><br>';
+}
 
-    let descriptionText = '<img src=' + defaultImg + '>' + '<br/>' +
-        '<hr> Tier: ' + map.tier + '<br/>' +
-        'Level: ' + (mapBaseLevel + map.tier + '<hr>');
+function create_map_tooltip(map) {
+
+
+    let descriptionText = create_description(map);
     return {
         show: {
             event: 'mouseover', // cxttap = double finger touch or right click.
@@ -40,7 +53,7 @@ function create_map_tooltip(map) {
             delay: 100
         },
         content: {
-            title: map.name,
+            title: '<b>'+map.name+'</b>',
             text: descriptionText,
         }, // content: { title: { text: value } }
 
