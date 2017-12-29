@@ -322,17 +322,17 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 //     continue;
 
                 if (map.upgrade && !map.unique) {
-                    let upgrade = getMapIdByName(map.upgrade,loadedMaps);
+                    let upgrade = getMapIdByName(map.upgrade, loadedMaps);
 
                     addUptier("u" + id + "-" + upgrade.id, map.id, upgrade.id)
                 }
                 if (map.unique) {
-                    let base = getMapIdByName(map.base,loadedMaps);
-                    addEdge("e"+id+"-"+base.id,id,base.id);
+                    let base = getMapIdByName(map.base, loadedMaps);
+                    addEdge("e" + id + "-" + base.id, id, base.id);
                 }
                 else if (map.connected_to) {
                     for (key in map.connected_to) {
-                        let neighbor = getMapIdByName(map.connected_to[key].name,loadedMaps);
+                        let neighbor = getMapIdByName(map.connected_to[key].name, loadedMaps);
 
                         if (neighbor.name === "Vaal Temple")
                             continue;
@@ -353,13 +353,12 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
 
     }
 
-    function getMapIdByName(name, array){
-        console.log(name);
-        console.log(array);
+    function getMapIdByName(name, array) {
         return array.filter(function (el) {
             return name.startsWith(el.name + " Map");
         })[0];
     }
+
     /**
      * Read the given URL and set the corresponding bits in the bitset.
      */

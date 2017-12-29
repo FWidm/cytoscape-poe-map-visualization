@@ -40,6 +40,7 @@ class Map {
         this.boss = json.boss;
         this.coordinates = json.coordinates;
         this.selected = selected;
+        this.img=json.img
     }
 
     toString() {

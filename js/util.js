@@ -16,7 +16,7 @@ function create_map_node(map) {
             unique: map.unique,
         },
         style: {
-            'background-image': defaultImg,
+            'background-image': map.img,
             'background-width': '100%',
             'background-height': '100%'
         },
