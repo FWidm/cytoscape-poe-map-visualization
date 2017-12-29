@@ -37,8 +37,8 @@ function create_description(map) {
         '<b>Level</b>: ' + (mapBaseLevel + map.tier + '<hr>') +
         '<b>Guild Character</b>: ' + map.guild_character + '<br>' +
         '<b>Boss</b>: ' + bossNames //todo: insert wiki link
-        +'<hr>' +
-        '<i>'+map.flavour_text + '</i><br>';
+        + '<hr>' +
+        '<i>' + map.flavour_text + '</i><br>';
 }
 
 function create_map_tooltip(map) {
@@ -54,7 +54,7 @@ function create_map_tooltip(map) {
             delay: 100
         },
         content: {
-            title: '<b>'+map.name+'</b>',
+            title: '<b>' + map.name + '</b>',
             text: descriptionText,
         }, // content: { title: { text: value } }
 
@@ -63,7 +63,8 @@ function create_map_tooltip(map) {
             at: 'top center' // at the bottom right of...
         },
         style: {
-            classes: 'qtip-bootstrap'
+            classes: 'qtip-bootstrap',
+            'font-size': 20
         }
     };
 }

@@ -29,6 +29,7 @@ class Map {
     constructor(id, json, selected = false) {
         //maps.push(new Map(map.mapId,map.tier,map.name,map.posX,map.posY,null,map.shaperOrb,false));
         this.id=id;
+        this.base = json.base;
         this.name = json.name;
         this.tier = json.tier;
         this.guild_character = json.guild_character;

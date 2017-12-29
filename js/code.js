@@ -322,17 +322,18 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 //     continue;
 
                 if (map.upgrade && !map.unique) {
-                    let uptier = loadedMaps.filter(function (el) {
-                        return map.upgrade.startsWith(el.name + " Map");
-                    })[0];
-                    addUptier("u" + id + "-" + uptier.id, map.id, uptier.id)
-                }
+                    let upgrade = getMapIdByName(map.upgrade,loadedMaps);
 
-                if (map.connected_to) {
+                    addUptier("u" + id + "-" + upgrade.id, map.id, upgrade.id)
+                }
+                if (map.unique) {
+                    let base = getMapIdByName(map.base,loadedMaps);
+                    addEdge("e"+id+"-"+base.id,id,base.id);
+                }
+                else if (map.connected_to) {
                     for (key in map.connected_to) {
-                        let neighbor = loadedMaps.filter(function (el) {
-                            return map.connected_to[key].name.startsWith(el.name + " Map");
-                        })[0];
+                        let neighbor = getMapIdByName(map.connected_to[key].name,loadedMaps);
+
                         if (neighbor.name === "Vaal Temple")
                             continue;
 
@@ -352,6 +353,13 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
 
     }
 
+    function getMapIdByName(name, array){
+        console.log(name);
+        console.log(array);
+        return array.filter(function (el) {
+            return name.startsWith(el.name + " Map");
+        })[0];
+    }
     /**
      * Read the given URL and set the corresponding bits in the bitset.
      */
@@ -435,7 +443,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
      * Creates the new map shape of poe as polygon.
      * @returns {string}
      */
-    function getPolygonMapShape(){
+    function getPolygonMapShape() {
         return '-.65, -.9' + //line top
             ',  -.65, -.9.5' +
             ',  0, -1' +
@@ -468,10 +476,10 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
             ',  -.65, .55' +
             //line left
             ',  -.9, .65' +
-            ',  -.95, .65'+
-            ',  -1, 0'+
-            ',  -.95, -.65'+
-            ',  -.9, -.65'+
+            ',  -.95, .65' +
+            ',  -1, 0' +
+            ',  -.95, -.65' +
+            ',  -.9, -.65' +
             //topleft
             ',  -.65, -.55' +
             ',  -.7, -.7' +
