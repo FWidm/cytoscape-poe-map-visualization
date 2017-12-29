@@ -103,6 +103,15 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'border-width': '0px',
 
             })
+            .selector('.shaper')
+            .css({
+                'border-width': '0px',
+                'color': '#8466ff',
+                'background-color': '#00000000',
+                'background-opacity': 0,
+                'width':220,
+                'height':220,
+            })
             .selector('.highlighted')
             .css({
                 'border-color': '#71cc7b',
@@ -129,7 +138,6 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'color': '#ff5945',
 
             }),
-
         layout: {
             name: 'grid',
             padding: 10
@@ -340,6 +348,7 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                         addEdge("e" + id + "-" + neighbor.id, map.id, neighbor.id);
                     }
                 }
+
             }
 
             centeringNodeId = loadedMaps[loadedMaps.length - 1].id;
@@ -389,7 +398,11 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         node.qtip(create_map_tooltip(map));
 
         //postprocessing the created node by adding corresponding classes.
-        styleByTier(node, map.tier);
+        if(map.name.includes("Shaper's")){
+            node.addClass('shaper')
+        }
+        else
+            styleByTier(node, map.tier);
         if (map.unique)
             node.addClass("unique");
 
@@ -404,7 +417,6 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
         }
         else {
             node.addClass("redMap");
-
         }
     }
 

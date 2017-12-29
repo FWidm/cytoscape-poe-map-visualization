@@ -4107,13 +4107,12 @@
         "flavour_text": "The nexus of nothingness and equilibrium of eternity.",
         "boss": [
             {
-                "name": "The Shaper"
-            }
+                "name": "The Shaper"            }
         ],
         "coordinates": {
             "y": 281.28900146484375,
             "x": 499.8380126953125
         },
-        "img": null
+        "img": "img/shaper_node.png"
     }
 ]
