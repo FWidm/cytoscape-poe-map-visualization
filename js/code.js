@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function () { // on dom ready
                 'border-width': '1px',
                 'text-outline-color': 'black',
                 "font-size": 11,
-                'shape': 'polygon',
-                'shape-polygon-points': getPolygonMapShape()
+                // 'shape': 'polygon',
+                // 'shape-polygon-points': getPolygonMapShape()
 
             })
             .selector('edge')
